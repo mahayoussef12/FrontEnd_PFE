@@ -24,9 +24,14 @@ export class SearchComponent implements OnInit {
     this.entrepriseService.getAllVille(this.activatedRoute.snapshot.params["categorie"],this.activatedRoute.snapshot.params["ville"]).subscribe(prod => {
       this.entreprise = prod;
       console.log(prod)
-    });
-    this.avisservice.count(this.entreprise).subscribe(prod => {
-      this.aviss = prod;
+
+      for (var val of this.entreprise)
+        this.avisservice.count(val.id).subscribe(prod => {
+          this.aviss = prod;
+
+        }
+        )
+      this.aviss=0;
 
     });
 

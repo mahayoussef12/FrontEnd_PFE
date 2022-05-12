@@ -13,7 +13,7 @@ import {AvisService} from "../services/avis.service";
 export class SearchUserComponent implements OnInit {
   entreprise!: Entreprise;
   private entrepriseId: any;
-  private aviss: any;
+  aviss: any;
   constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class SearchUserComponent implements OnInit {
     this.entrepriseService.getEntrepriseById(this.entrepriseId).subscribe((response) => {
       this.entreprise = response
     })
-    this.avisservice.count(this.entreprise).subscribe(prod => {
+    this.avisservice.count(this.entrepriseId).subscribe(prod => {
       this.aviss = prod;
 
     });
