@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="page-wrapper">
+
+  <!--Sidebar Menu Starts-->
+  <aside class="menu-sidebar js-right-sidebar d-block d-lg-none">
+    <div class="menu-sidebar__content js-scrollbar2">
+      <div class="account-img">
+        <img src="{{entreprise.image}}" alt="Steve Austin" />
+      </div>
+      <h4 class="name">{{entreprise.nomSociete}}</h4>
+      <nav class="navbar-sidebar2">
+        <ul class="list-unstyled navbar__list">
+          <li>
+          <li>
+            <a  class="active">
+              <i class="bi bi-person"></i>My profile</a>
+          </li>
+          <li>
+
+            <a href="db.html">
+              <i class="bi bi-house"></i>Accueil
+            </a>
+          </li>
+          <!--       <li class="has-sub">
+                   <a class="js-arrow" href="#">
+                     <i class="ion-social-buffer-outline"></i>My Listings
+                   </a>
+                   <ul class="list-unstyled navbar__sub-list js-sub-list">
+                     <li>
+                       <a href="db-my-listing.html">Active</a>
+                       <span class="inbox-num active">6</span>
+                     </li>
+                     <li>
+                       <a href="db-my-listing.html">Pending</a>
+                       <span class="inbox-num pending">8</span>
+                     </li>
+                     <li>
+                       <a href="db-my-listing.html">Expired</a>
+                       <span class="inbox-num expired">12</span>
+                     </li>
+                   </ul>
+                 </li>-->
+
+          <!--     <li>
+                 <a href="db-bookings.html">
+                   <i class="ion-ios-copy-outline"></i>Bookings</a>
+               </li>-->
+          <li>
+            <a href="db-messages.html">
+              <i class="bi bi-chat"></i>Messagerie</a>
+
+          </li>
+          <!--
+                  <li>
+                    <a href="db-favourites.html">
+                      <i class="ion-ios-heart-outline"></i>Favourites</a>
+                  </li>-->
+          <!--        <li>
+                    <a href="db-add-listing.html">
+                      <i class="ion-ios-plus-outline"></i>Add Listings</a>
+                  </li>-->
+          <!--        <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                      <i class="ion-ios-star-outline"></i>Reviews
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                      <li>
+                        <a href="db-recieve-reviews.html">
+                          Recieved Reviews</a>
+                        <span class="inbox-num active">6</span>
+                      </li>
+                      <li>
+                        <a href="db-submit-reviews.html">
+                          Submitted reviews</a>
+                        <span class="inbox-num pending">8</span>
+                      </li>
+                    </ul>
+                  </li>-->
+
+          <li>
+            <a href="db-my-profile.html">
+              <i class="bi bi-receipt"></i>Facture</a>
+          </li>
+          <li>
+            <a href="db-my-profile.html">
+              <i class="bi bi-calendar-date"></i>Rendez_Vous</a>
+          </li>
+          <!--        <li>
+                    <a href="db-invoices.html">
+                      <i class="ion-ios-printer-outline"></i>Invoices</a>
+                  </li>-->
+          <li>
+            <a href="#">
+              <i class="bi bi-box-arrow-right"></i>deconnexion</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <!--Sidebar Menu ends-->
+
+  <!--Dashboard content Wrapper starts-->
+  <div class="dash-content-wrap">
+
+    <!-- Top header starts-->
+    <header class="db-top-header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-9 col-sm-6 col-4">
+            <div class="site-navbar-wrap v2">
+              <div class="site-navbar">
+                <div class="row align-items-center">
+                  <nav class="site-navigation float-left">
+                    <div class="container">
+                        <li class="d-lg-none"><a class="btn v1" href="add-listing.html">Add Listing <i class="ion-plus-round"></i></a></li>
+
+                    </div>
+                  </nav>
+                  <div class="d-lg-none sm-right">
+                    <a href="#" class="mobile-bar js-menu-toggle">
+                      <span class="ion-android-menu"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="site-mobile-menu">
+                <div class="site-mobile-menu-header">
+                  <div class="site-mobile-menu-close  js-menu-toggle">
+                    <span class="ion-ios-close-empty"></span>
+                  </div>
+                </div>
+                <div class="site-mobile-menu-body"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-8">
+            <div class="header-button">
+              <div class="header-button-item has-noti js-item-menu">
+                <i class="ion-ios-bell-outline"></i>
+                <div class="notifi-dropdown js-dropdown">
+                  <div class="notifi__title">
+                    <p>You have 2 Notifications</p>
+                  </div>
+                  <div class="notifi__item">
+                    <div class="bg-c1 red">
+                      <i class="icofont-check"></i>
+                    </div>
+                    <div class="content">
+                      <p>Your listing <b>Hotel Ocean Paradise</b> has been approved!</p>
+                      <span class="date">5min ago</span>
+                    </div>
+                  </div>
+                  <div class="notifi__item">
+                    <div class="bg-c1 green">
+                      <i class="icofont-ui-message"></i>
+                    </div>
+                    <div class="content">
+                      <p>You have 3 unread Messages</p>
+                      <span class="date">5min ago</span>
+                    </div>
+                  </div>
+                  <div class="notify-bottom text-center pad-tb-20">
+                    <a href="#">View All Notification</a>
+                  </div>
+                </div>
+              </div>
+              <div class="header-button-item js-sidebar-btn">
+                <img src="{{entreprise.image}}" alt="...">
+                <span>{{entreprise.nomSociete}} <i class="ion-arrow-down-b"></i></span>
+              </div>
+              <div class="setting-menu js-right-sidebar d-none d-lg-block">
+                <div class="account-dropdown__body">
+                  <div class="account-dropdown__item">
+                    <a href="db.html">
+                      <i class="ion-ios-gear-outline"></i>Dashboard</a>
+                  </div>
+                  <div class="account-dropdown__item">
+                    <a href="db-my-listing.html">
+                      <i class="ion-social-buffer-outline"></i>Listings</a>
+                  </div>
+                  <div class="account-dropdown__item">
+                    <a href="db-bookings.html">
+                      <i class="ion-ios-copy-outline"></i>Bookings</a>
+                  </div>
+                  <div class="account-dropdown__item">
+                    <a href="db-recieve-reviews.html">
+                      <i class="ion-ios-star-outline"></i>Reviews</a>
+                  </div>
+                  <div class="account-dropdown__item">
+                    <a href="db-messages.html">
+                      <i class="ion-ios-email-outline"></i>Inbox</a>
+                  </div>
+                  <div class="account-dropdown__item">
+                    <a href="db-my-profile.html">
+                      <i class="ion-ios-person-outline"></i>Profile</a>
+                  </div>
+                  <div class="account-dropdown__item">
+                    <a href="#">
+                      <i class="ion-ios-upload-outline"></i>Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Top header ends-->
+
+    <!--Dashboard breadcrumb starts-->
+    <div class="dash-breadcrumb">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dash-breadcrumb-content">
+              <div class="dash-breadcrumb-left">
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li>My Profile</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!--Dashboard breadcrumb ends-->
+    <!--Dashboard content starts-->
+    <div class="dash-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="recent-activity">
+              <div class="act-title">
+                <h5><i class="ion-person"></i>Profile Details</h5>
+              </div>
+              <div class="profile-wrap">
+                <div class="row">
+                  <div class="col-md-8 offset-md-2 py-4">
+                    <div class="edit-profile-photo text-center">
+                      <img src="{{entreprise.image}}" alt="">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="my-profile">
+                      <ul class="db-profile-info">
+                        <li>
+                          <h6>First Name :</h6>
+                          <span>{{entreprise.nomSociete}}</span>
+                        </li>
+                        <li>
+                          <h6>Last Name :</h6>
+                          <span> {{entreprise.nom_gerant}}</span>
+                        </li>
+                        <li>
+                          <h6>Email Id :</h6>
+                          <span> {{entreprise.email}}</span>
+                        </li>
+                        <li>
+                          <h6>Phone :</h6>
+                          <span> {{entreprise.tel}}</span>
+                        </li>
+                        <li>
+                          <h6>Address :</h6>
+                          <span>{{entreprise.adresse}} {{entreprise.ville}}</span>
+                        </li>
+                        <li>
+                          <h6>Categorie :</h6>
+                          <span>{{entreprise.categorie}}</span>
+                        </li>
+                        <li>
+                          <h6>Social Profile :</h6>
+                          <ul class="social-profile">
+                            <li class="bg-fb"><a href="https://www.facebook.com"><i class="ion-social-facebook"></i></a></li>
+                            <li class="bg-tt"><a href="https://www.twitter.com"><i class="ion-social-twitter"></i></a></li>
+                            <li class="bg-ig"><a href="https://www.instagram.com"><i class="ion-social-instagram"></i></a></li>
+                          </ul>
+                        </li>
+
+                      </ul>
+                      <a (click)="gotoeditprofile()" class="btn v5">Modifier profile</a>
+                      <a (click)="delete(entreprise)" class="btn v5" style="margin-left: 80%;background-color: red">Desactiver votre compte</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard content ends-->
+
+    <!--Dashboard footer starts-->
+    <div class="dash-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright">
+              <p>© 2019 Listagram . All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard footer ends-->
+  </div>
+  <!--Dashboard content Wrapper ends-->
+</div>
+
+
+</body>
+
+</html>

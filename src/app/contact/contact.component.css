@@ -1,0 +1,110 @@
+
+/*-----------------------------------------
+                    Contact Page
+----------------------------------------*/
+#contact_form .form-control-wrap input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#contact_form .form-control-wrap input,
+#contact_form .form-control-wrap textarea {
+  font-weight: 300;
+
+}
+
+#contact_form .form-group {
+  margin-bottom: 0;
+}
+
+#contact_form .form-group .help-block {
+  color: #f91942;
+  font-size: 15px;
+}
+
+.map-view-wrap_item {
+  position: absolute;
+  width: 350px;
+  border-radius: 6px;
+  background: #fff;
+  padding: 25px 30px;
+  top: 80px;
+  right: 120px;
+  z-index: 9999;
+}
+
+.list-single-main-item-title {
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.list-single-main-item-title h3 {
+  color: #444;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.address-list {
+  display: block;
+}
+
+.contact-social li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: #0cbcb7;
+  text-align: center;
+  margin-right: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.contact-social li:hover {
+  border: 1px solid #ddd;
+  background: transparent;
+}
+
+.contact-social li:hover a i {
+  color: #444;
+}
+
+.contact-social li a i {
+  color: #fff;
+  font-size: 15px;
+  line-height: 35px;
+}
+
+.address-list li {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.address-list ul li span i {
+  font-size: 20px;
+}
+
+.address-list ul li span {
+  width: 30px;
+  display: inline-block;
+  text-align: left;
+}
+
+.address-list ul li a {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.contact-widget p {
+  margin-top: 15px;
+}
+
+.contact-widget {
+
+  border: 1px solid #ddd;
+  padding: 20px;
+
+}

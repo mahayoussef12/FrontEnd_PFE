@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+<div class="nav">
+  <header class="site-navbar" role="banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div style="margin-left: 77%;padding-bottom: -25%">
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a routerLink=""><span>Home</span></a></li>
+                <li class="has-children">
+                <li><a routerLink="choisir"><span>S'inscrire</span></a></li>
+                <li><a routerLink="login"><span>Se connecter </span></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+</div>
+<div class="s01">
+  <div class="form">
+    <fieldset>
+      <legend style="margin-left:40%;color: #2eca6a">Prenez votre rendez vous </legend>
+    </fieldset>
+    <p>Annuaire Tunisie, Bons plans, Actualités, Site web ...</p>
+    <div class="inner-form">
+      <div class="input-field first-wrap">
+        <input id="search" type="text" placeholder="Categorie d'entreprise"  [(ngModel)]="nom"/>
+      </div>
+      <div class="input-field second-wrap">
+        <input id="location" type="text" placeholder="Emplacement"  [(ngModel)]="categorie"  />
+      </div>
+      <div class="input-field third-wrap">
+        <button class="btn-search" type="button" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="values" class="values">
+
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h2>Nos valeurs</h2>
+      <p>Nos valeurs</p>
+    </header>
+
+    <div class="row">
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="box">
+          <img src="../assets/values-1.png" class="img-fluid" alt="">
+          <h3>facilite de recherche des entreprises </h3>
+          <p class="sous-text">Vous pouvez Trouvez facilement les details d’entreprise pour reserver un rendez_vous en 2 minutes</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+        <div class="box">
+          <img src="../assets/values-2.png" class="img-fluid" alt="">
+          <h3>Sécurité</h3>
+          <p class="sous-text">Nos serveurs et notre réseau sont protégés par une technologie de pointe pour garder vos informations personnelles et les détails de votre carte privés.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+        <div class="box">
+          <img src="../assets/values-3.png" class="img-fluid" alt="">
+          <h3>Efficacité </h3>
+          <p class="sous-text">Nous sommes efficaces ! Immédiatement après la réservation, vous trouverez votre confirmation de réservation dans votre boîte aux lettres.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- End Values Section -->
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h2>Fonctionnalités </h2>
+      <p>L’ensemble de nos fonctionnalités ont été développées pour rendre votre agenda plus agile et atteindre votre organisation idéale</p>
+    </header>
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <img src="assets/features.png" class="img-fluid" alt="" style="width: 90%;height: 80%">
+      </div>
+
+      <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+        <div class="row align-self-center gy-4">
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Rendez-vous sur Internet</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>
+                Rappels par SMS et/ou e-mail
+              </h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Agenda partagé</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Synchronisation</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Paiement en ligne</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Push notification </h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div> <!-- / row -->
+  </div>
+</section><!-- End Features Section -->
+<!-- ======= Cta Section ======= -->
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-9 text-center text-lg-start">
+        <h3 class="h3">Prenez rapidement un rendez-vous</h3>
+        <p class="cd">Pour Prenez votre rendez vous dans notre platforme .Il faut De S'inscrire  cliquer ici ...... </p>
+
+      </div>
+      <div class="col-lg-3 cta-btn-container text-center">
+        <a class="cta-btn align-middle" routerLink="choisir">S'inscrire</a>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Cta Section -->
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2 style="position: center;margin-left: 40%">Contact</h2>
+    </div>
+<br>
+    <div>
+      <div>
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>Avenue de la république 5000 Monastir, Tunisie</p>
+          </div>
+
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>contact@codynet.tn</p>
+          </div>
+
+          <div class="phone">
+            <i class="bi bi-telephone"></i>
+            <h4>Call:</h4>
+            <p>+216 28 28 28 22</p>
+          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.0683342761413!2d10.81389531468914!3d35.773697732503784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302139e4e154d63%3A0x13bf468fdcbbe647!2sCODYNET!5e0!3m2!1sfr!2stn!4v1648028192433!5m2!1sfr!2stn" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+          <!--          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>-->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======= Footer ======= -->
+<div style="margin-right: -20%">
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Folow us </h3>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bi bi-google"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright" style="margin-right: 35%">
+        &copy; Copyright <strong><span>Codynet</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+</div>
+</body>
+</html>
+

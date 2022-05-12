@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="page-wrapper">
+
+  <!--Sidebar Menu Starts-->
+  <aside class="menu-sidebar js-right-sidebar d-block d-lg-none">
+    <div class="menu-sidebar__content js-scrollbar2">
+      <div class="account-img">
+        <img src="{{entreprise.images}}" alt="Steve Austin" />
+      </div>
+      <h4 class="name">{{entreprise.nom}} {{entreprise.prenom}}</h4>
+      <nav class="navbar-sidebar2">
+        <ul class="list-unstyled navbar__list">
+          <li>
+          <li>
+            <a >
+              <i class="bi bi-person"></i>My profile</a>
+          </li>
+          <li>
+
+            <a href="db.html">
+              <i class="bi bi-house"></i>Accueil
+            </a>
+          </li>
+          <li>
+            <a href="db-messages.html">
+              <i class="bi bi-chat"></i>Messagerie</a>
+          </li>
+          <li>
+            <a href="db-my-profile.html">
+              <i class="bi bi-receipt"></i>Facture</a>
+          </li>
+          <li>
+            <a  class="active">
+              <i class="bi bi-calendar-date"></i>Rendez_Vous</a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="bi bi-box-arrow-right"></i>deconnexion</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <!--Sidebar Menu ends-->
+
+  <!--Dashboard content Wrapper starts-->
+  <div class="dash-content-wrap">
+    <div class="header-button-item js-sidebar-btn">
+      <img src="{{entreprise.images}}" alt="...">
+      <span>{{entreprise.nom}} {{entreprise.prenom}}</span>
+    </div>
+    <!--Dashboard breadcrumb starts-->
+    <div class="dash-breadcrumb">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dash-breadcrumb-content">
+              <div class="dash-breadcrumb-left">
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li ><a >Home</a></li>
+                    <li>Rendez_vous</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <scheduler-component></scheduler-component>
+  </div>
+
+</div>
+
+</body>
+
+</html>

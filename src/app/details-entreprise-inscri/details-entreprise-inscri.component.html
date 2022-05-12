@@ -1,0 +1,61 @@
+<div class="dash-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div class="recent-activity">
+          <div class="act-title">
+            <h5><i class="ion-person"></i>Profile Details</h5>
+          </div>
+          <div class="profile-wrap">
+            <div class="row">
+              <div class="col-md-8 offset-md-2 py-4">
+                <div class="edit-profile-photo text-center">
+                  <img src="{{entreprise.image}}" alt="">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="my-profile">
+                  <ul class="db-profile-info">
+                    <li>
+                      <h6>First Name :</h6>
+                      <span>{{entreprise.nomSociete}}</span>
+                    </li>
+                    <li>
+                      <h6>Last Name :</h6>
+                      <span> {{entreprise.nom_gerant}}</span>
+                    </li>
+                    <li>
+                      <h6>Email Id :</h6>
+                      <span> {{entreprise.email}}</span>
+                    </li>
+                    <li>
+                      <h6>Phone :</h6>
+                      <span> {{entreprise.tel}}</span>
+                    </li>
+                    <li>
+                      <h6>Address :</h6>
+                      <span>{{entreprise.adresse}} {{entreprise.ville}}</span>
+                    </li>
+                    <li>
+                      <h6>Categorie :</h6>
+                      <span>{{entreprise.categorie}}</span>
+                    </li>
+                    <li>
+                      <div id="image-content">
+                      <div class="qrcode-img">
+                      <div id="qrcode"></div>
+                      </div>
+                      </div>
+                      <button type="button" class="btn btn-outline-dark" (click)="saveImage()" style="margin-left: 20%;">Telecharger CodeQR</button>
+                    </li>
+                    <li> <button type="button" class="btn btn-outline-success" style="margin-left: 50%">Continue</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

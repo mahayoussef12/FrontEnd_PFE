@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+<div class="ticket">
+  <p class="centered">Contact Info
+    <br> Nom: {{details.entreprise?.nomSociete}}
+<!--    <br>E-mail: {{details.entreprise?.email}}-->
+    <br>Tel: {{details.entreprise?.tel}}</p>
+  <table>
+    <thead>
+    <tr>
+      <th class="quantity">Quantité</th>
+      <th class="description">Description</th>
+      <th class="price">prix unitaire HT</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="quantity">{{details.quantite}}</td>
+      <td class="description">{{details.description}}</td>
+      <td class="price">{{details.prix_unitaire_HT}}</td>
+    </tr>
+
+    <tr>
+      <td class="quantity"></td>
+      <td class="description" style="font-weight: bold;">TVA</td>
+      <td class="price">{{details.tva}}%</td>
+    </tr>
+    <tr>
+      <td class="quantity"></td>
+      <td class="description"  style="font-weight: bold;">Remise</td>
+      <td class="price">{{details.remise}}%</td>
+    </tr>
+
+
+
+    <td class="quantity"></td>
+    <td class="description"  style="font-weight: bold;">totale</td>
+    <td class="price">{{details.tolale_TTC}}</td>
+
+    </tbody>
+  </table>
+  <div class="qrcode-img">
+    <div id="qrcode"  width="30%"></div>
+  </div>
+  <p class="centered">{{date| date: 'dd/MM/yyyy'}}
+    <br>{{date| date: 'hh:MM:ss'}}</p>
+</div>
+<button type="button" class="btn-secondary" style="margin-left: 90%;margin-top: 8px"(click)="onPrint()">Imprimer </button>
+
+</body>
+</html>

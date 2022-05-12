@@ -1,0 +1,33 @@
+/*---------------------------------------
+                404 PAGE
+------------------------------------------*/
+
+.error-content i {
+  font-size: 60px;
+  display: block;
+  color: #0cbcb7;
+}
+
+.error-content p {
+  margin-bottom: 30px;
+}
+
+.error-content a {
+  color: #0cbcb7;
+}
+
+.error-search-container input {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.error-search-container button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: -27px;
+  font-size: 17px;
+  cursor: pointer;
+}

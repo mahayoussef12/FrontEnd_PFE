@@ -1,0 +1,714 @@
+<!--
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+<body>
+<div class="nav">
+  <header class="site-navbar" role="banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div style="margin-left: 77%;padding-bottom: -25%">
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a routerLink=""><span>Home</span></a></li>
+                <li class="has-children">
+                <li><a routerLink="choisir"><span>S'inscrire</span></a></li>
+                <li><a routerLink="login"><span>Se connecter </span></a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+</div>
+<div class="s01">
+  <div class="form">
+    <fieldset>
+      <legend style="margin-left:40%;color: #2eca6a">Prenez votre rendez vous </legend>
+    </fieldset>
+    <p>Annuaire Tunisie, Bons plans, Actualités, Site web ...</p>
+    <div class="inner-form">
+      <div class="input-field first-wrap">
+        <input id="search" type="text" placeholder="Categorie d'entreprise"  [(ngModel)]="nom"/>
+      </div>
+      <div class="input-field second-wrap">
+        <input id="location" type="text" placeholder="Emplacement"  [(ngModel)]="categorie"  />
+      </div>
+      <div class="input-field third-wrap">
+        <button class="btn-search" type="button" (click)="search()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="values" class="values">
+
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h2>Nos valeurs</h2>
+      <p>Nos valeurs</p>
+    </header>
+
+    <div class="row">
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="box">
+          <img src="../assets/values-1.png" class="img-fluid" alt="">
+          <h3>facilite de recherche des entreprises </h3>
+          <p class="sous-text">Vous pouvez Trouvez facilement les details d’entreprise pour reserver un rendez_vous en 2 minutes</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+        <div class="box">
+          <img src="../assets/values-2.png" class="img-fluid" alt="">
+          <h3>Sécurité</h3>
+          <p class="sous-text">Nos serveurs et notre réseau sont protégés par une technologie de pointe pour garder vos informations personnelles et les détails de votre carte privés.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+        <div class="box">
+          <img src="../assets/values-3.png" class="img-fluid" alt="">
+          <h3>Efficacité </h3>
+          <p class="sous-text">Nous sommes efficaces ! Immédiatement après la réservation, vous trouverez votre confirmation de réservation dans votre boîte aux lettres.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>&lt;!&ndash; End Values Section &ndash;&gt;
+&lt;!&ndash; ======= Features Section ======= &ndash;&gt;
+<section id="features" class="features">
+
+  <div class="container" data-aos="fade-up">
+
+    <header class="section-header">
+      <h2>Fonctionnalités </h2>
+      <p>L’ensemble de nos fonctionnalités ont été développées pour rendre votre agenda plus agile et atteindre votre organisation idéale</p>
+    </header>
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <img src="assets/features.png" class="img-fluid" alt="" style="width: 90%;height: 80%">
+      </div>
+
+      <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+        <div class="row align-self-center gy-4">
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Rendez-vous sur Internet</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>
+                Rappels par SMS et/ou e-mail
+              </h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Agenda partagé</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Synchronisation</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Paiement en ligne</h3>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+            <div class="feature-box d-flex align-items-center">
+              <i class="bi bi-check"></i>
+              <h3>Push notification </h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div> &lt;!&ndash; / row &ndash;&gt;
+  </div>
+</section>&lt;!&ndash; End Features Section &ndash;&gt;
+&lt;!&ndash; ======= Cta Section ======= &ndash;&gt;
+<section id="cta" class="cta">
+  <div class="container" data-aos="zoom-in">
+
+    <div class="row">
+      <div class="col-lg-9 text-center text-lg-start">
+        <h3 class="h3">Prenez rapidement un rendez-vous</h3>
+        <p class="cd">Pour Prenez votre rendez vous dans notre platforme .Il faut De S'inscrire  cliquer ici ...... </p>
+
+      </div>
+      <div class="col-lg-3 cta-btn-container text-center">
+        <a class="cta-btn align-middle" routerLink="choisir">S'inscrire</a>
+      </div>
+    </div>
+
+  </div>
+</section>&lt;!&ndash; End Cta Section &ndash;&gt;
+&lt;!&ndash; ======= Contact Section ======= &ndash;&gt;
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2 style="position: center;margin-left: 40%">Contact</h2>
+    </div>
+<br>
+    <div>
+      <div>
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>Avenue de la république 5000 Monastir, Tunisie</p>
+          </div>
+
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>contact@codynet.tn</p>
+          </div>
+
+          <div class="phone">
+            <i class="bi bi-telephone"></i>
+            <h4>Call:</h4>
+            <p>+216 28 28 28 22</p>
+          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.0683342761413!2d10.81389531468914!3d35.773697732503784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302139e4e154d63%3A0x13bf468fdcbbe647!2sCODYNET!5e0!3m2!1sfr!2stn!4v1648028192433!5m2!1sfr!2stn" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+          &lt;!&ndash;          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>&ndash;&gt;
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+&lt;!&ndash; ======= Footer ======= &ndash;&gt;
+<div style="margin-right: -20%">
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Folow us </h3>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bi bi-google"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright" style="margin-right: 35%">
+        &copy; Copyright <strong><span>Codynet</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>&lt;!&ndash; End Footer &ndash;&gt;
+</div>
+</body>
+</html>
+
+-->
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+  <!-- Metas -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="LionCoders" />
+  <!-- Links -->
+  <link rel="icon" type="image/png" href="#" />
+  <!-- google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+  <!-- Plugins CSS -->
+  <!--color switcher css-->
+  <!-- Document Title -->
+  <title>listagram - Directory Listing HTML Template</title>
+</head>
+
+<body>
+<!--Preloader starts-->
+<!--Page Wrapper starts-->
+<div class="page-wrapper">
+  <!--header starts-->
+  <header >
+    <!--Main Menu starts-->
+    <div class="site-navbar-wrap v1">
+      <div class="container">
+        <div class="site-navbar" style="margin-left: 72%;">
+          <div class="row align-items-center">
+
+            <div class="col-md-8 col-6">
+              <nav class="site-navigation float-left" >
+                <div class="container">
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li>
+                      <i class="bi bi-house" style="color: whitesmoke"></i><a routerLink="">Accuiel</a>
+                    </li>
+                    <li >
+                      <i class="fa fa-sign-in" aria-hidden="true" style="color: whitesmoke"></i> <a routerLink="login">Se connecter </a>
+
+                        </li>
+                        <li >
+                          <i class="fa fa-user-plus" aria-hidden="true" style="color: whitesmoke"></i>
+                          <a href="#">S'inscrire</a>
+                        </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="d-lg-none sm-right">
+                <a href="#" class="mobile-bar js-menu-toggle">
+                  <span class="ion-android-menu"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--mobile-menu starts -->
+        <div class="site-mobile-menu">
+          <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close  js-menu-toggle">
+              <span class="ion-ios-close-empty"></span>
+            </div>
+          </div>
+          <div class="site-mobile-menu-body"></div>
+        </div>
+        <!--mobile-menu ends-->
+      </div>
+    </div>
+    <!--Main Menu ends-->
+  </header>
+  <!--Header ends-->
+  <!--Hero section starts-->
+  <div class="hero v3 section-padding" style="background-image: url(../../assets/hero-5.jpg)">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="hero-title v2">
+            Prenez votre rendez vous
+          </h1>
+          <p class="hero-desc v2">
+            Annuaire Tunisie, Bons plans, Actualités, Site web ...
+          </p>
+        </div>
+        <div class="col-md-12 text-center mar-top-20">
+          <div class="hero__form v2 mar-bot-30">
+            <div class="row">
+              <div class="col-lg-5 col-md-12">
+                <input class="hero__form-input custom-select" type="text" name="place-event" id="place-event" placeholder="What are you looking for?"  [(ngModel)]="nom" >
+              </div>
+              <div class="col-lg-5 col-md-12">
+                <input class="hero__form-input custom-select" type="text" name="place-event" id="place-event1" placeholder="What are you looking for?" [(ngModel)]="categorie"  >
+              </div>
+
+              <div class="col-lg-2 col-md-12">
+                <div class="submit_btn text-right md-left">
+                  <button class="btn v3  mar-right-5" type="submit" (click)="search()"><i class="ion-ios-search" aria-hidden="true" ></i> Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Hero section ends-->
+  <br>
+  <!--Promo Category starts-->
+  <div class="hero-catagory mar-top-30 section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="hero-catagory-wrapper v1">
+            <a  class="hero-category-content v1" (click)="cv()">
+              <i class="icofont-hotel"></i>
+              <p class="name">fieance</p>
+              <p class="d-name">{{test}}</p>
+            </a>
+            <a (click)="restau()" class="hero-category-content v1">
+              <i class="icofont-restaurant"></i> <br>
+              <p class="name" >Restaurent</p>
+              <p class="d-name">{{testing}}</p>
+            </a>
+
+            <a (click)="beau()" class="hero-category-content v1">
+              <i class="icofont-cut"></i> <br>
+              <p class="name">Beauty & spa</p>
+              <p class="d-name">{{beauty}}</p>
+            </a>
+
+            <a (click)="docteur()" class="hero-category-content v1">
+              <i class="icofont-list"></i> <br>
+              <p class="name">docteur</p>
+              <p class="d-name">{{medecin}}</p>
+            </a>
+            <a href="grid-fullwidth.html" class="hero-category-content v1">
+              <i class="icofont-list"></i> <br>
+              <p class="name">docteur</p>
+              <p class="d-name">28 Locations</p>
+            </a>
+            <a href="grid-fullwidth.html" class="hero-category-content v1">
+              <i class="icofont-list"></i> <br>
+              <p class="name">docteur</p>
+              <p class="d-name">28 Locations</p>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="values" class="values">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>Nos valeurs</h2>
+        <p>Nos valeurs</p>
+      </header>
+
+      <div class="row">
+
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="box">
+            <img src="../assets/values-1.png" class="img-fluid" alt="">
+            <h3>facilite de recherche des entreprises </h3>
+            <p class="sous-text">Vous pouvez Trouvez facilement les details d’entreprise pour reserver un rendez_vous en 2 minutes</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+          <div class="box">
+            <img src="../assets/values-2.png" class="img-fluid" alt="">
+            <h3>Sécurité</h3>
+            <p class="sous-text">Nos serveurs et notre réseau sont protégés par une technologie de pointe pour garder vos informations personnelles et les détails de votre carte privés.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+          <div class="box">
+            <img src="../assets/values-3.png" class="img-fluid" alt="">
+            <h3>Efficacité </h3>
+            <p class="sous-text">Nous sommes efficaces ! Immédiatement après la réservation, vous trouverez votre confirmation de réservation dans votre boîte aux lettres.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- End Values Section -->
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>Fonctionnalités </h2>
+        <p>L’ensemble de nos fonctionnalités ont été développées pour rendre votre agenda plus agile et atteindre votre organisation idéale</p>
+      </header>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+          <img src="assets/features.png" class="img-fluid" alt="" style="width: 90%;height: 80%">
+        </div>
+
+        <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+          <div class="row align-self-center gy-4">
+
+            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+              <div class="feature-box d-flex align-items-center">
+                <i class="bi bi-check"></i>
+                <h3>Rendez-vous sur Internet</h3>
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+              <div class="feature-box d-flex align-items-center">
+                <i class="bi bi-check"></i>
+                <h3>
+                  Rappels par SMS et/ou e-mail
+                </h3>
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+              <div class="feature-box d-flex align-items-center">
+                <i class="bi bi-check"></i>
+                <h3>Agenda partagé</h3>
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+              <div class="feature-box d-flex align-items-center">
+                <i class="bi bi-check"></i>
+                <h3>Synchronisation</h3>
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+              <div class="feature-box d-flex align-items-center">
+                <i class="bi bi-check"></i>
+                <h3>Paiement en ligne</h3>
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+              <div class="feature-box d-flex align-items-center">
+                <i class="bi bi-check"></i>
+                <h3>Push notification </h3>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div> <!-- / row -->
+    </div>
+  </section><!-- End Features Section -->
+  <!-- ======= Cta Section ======= -->
+  <!--Promo Category ends-->
+  <!--Popular City starts-->
+  <div class="popular-catagory section-padding pad-bot-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <h2 class="section-title v1">Explore your Dream Places</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="popular-item sm-grid mar-bot-30">
+            <div class="single-place">
+              <img class="single-place-image" src="assets/sfax.jpg" alt="place-image">
+              <div class="single-place-content">
+                <h2 class="single-place-title">
+                  <a href="#">Sfax</a>
+                </h2>
+                <ul class="single-place-list v2">
+                  <li><span></span> Listings</li>
+                </ul>
+                <a class="btn v6 explore-place" href="grid-fullwidth-map.html">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="popular-item sm-grid mar-bot-30">
+            <div class="single-place">
+              <img class="single-place-image" src="assets/sousse.jpg" alt="place-image">
+              <div class="single-place-content">
+                <h2 class="single-place-title">
+                  <a href="#">Sousse</a>
+                </h2>
+                <ul class="single-place-list v2">
+                  <li><span>{{souss}}</span> Listings</li>
+                </ul>
+                <a class="btn v6 explore-place" (click)="sousse()">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="popular-item sm-grid mar-bot-30">
+            <div class="single-place">
+              <img class="single-place-image" src="assets/monastir.jpg"   (click)="monastir()" alt="place-image">
+              <div class="single-place-content">
+                <h2 class="single-place-title">
+                  <a  (click)="monastir()">Monastir </a>
+                </h2>
+                <ul class="single-place-list v2">
+                  <li><span>{{mestir}}</span> Listings</li>
+                </ul>
+                <a class="btn v6 explore-place" (click)="monastir()">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="popular-item sm-grid mar-bot-30">
+            <div class="single-place">
+              <img class="single-place-image" src="assets/mahdia.jpg" alt="place-image">
+              <div class="single-place-content">
+                <h2 class="single-place-title">
+                  <a href="#">Mahdia</a>
+                </h2>
+                <ul class="single-place-list v2">
+                  <li><span></span> Listings</li>
+                </ul>
+                <a class="btn v6 explore-place" href="grid-fullwidth-map.html">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="blog-posts v1 pad-bot-60 pad-top-60">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <h2 class="section-title v1">Popular Posts</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card single-blog-item v1">
+            <img src="assets/images/blog/news_7.jpg" alt="...">
+            <a href="#" class="blog-cat btn v6 red">Hotel</a>
+            <div class="card-body">
+              <h4 class="card-title"><a href="single-news-one.html">Top 10 Homestay in London That you don't miss out</a></h4>
+              <div class="bottom-content">
+                <p class="date">Sep 28th , 2018 by <a href="#" class="text-dark">Louis Fonsi</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card single-blog-item v1">
+            <img src="assets/images/blog/news_8.jpg" alt="...">
+            <a href="#" class="blog-cat btn v6 red">Restaurant</a>
+            <div class="card-body">
+              <h4 class="card-title"><a href="single-news-one.html">Cappuccino Coffee at Broklyn for Coffee Lover.</a></h4>
+              <div class="bottom-content">
+                <p class="date">Dec 5th , 2018 by <a href="#" class="text-dark">Adam D'Costa</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card single-blog-item v1">
+            <img src="assets/images/blog/news_9.jpg" alt="...">
+            <a href="#" class="blog-cat btn v6 red">Travel</a>
+            <div class="card-body">
+              <h4 class="card-title"><a href="single-news-one.html">Top 50 Greatest Street Arts in Paris</a></h4>
+              <div class="bottom-content">
+                <p class="date">Mar 13th , 2018 by <a href="#" class="text-dark">Mark Henri</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Page Wrapper ends-->
+<!--Footer Starts-->
+<div style="margin-right: -20%">
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Folow us </h3>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bi bi-google"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright" style="margin-right: 35%">
+        &copy; Copyright <strong><span>Codynet</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+</div>
+<!--Footer ends-->
+<!--Color switcher starts-->
+
+</body>
+
+</html>
