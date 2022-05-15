@@ -9005,18 +9005,7 @@ span.infobox_rate {
                 Sidebar menu
 =======================================*/
 
-.menu-sidebar {
-  width: 275px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background: #fff;
-  overflow-y: auto;
-  height: 100vh;
-  transition: all 0.5s ease;
-  z-index: 1000;
-}
+
 
 .menu-sidebar .logo {
   text-align: center;
@@ -9026,7 +9015,7 @@ span.infobox_rate {
 }
 
 .menu-sidebar .logo a img {
-  max-width: 140px;
+  max-width: 120px;
 }
 
 
@@ -10787,7 +10776,7 @@ ul.buttons li {
   top: 0;
   bottom: 0;
   background: #fff;
-  overflow-y: auto;
+  overflow-y: auto !important;
   height: 100vh;
   transition: all 0.5s ease;
   z-index: 1000;
@@ -10871,7 +10860,7 @@ ul.buttons li {
   height: calc(100vh - 71px);
   border-right: 1px solid #e5e5e5;
   position: relative;
-  background: #2B333E;
+  background: #456145;
 }
 
 .menu-sidebar__content .name {
@@ -10900,7 +10889,7 @@ ul.buttons li {
 
 .navbar-sidebar2 .navbar__list li a.active,
 .navbar-sidebar2 .navbar__list li:hover {
-  background: #3D434B;
+  background: darkseagreen;
   color: #fff;
 }
 

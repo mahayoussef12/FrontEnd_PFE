@@ -10,18 +10,18 @@ import {ClientService} from "../services/client.service";
 })
 export class ProfileClientComponent implements OnInit {
   detailId:any;
-  details!:Client
+  client!:Client
 
   constructor(private route: ActivatedRoute,private clientservice:ClientService, private router: Router) { }
 
 
   ngOnInit(): void {
-    localStorage.removeItem("monObjet");
+
     this.detailId = this.route.snapshot.params["id"];
     console.log(this.detailId)
     this.clientservice.getClientById(this.detailId).subscribe((response)=>{
-      this.details = response
-      localStorage.setItem('monObjet', JSON.stringify(this.details.id));
+      this.client = response
+
     },(error) => {
       console.log(error);
     })
@@ -34,7 +34,7 @@ export class ProfileClientComponent implements OnInit {
   }
 
   gotoeditprofile() {
-    this.router.navigate(["edit_client/",this.details.id])
+    this.router.navigate(["edit_client/",this.client.id])
   }
 
   delete(details: Client) {
@@ -45,5 +45,26 @@ export class ProfileClientComponent implements OnInit {
         this.router.navigate([""])
         // window.location.reload()
       })
+  }
+  profile(id: any) {
+    this.router.navigate(['profile/',id])
+  }
+
+  accuiel(id: any) {
+
+    this.router.navigate(['compte/',id])
+  }
+
+  facture(id: any) {
+
+  }
+
+  rendez_vous(id: any) {
+
+    this.router.navigate(['calendrier/',id])
+
+  }
+  edit(id: any) {
+    this.router.navigate(['edit_client/',id])
   }
 }

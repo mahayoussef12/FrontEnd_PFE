@@ -79,7 +79,6 @@ export class ProfileEntrepriseComponent implements OnInit {
       });
   }
 
-
   gotoeditprofile() {
     this.router.navigate(["edit/",this.entreprise.id])
   }
@@ -92,5 +91,27 @@ export class ProfileEntrepriseComponent implements OnInit {
         // window.location.reload()
       })
 
+  }
+  facture(id: any) {
+    this.router.navigate(['ds/',id])
+  }
+
+  rendez_vous(id: any) {
+
+    this.router.navigate(['calendrier/en/',id])
+  }
+  profile(id: any) {
+    this.router.navigate(['profile_entreprise/',id])
+
+  }
+
+
+  accuiel(id: any) {
+
+    this.router.navigate(['compte_entreprise/',id])
+  }
+  edit(id: any) {
+
+    this.router.navigate(['edit/',id])
   }
 }

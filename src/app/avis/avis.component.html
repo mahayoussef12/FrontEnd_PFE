@@ -1,127 +1,114 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-
-<body>
-
-<!--Page Wrapper starts-->
+<body >
 <div class="page-wrapper fixed-footer">
-  <div class="user-profile section-padding mar-top-30 bg-green-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-12">
-          <div class="user-titlebar">
-            <div class="user-avatar">
-              <img src="{{entreprise.image}}" alt="">
-            </div>
-            <div class="user-name">
-              <h4>{{entreprise.nomSociete}}</h4>
+  <!--header starts-->
+  <header class="header transparent scroll-hide">
+    <!--Main Menu starts-->
+    <div class="site-navbar-wrap v2">
+      <div class="container">
+        <div class="site-navbar">
+          <div class="row align-items-center">
+            <div class="col-md-4 col-6">
+<h2 style="color: #1ec38b;font-style: oblique 40deg;">Mawaaied</h2>            </div>
+            <div class="col-md-8 col-6">
+              <nav class="site-navigation float-left">
+                <div class="container">
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="has-children">
+                      <p style="color: black">Home</p>
+                     <ul class="dropdown">
+                        <li><a href="home-v1.html">Home Tab</a></li>
+                       </ul>
+                  </ul>
+                </div>
+              </nav>
+              <div class="d-lg-none sm-right">
+                <a href="#" class="mobile-bar js-menu-toggle">
+                  <span class="ion-android-menu"></span>
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
-        <!--<form [formGroup]="form">
-          <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
-          <div>Rating: {{form.value.rating}}</div>
-          &lt;!&ndash;  <p>form is valid: {{ form.valid ? 'true' : 'false' }}</p>&ndash;&gt;
-        </form>-->
+        <!--mobile-menu starts -->
+        <div class="site-mobile-menu">
+          <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close  js-menu-toggle">
+              <span class="ion-ios-close-empty"></span>
+            </div>
+          </div>
+          <div class="site-mobile-menu-body"></div>
+        </div>
+        <!--mobile-menu ends-->
+      </div>
+    </div>
+    <!--Main Menu ends-->
+  </header>
+  <!--Header ends-->
+  <!--Breadcrumb section starts-->
+  <div class="breadcrumb-section" style="background-image: url(assets/images/breadcrumb/breadcrumb-3.jpg)">
+    <div class="overlay op-5"></div>
+    <div class="container">
+      <div class="row align-items-center  pad-top-80">
+        <div class="col-md-6 col-12">
+          <div class="breadcrumb-menu">
+            <h2 class="page-title">Avis</h2>
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="breadcrumb-menu text-right sm-left">
+            <ul>
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Avis</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list-details-section section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-18 col-md-30">
+          <div class="list-details-wrap">
+<div id="add_review" class="list-details-section mar-top-10">
+  <h4>Add Review</h4>
+  <div  class="contact-form" id="leave-review">
+
+    <h4 class="contact-form__title">
+      Rate us and Write a Review
+    </h4>
+    <div class="row">
+      <div class="col-md-6 col-sm-7 col-12">
+        <p class="contact-form__rate">
+          Your rating for this listing:
+        </p>
 
         <ngx-star-rating [(ngModel)]="newAvis.start" [id]="'rating'" ></ngx-star-rating>
         <p>{{newAvis.start}}</p>
-
       </div>
-    </div>
-  </div>
-  <!--User Profile ends-->
-  <!--User profile details starts-->
-  <div class="list-details-section section-padding mar-top-40">
-    <div class="container">
       <div class="row">
-<br>
-        <br>
-        <div class="listing-sidebar">
-          <div class="boxed-widget">
-            <h3><i class="icofont-contact-add"></i>Ajouter un commentaire</h3>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" [(ngModel)]="newAvis.email_auteur" >
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Nom: </label>
-              <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Nom:"[(ngModel)]="newAvis.nom_auteur">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Prenom</label>
-              <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Prenom:" [(ngModel)]="newAvis.prenom_auteur">
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Commentaire </label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" cols="500" [(ngModel)]="newAvis.description"></textarea>
-            </div>
-            <!--<input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Prenom:" [(ngModel)]="newAvis.entreprise_id">-->
+        <div class="col-md-4">
+          <input class="contact-form__input-text" type="text" name="name" id="name" placeholder="Name:" [(ngModel)]="newAvis.nom_auteur">
+        </div>
 
-
-            <button type="submit" class="btn btn-outline-secondary" style="margin-left: 50%" (click)="test()">Ajouter </button>
-          </div>
+        <div class="col-md-4">
+          <input class="contact-form__input-text" type="text" name="prenom" id="prenom" placeholder="Prenom:" [(ngModel)]="newAvis.prenom_auteur">
+        </div>
+        <div class="col-md-4">
+          <input class="contact-form__input-text" type="email" name="mail" id="mail" placeholder="Email:" [(ngModel)]="newAvis.email_auteur">
         </div>
       </div>
+      <textarea class="contact-form__textarea" name="comment" id="comment" placeholder="Comment" [(ngModel)]="newAvis.description"></textarea>
+      <input  type="submit" class="btn v1" value="Submit" (click)="test()">
     </div>
   </div>
 </div>
-<!--<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.7648541569456!2d10.809960885441344!3d35.707403736144876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1302120c69720997%3A0xe7e650d58fb609bf!2z2LTYsdmD2Kkg2KfZhNi12YPZhNmKINmIINi02LHZg9in2KbZhw!5e0!3m2!1sar!2stn!4v1651923861072!5m2!1sar!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-</div>-->
-<span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
-<!-- Scroll to top ends-->
-<div style="margin-right: -20%">
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Folow us </h3>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bi bi-google"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
+          </div></div>
           </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright" style="margin-right: 35%">
-        &copy; Copyright <strong><span>Codynet</span></strong>. All Rights Reserved
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 </div>
-<!--Scripts ends-->
-</body>
 
-</html>
+  </div>
+</div>
+
+</body>

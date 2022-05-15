@@ -13,7 +13,7 @@ import {Client} from "../Client";
 export class CalendrierComponent implements OnInit {
 
   entrepriseId: any;
-  entreprise!: Client;
+  client!: Client;
 
 
   constructor(private route: ActivatedRoute,private entrepriseService:ClientService, private router: Router) { }
@@ -23,8 +23,28 @@ export class CalendrierComponent implements OnInit {
     this.entrepriseId = this.route.snapshot.params["id"];
     console.log(this.entrepriseId)
     this.entrepriseService.getClientById(this.entrepriseId).subscribe((response) => {
-      this.entreprise = response
+      this.client = response
     })
   }
+  profile(id: any) {
+    this.router.navigate(['profile/',id])
+  }
 
+  accuiel(id: any) {
+
+    this.router.navigate(['compte/',id])
+  }
+
+  facture(id: any) {
+    this.router.navigate(['All_facture_Client/',id])
+  }
+  rendez_vous(id: any) {
+
+    this.router.navigate(['calendrier/',id])
+
+  }
+
+  edit(id: any) {
+    this.router.navigate(['edit_client/',id])
+  }
 }

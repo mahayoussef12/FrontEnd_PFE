@@ -21,6 +21,15 @@ import {CompteEnFactureComponent} from "./compte-en-facture/compte-en-facture.co
 import {TicketComponent} from "./ticket/ticket.component";
 import {EditProfileEntrepriseComponent} from "./edit-profile-entreprise/edit-profile-entreprise.component";
 import {EditProfileClientComponent} from "./edit-profile-client/edit-profile-client.component";
+import {CompteEnClientComponent} from "./compte-en-client/compte-en-client.component";
+import {UpdateCalendrierComponent} from "./update-calendrier/update-calendrier.component";
+import {PayementPaypalComponent} from "./payement-paypal/payement-paypal.component";
+import {ChoisirTypeCompteComponent} from "./choisir-type-compte/choisir-type-compte.component";
+import {InsripClientComponent} from "./insrip-client/insrip-client.component";
+import {AdminComponent} from "./admin/admin.component";
+import {SuperadminComponent} from "./superadmin/superadmin.component";
+import {SuperadminClientComponent} from "./superadmin-client/superadmin-client.component";
+import {TestComponent} from "./test/test.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -40,9 +49,20 @@ const routes: Routes = [
   {path:'calendrier/en/:id',component:CalendrerEntrepriseComponent},
   {path:'facture/:id',component:DetailsFactureComponent},
   {path:'ds/:id',component:CompteEnFactureComponent},
+  {path:'All_facture_Client/:id',component:CompteEnClientComponent},
+  {path:'update',component:UpdateCalendrierComponent},
   {path:'thermal/:id',component:TicketComponent},
   {path:'edit/:id',component:EditProfileEntrepriseComponent},
   {path:'edit_client/:id',component:EditProfileClientComponent},
+  {path:'payment',component:PayementPaypalComponent},
+  {path:'type_espace',component:ChoisirTypeCompteComponent},
+  {path:'inscription_client',component:InsripClientComponent},
+  {path:'super_admin',component:AdminComponent},
+  {path:'super_admin/entreprise',component:SuperadminComponent},
+  {path:'super_admin/client',component:SuperadminClientComponent},
+  {path:'test',component:TestComponent},
+
+
   {path:'**',component:NotfoundComponent}
 
 

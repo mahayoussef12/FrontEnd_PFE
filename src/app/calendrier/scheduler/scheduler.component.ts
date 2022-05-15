@@ -5,7 +5,7 @@ import {
   DayPilotNavigatorComponent,
   DayPilotSchedulerComponent
 } from "daypilot-pro-angular";
-import {DataService, EventCreateParams} from "./data.service";
+import {DataService, EventCreateParams, EventDeleteParams} from "./data.service";
 import EventData = DayPilot.EventData;
 import SchedulerConfig = DayPilot.SchedulerConfig;
 import {ActivatedRoute} from "@angular/router";
@@ -40,9 +40,10 @@ import {ClientService} from "../../services/client.service";
   `]
 })
 export class SchedulerComponent implements AfterViewInit {
+  [x: string]: any;
   @ViewChild("calendar") calendar!: DayPilotCalendarComponent;
   @ViewChild("navigator") nav!: DayPilotNavigatorComponent;
-
+  scheduler!: DayPilotSchedulerComponent;
   events: DayPilot.EventData[] = [];
 
   configNavigator: DayPilot.NavigatorConfig = {
@@ -58,26 +59,21 @@ export class SchedulerComponent implements AfterViewInit {
       this.configCalendar.viewType = "Days";
       this.configCalendar.startDate = args.start;
       this.configCalendar.days = args.days;
-    }
+    },
   };
 
   configCalendar: DayPilot.CalendarConfig = {
     viewType: "Days",
-/*    onTimeRangeSelected: async (args) => {
-      const modal = await DayPilot.Modal.prompt("Create a new event:", "Event 1");
-      const dp = args.control;
-      dp.clearSelection();
-      if (!modal.result) {
-        return;
-      }
-      const params: EventCreateParams = {
-        start: args.start.toString(),
-        end: args.end.toString(),
-        text: modal.result,
-        resource: args.resource
-      };
-    },*/
 
+    onEventDelete: args => {
+      let params: EventDeleteParams = {
+        id: args.e.id(),
+      };
+      this.ds.deleteEvent(params).subscribe(result => {
+        this.scheduler.control.message("Event deleted");
+      });
+
+    },
   };
   private detailId: any;
 
@@ -98,126 +94,8 @@ export class SchedulerComponent implements AfterViewInit {
   }
 
 
-  /*@ViewChild("scheduler")
-  scheduler!: DayPilotSchedulerComponent;
 
-  readonly: boolean = false;
 
-  events: EventData[] = [];
 
-  config: SchedulerConfig = {
-    timeHeaders : [
-      {groupBy: "Month", format: "MMMM yyyy"},
-      {groupBy: "Day", format: "d"}
-    ],
-    eventHeight: 40,
-    scale: "Day",
-    days: 30,
-    startDate: "2022-06-01",
-    eventDeleteHandling: "Update",
-    contextMenu: new DayPilot.Menu({
-      items: [
-        { text: "Edit" },
-        { text: "Details" }
-        ],
-      onShow: args => {
-        // @ts-ignore
-        args.menu.items[0].disabled = this.readonly;
-      }
-    }),
-    onTimeRangeSelected: async (args) => {
-      const dp = args.control;
-      const modal = await DayPilot.Modal.prompt("Create a new event:", "Event 1");
-      dp.clearSelection();
-      if (modal.canceled) { return; }
-      const params: EventCreateParams = {
-        start: args.start.toString(),
-        end: args.end.toString(),
-        text: modal.result,
-        resource: args.resource
-      };
-      this.ds.createEvent(params).subscribe(result => {
-        this.events.push(result);
-        this.scheduler.control.message('Event created');
-      } );
-    },
-    onBeforeRowHeaderRender: args => {
-      if (!this.readonly) {
-        args.row.areas = [
-          { right: 3, top: 13, width: 14, height: 14, style: "color: #aaa", cssClass: "icon icon-edit", visibility: "Hover", onClick: args => { this.scheduler.control.rows.edit(args.source); } }
-        ];
-      }
-    },
-    onEventClick: args => {
-      DayPilot.Modal.prompt("Event name:", args.e.data.text).then(modal => {
-        if (modal.canceled) {
-          return;
-        }
-        args.e.data.text = modal.result;
-        this.scheduler.control.events.update(args.e);
-      });
-    }
-  };
-
-  constructor(private ds: DataService, private cdr: ChangeDetectorRef) {}
-
-  ngAfterViewInit(): void {
-    this.ds.getResources().subscribe(result => this.config.resources = result);
-
-    var from = this.scheduler.control.visibleStart();
-    var to = this.scheduler.control.visibleEnd();
-    this.ds.getEvents(from, to).subscribe(result => {
-      this.events = result;
-    });
-  }
-
-  original: any;
-
-  changed():void {
-    let properties = [
-      "eventClickHandling",
-      "eventDeleteHandling",
-      "eventHoverHandling",
-      "eventDoubleClickHandling",
-      //"eventEditHandling",
-      "eventMoveHandling",
-      "eventResizeHandling",
-      //"eventSelectHandling",
-      "rowClickHandling",
-      "rowDoubleClickHandling",
-      "rowCreateHandling",
-      //"rowEditHandling",
-      "rowSelectedHandling",
-      "rowMoveHandling",
-      "timeRangeClickHandling",
-      "timeRangeDoubleClickHandling",
-      "timeRangeSelectedHandling",
-      "timeRangeRightClickHandling"
-    ];
-
-    if (this.readonly) {
-      this.original = {};
-
-      properties.forEach(name => {
-        // @ts-ignore
-        this.original[name] = this.scheduler.control[name];
-        // @ts-ignore
-        this.config[name] = "Disabled";
-      });
-
-      this.scheduler.control.clearSelection();
-
-    }
-    else {
-      properties.forEach(name => {
-        // @ts-ignore
-        this.config[name] = this.original[name];
-      });
-    }
-  }*!/
-
-}
-
-*/
 
 }

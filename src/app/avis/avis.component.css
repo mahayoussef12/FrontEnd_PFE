@@ -719,8 +719,8 @@ body {
   color: #777;
   font-family: 'poppins', sans-serif;
   font-size: 14px;
-  font-weight: 300;
-  overflow-x: hidden !important;
+  max-height: 150vh;
+  /*overflow-x: hidden !important;*/
 }
 
 h1 {

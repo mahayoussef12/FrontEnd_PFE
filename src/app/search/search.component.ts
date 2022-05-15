@@ -31,7 +31,6 @@ export class SearchComponent implements OnInit {
 
         }
         )
-      this.aviss=0;
 
     });
 

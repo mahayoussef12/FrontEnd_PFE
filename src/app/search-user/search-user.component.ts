@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Entreprise} from "../Entreprise";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AvisService} from "../services/avis.service";
+import {avis} from "../avis";
 
 @Component({
   selector: 'app-search-user',
@@ -12,8 +13,10 @@ import {AvisService} from "../services/avis.service";
 })
 export class SearchUserComponent implements OnInit {
   entreprise!: Entreprise;
-  private entrepriseId: any;
+  entrepriseId: any;
   aviss: any;
+  maha!: avis[];
+ newAvis!: avis;
   constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
   ngOnInit(): void {
@@ -26,6 +29,20 @@ export class SearchUserComponent implements OnInit {
       this.aviss = prod;
 
     });
+    this.avisservice.getEntrepriseId(this.entrepriseId).subscribe((response) => {
+      this.maha = response
+      console.log(this.maha)
+    })
+  }
+  test() {
+    this.avisservice.createAvis(this.entrepriseId,this.newAvis).subscribe(prod => {
+      console.log(prod);
+      console.log("ajouter avec sucess")
+    })}
+
+  gotoavis(id: any) {
+    this.router.navigate(['avis/',id])
+
   }
 }
 

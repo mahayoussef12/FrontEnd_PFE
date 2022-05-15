@@ -25,7 +25,6 @@ import {
   SocialAuthServiceConfig,
   FacebookLoginProvider, GoogleLoginProvider,
 } from 'angularx-social-login';
-import firebase from "firebase/compat";
 import { environment } from "../environments/environment";
 import { initializeApp } from 'firebase/app';
 import { DetailsEntrepriseInscriComponent } from './details-entreprise-inscri/details-entreprise-inscri.component';
@@ -41,6 +40,18 @@ import { CompteEnFactureComponent } from './compte-en-facture/compte-en-facture.
 import { TicketComponent } from './ticket/ticket.component';
 import { EditProfileEntrepriseComponent } from './edit-profile-entreprise/edit-profile-entreprise.component';
 import { EditProfileClientComponent } from './edit-profile-client/edit-profile-client.component';
+import { CompteEnClientComponent } from './compte-en-client/compte-en-client.component';
+import { UpdateCalendrierComponent } from './update-calendrier/update-calendrier.component';
+import { PayementPaypalComponent } from './payement-paypal/payement-paypal.component';
+
+import { ChoisirTypeCompteComponent } from './choisir-type-compte/choisir-type-compte.component';
+import { InsripClientComponent } from './insrip-client/insrip-client.component';
+import { AdminComponent } from './admin/admin.component';
+import { SuperadminClientComponent } from './superadmin-client/superadmin-client.component';
+import { SuperadminComponent } from './superadmin/superadmin.component';
+import { TestComponent } from './test/test.component';
+import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
+
 
 @NgModule({
   declarations: [
@@ -60,9 +71,11 @@ import { EditProfileClientComponent } from './edit-profile-client/edit-profile-c
     AvisComponent,
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent
+    SuperadminClientComponent,
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, UpdateCalendrierComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, TestComponent
   ],
   imports: [
+    AngularWeatherWidgetModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -92,3 +105,5 @@ import { EditProfileClientComponent } from './edit-profile-client/edit-profile-c
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

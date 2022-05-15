@@ -29,6 +29,7 @@ letre: any;
     console.log(this.detailId)
     this.factureservice.getfacById(this.detailId).subscribe((response)=>{
       this.details = response
+      localStorage.setItem('total', JSON.stringify(response.tolale_TTC));
 
       function addDaysToDate(date: any | number | Date, days: number): Date{
         var res = new Date(date);
@@ -89,6 +90,7 @@ letre: any;
   }
 
 
-
-
+  paypal() {
+    this.router.navigate(['payment'])
+  }
 }

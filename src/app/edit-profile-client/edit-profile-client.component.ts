@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Entreprise} from "../Entreprise";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {EntrepriseService} from "../services/entreprise.service";
 import {Client} from "../Client";
 import {ClientService} from "../services/client.service";
@@ -14,8 +14,9 @@ export class EditProfileClientComponent implements OnInit {
 
   employee!: Client;
   id: any;
+ client!: Client;
 
-  constructor(private route: ActivatedRoute,private clientService:ClientService) { }
+  constructor(private route: ActivatedRoute,private clientService:ClientService,private router:Router) { }
 
   ngOnInit(): void {
     this.employee = new Client();
@@ -27,6 +28,10 @@ export class EditProfileClientComponent implements OnInit {
         console.log(data)
         this.employee = data;
       }, error => console.log(error));
+    this.clientService.getClientById(this.id) .subscribe(data => {
+      console.log(data)
+      this.client=data
+    })
   }
   updateEmployee() {
     this.clientService.updateClient(this.id, this.employee)
@@ -40,5 +45,25 @@ export class EditProfileClientComponent implements OnInit {
   onSubmit() {
     this.updateEmployee();
   }
+  profile(id: any) {
+    this.router.navigate(['profile/',id])
+  }
 
+  accuiel(id: any) {
+
+    this.router.navigate(['compte/',id])
+  }
+
+  facture(id: any) {
+    this.router.navigate(['All_facture_Client/',id])
+  }
+
+  rendez_vous(id: any) {
+
+    this.router.navigate(['calendrier/',id])
+
+  }
+  edit(id: any) {
+    this.router.navigate(['edit_client/',id])
+  }
 }

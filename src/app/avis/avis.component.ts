@@ -35,7 +35,7 @@ export class AvisComponent implements OnInit {
   }
 
   test() {
-    this.avisservice.create(this.newAvis).subscribe(prod => {
+    this.avisservice.createAvis(this.entrepriseId,this.newAvis).subscribe(prod => {
       console.log(prod);
       console.log("ajouter avec sucess")
   })}

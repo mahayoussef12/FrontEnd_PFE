@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Entreprise} from "../Entreprise";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {EntrepriseService} from "../services/entreprise.service";
 
 @Component({
@@ -14,7 +14,7 @@ id: any;
    entrepriseId: any;
  entreprise!: Entreprise;
 
-  constructor(private route: ActivatedRoute,private entrepriseService:EntrepriseService) { }
+  constructor(private route: ActivatedRoute,private entrepriseService:EntrepriseService, private router: Router) { }
 
   ngOnInit(): void {
     this.employee = new Entreprise();
@@ -46,5 +46,27 @@ id: any;
 
   onSubmit() {
     this.updateEmployee();
+  }
+  facture(id: any) {
+    this.router.navigate(['ds/',id])
+  }
+
+  rendez_vous(id: any) {
+
+    this.router.navigate(['calendrier/en/',id])
+  }
+  profile(id: any) {
+    this.router.navigate(['profile_entreprise/',id])
+
+  }
+
+
+  accuiel(id: any) {
+
+    this.router.navigate(['compte_entreprise/',id])
+  }
+  edit(id: any) {
+
+    this.router.navigate(['edit/',id])
   }
 }

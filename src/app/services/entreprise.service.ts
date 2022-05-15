@@ -71,7 +71,9 @@ export class EntrepriseService {
     const url = `${this.apii}/${id}`;
     return this.http.get<any[]>(url)
   }
-
+  testcountclient(id: number): Observable<any[]> {
+    const url = `${'http://localhost:8082/api/v1/sumClient'}/${id}`;
+    return this.http.get<any[]>(url)}
   verif(prod: code, cle: number): Observable<any> {
 
     return this.http.post<Entreprise>(`${this.maha}/${cle}`, prod);
