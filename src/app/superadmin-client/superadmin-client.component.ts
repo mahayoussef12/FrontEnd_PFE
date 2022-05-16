@@ -36,10 +36,6 @@ export class SuperadminClientComponent implements OnInit {
       this.clients = prod;
       console.log(this.clients)  }
     )
-    this.clientservise.getAllCliens().subscribe(prod => {
-      this.clients = prod;
-      console.log(this.clients)  }
-    )
 
   }
 

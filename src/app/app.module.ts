@@ -30,7 +30,6 @@ import { initializeApp } from 'firebase/app';
 import { DetailsEntrepriseInscriComponent } from './details-entreprise-inscri/details-entreprise-inscri.component';
 initializeApp(environment.firebase);
 import {DayPilotModule} from 'daypilot-pro-angular';
-
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { CalendrerEntrepriseComponent } from './calendrer-entreprise/calendrer-entreprise.component';
 import { CalendComponent } from './calendrer-entreprise/calend/calend.component';
@@ -43,14 +42,13 @@ import { EditProfileClientComponent } from './edit-profile-client/edit-profile-c
 import { CompteEnClientComponent } from './compte-en-client/compte-en-client.component';
 import { UpdateCalendrierComponent } from './update-calendrier/update-calendrier.component';
 import { PayementPaypalComponent } from './payement-paypal/payement-paypal.component';
-
 import { ChoisirTypeCompteComponent } from './choisir-type-compte/choisir-type-compte.component';
 import { InsripClientComponent } from './insrip-client/insrip-client.component';
 import { AdminComponent } from './admin/admin.component';
 import { SuperadminClientComponent } from './superadmin-client/superadmin-client.component';
 import { SuperadminComponent } from './superadmin/superadmin.component';
 import { TestComponent } from './test/test.component';
-import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
+import {NgToastModule} from "ng-angular-popup";
 
 
 @NgModule({
@@ -75,14 +73,15 @@ import { AngularWeatherWidgetModule } from 'angular2-weather-widget';
     CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, UpdateCalendrierComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, TestComponent
   ],
   imports: [
-    AngularWeatherWidgetModule,
+
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule,SocialLoginModule,DayPilotModule,SchedulerModule
+    }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule,SocialLoginModule,DayPilotModule,SchedulerModule,
+    NgToastModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Entreprise} from "../Entreprise";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EntrepriseService} from "../services/entreprise.service";
+import {NgToastService} from "ng-angular-popup";
 
 @Component({
   selector: 'app-edit-profile-entreprise',
@@ -14,7 +15,7 @@ id: any;
    entrepriseId: any;
  entreprise!: Entreprise;
 
-  constructor(private route: ActivatedRoute,private entrepriseService:EntrepriseService, private router: Router) { }
+  constructor(private route: ActivatedRoute,private entrepriseService:EntrepriseService, private router: Router,private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.employee = new Entreprise();
@@ -41,6 +42,8 @@ id: any;
         console.log(data);
         this.employee = new Entreprise();
         console.log("update avec success")
+        this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
+        this.router.navigate(['profile_entreprise/',this.id])
       }, error => console.log(error));
   }
 

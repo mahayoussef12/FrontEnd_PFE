@@ -4,6 +4,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {EntrepriseService} from "../services/entreprise.service";
 import {Client} from "../Client";
 import {ClientService} from "../services/client.service";
+import {NgToastService} from "ng-angular-popup";
+
+import bcrypt from "bcrypt";
 
 @Component({
   selector: 'app-edit-profile-client',
@@ -16,7 +19,7 @@ export class EditProfileClientComponent implements OnInit {
   id: any;
  client!: Client;
 
-  constructor(private route: ActivatedRoute,private clientService:ClientService,private router:Router) { }
+  constructor(private route: ActivatedRoute,private clientService:ClientService,private router:Router,private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.employee = new Client();
@@ -39,6 +42,8 @@ export class EditProfileClientComponent implements OnInit {
         console.log(data);
         this.employee = new Entreprise();
         console.log("update avec success")
+        this.toast.success({detail:"Success Message",summary:"update avec success",duration:5000})
+        this.router.navigate(['profile/',this.id])
       }, error => console.log(error));
   }
 
@@ -66,4 +71,9 @@ export class EditProfileClientComponent implements OnInit {
   edit(id: any) {
     this.router.navigate(['edit_client/',id])
   }
+
+  saltRounds = 10;
+   myPlaintextPassword = 's0/\/\P4$$w0rD';
+   someOtherPlaintextPassword = 'not_bacon';
+
 }

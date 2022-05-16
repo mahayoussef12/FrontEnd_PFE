@@ -53,14 +53,14 @@ export class AdminComponent implements OnInit {
     this.router.navigate(['admin'])
   }
 
-  adminClient()
-  {
-    this.router.navigate(['super_admin/client'])
-  }
+
   adminEntreprise()
   {
     this.router.navigate(['super_admin/entreprise'])
   }
 
 
+  adminClient() {
+    this.router.navigate(['super_admin/client'])
+  }
 }
