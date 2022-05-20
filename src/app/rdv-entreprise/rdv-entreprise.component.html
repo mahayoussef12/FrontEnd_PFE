@@ -46,7 +46,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><button class="dropdown-item" type="button" (click)="rendez_vous(entreprise.id)">Afficher calendrier  </button></li>
-              <li><button class="dropdown-item" type="button" (click)="rdv(entreprise.id)">Manipuler les rendez_vous </button></li>
+              <li><button class="dropdown-item" type="button" (click)="test(entreprise.id)">Manipuler les rendez_vous </button></li>
             </ul>
           </li>
           <li>
@@ -136,63 +136,30 @@
         </div>
       </div>
     </div>
-
-
-  <!--  <main id="main" class="main">
-      <div class="container">
-        <table class="table table-striped">
-          <thead>
-
-          <th>Numero Facture </th>
-          <th>Nom Client </th>
-          <th>Voir la Facture</th>
-         &lt;!&ndash; <th>Voir le Ticket</th>&ndash;&gt;
-          </thead>
-
-
-          <tbody *ngFor="let rdvv of Facture">
-          <tr>
-            <td>{{rdvv.num_facture}}</td>
-            <td>{{rdvv.client?.nom}}</td>
-            <td><button type="button" class="btn btn-info" (click)="consulter(rdvv)">Consulter </button></td>
- &lt;!&ndash;           <td><button type="button" class="btn btn-info" (click)="consulterr(rdvv)">Consulter </button></td>&ndash;&gt;
-          </tr>
-          </tbody>
-
-        </table>
-      </div>
-
-
-    </main>--><!-- End #main -->
-<!--    <div *ngIf="rdv?.length == 0" style="margin-left: 35%; width: 50%">
-      <div class="alert alert-danger" role="alert">
-        Ne trouve pas des Rendez-vous !
-      </div>
-    </div>-->
-    <br> <br> <br>
-    <table class="container">
+    <br>
+    <br>
+    <br>
+    <!--    <div *ngIf="rdv?.length == 0" style="margin-left: 35%; width: 50%">
+          <div class="alert alert-danger" role="alert">
+            Ne trouve pas des Rendez-vous !
+          </div>
+        </div>-->
+    <table class="table table-hover"  style="width: 80%;background-color: white;margin-left: 10%">
       <thead>
       <tr>
-        <th><h1>Num Facture</h1></th>
-        <th><h1>Date creation </h1></th>
+        <th scope="col">Date Rendez_vous</th>
 
-        <th><h1>  Nom client </h1></th>
-        <th><h1>Email client</h1></th>
-        <th><h1>Total</h1></th>
-        <th></th>
       </tr>
       </thead>
-      <tbody *ngFor="let rdvv of Facture" >
+      <tbody *ngFor="let rdvv of rdv">
       <tr>
-        <td>{{rdvv.num_facture}}</td>
-        <td>{{rdvv.date_creation}}</td>
+        <th scope="row">{{rdvv.date_rdv}}</th>
+        <td>  <button  class="btn btn-outline-success" style="color: #0cbcb7" (click)="delete(rdvv)">Supprimer</button>
+        </td>
+          <td><button type="button" class="btn btn-info" (click)="modifier(rdvv)">Modifier </button></td>
 
-        <td>{{rdvv.client?.nom}} {{rdvv.client?.prenom}}</td>
-        <td>{{rdvv.client?.email}}</td>
-        <td>{{rdvv.tolale_TTC}}</td>
-        <td><button type="button" class="btn btn-info" (click)="consulter(rdvv)">Consulter </button></td>
+
       </tr>
-
       </tbody>
     </table>
     <!--Dashboard footer starts-->
@@ -214,3 +181,4 @@
 </body>
 
 </html>
+

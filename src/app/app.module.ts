@@ -40,15 +40,19 @@ import { TicketComponent } from './ticket/ticket.component';
 import { EditProfileEntrepriseComponent } from './edit-profile-entreprise/edit-profile-entreprise.component';
 import { EditProfileClientComponent } from './edit-profile-client/edit-profile-client.component';
 import { CompteEnClientComponent } from './compte-en-client/compte-en-client.component';
-import { UpdateCalendrierComponent } from './update-calendrier/update-calendrier.component';
+
 import { PayementPaypalComponent } from './payement-paypal/payement-paypal.component';
 import { ChoisirTypeCompteComponent } from './choisir-type-compte/choisir-type-compte.component';
 import { InsripClientComponent } from './insrip-client/insrip-client.component';
 import { AdminComponent } from './admin/admin.component';
 import { SuperadminClientComponent } from './superadmin-client/superadmin-client.component';
 import { SuperadminComponent } from './superadmin/superadmin.component';
-import { TestComponent } from './test/test.component';
+
 import {NgToastModule} from "ng-angular-popup";
+import { IncriEntrepriseComponent } from './incri-entreprise/incri-entreprise.component';
+import { RdvEntrepriseComponent } from './rdv-entreprise/rdv-entreprise.component';
+import { HoraireEntrepriseComponent } from './horaire-entreprise/horaire-entreprise.component';
+import { AvisEntrepriseComponent } from './avis-entreprise/avis-entreprise.component';
 
 
 @NgModule({
@@ -70,7 +74,7 @@ import {NgToastModule} from "ng-angular-popup";
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, UpdateCalendrierComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, TestComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent
   ],
   imports: [
 

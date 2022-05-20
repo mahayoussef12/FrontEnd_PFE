@@ -46,4 +46,14 @@ export class CalendrerEntrepriseComponent implements OnInit {
 
     this.router.navigate(['edit/',id])
   }
+
+  rdv(id: any) {
+
+    this.router.navigate(['rddv/',id])
+  }
+
+  avis(id: any) {
+    this.router.navigate(['avis_en/',id])
+
+  }
 }

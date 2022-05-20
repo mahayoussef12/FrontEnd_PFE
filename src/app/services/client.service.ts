@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpEvent} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {Client} from "../Client";
+import {User} from "../User";
 
 /*const baseUrl = 'http://localhost:8081/api/v1/client/ajouter';*/
 
@@ -21,7 +22,7 @@ export class ClientService {
   /*  create(data: any): Observable<any> {
       return this.http.post(baseUrl, data);
     }*/
-  create(prod: Client): Observable<Client> {
+    create(prod: Client): Observable<Client> {
     return this.http.post<Client>(this.baseUrl, prod);
   }
 
@@ -35,12 +36,16 @@ export class ClientService {
 
   }
 
-  getAllEmail(email: string | undefined):Observable<Client[]>{
+  getAllEmail(email: string | undefined):Observable<Client>{
 
-  const url = `${this.apiGett}/${email}`; return this.http.get<Client[]>(url); }
+  const url = `${this.apiGett}/${email}`; return this.http.get<Client>(url); }
   updateClient(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.apiURL}/${id}`, value);
   }
   deleteClient(id: number | undefined) { const url = `${this.apiDelete}/${id}`; return this.http.delete(url); }
+  testing(email: string | undefined):Observable<User>{
+    const url = `${'http://localhost:8082/api/v1/user/maha'}/${email}`;
+    return this.http.get<User>(url);
 
+  }
 }

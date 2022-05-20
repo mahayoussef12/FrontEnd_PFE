@@ -132,7 +132,7 @@
                         <p>Vous pouvez donner votre avis sur cette entreprise Cliquer ici ...</p>
                         <br>
                         <br>
-                        <button class="btn btn-success" type="button" (click)="gotoavis(entreprise.id)">Button</button>
+                        <button class="btn btn-success" type="button" (click)="gotoavis(entreprise.id)">Ajouter Votre Avis</button>
                       </div>
                       <div class="customer-content-wrap">
                         <p class="customer-text">
@@ -155,12 +155,12 @@
               <h3><i class="bi bi-calendar3"></i>Rendez vous </h3>
                 <div class="col-md-12 mar-bot-15">
                   <div id="datepicker-from" class="input-group date" data-date-format="dd-mm-yyyy">
-                    <input class="form-control" type="datetime-local" placeholder="Date rendez vous:">
+                    <input class="form-control" type="datetime-local" placeholder="Date rendez vous:" [(ngModel)]="newRDV.date_rdv">
                     <span class="input-group-addon"><i class="bi bi-calendar3"></i></span>
                   </div>
                 </div>
               <div class="book-btn text-center">
-                <a > Request To Book</a>
+                <a  (click)="rdv()">Prise un Rendez_vous</a>
               </div>
             </div>
             <div class="sidebar-widget info">

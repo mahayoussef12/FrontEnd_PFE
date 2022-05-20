@@ -21,25 +21,19 @@
       <nav class="navbar-sidebar2">
         <ul class="list-unstyled navbar__list">
           <li>
-          <li>
-
-            <a  class="active" class=" dropdown-toggle"  style="height: 20%" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
-
+            <a class=" dropdown-toggle"  style="height: 20%" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
               My Profile
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><button class="dropdown-item" type="button" (click)="edit(entreprise.id)">Parametre Profile </button></li>
               <li><button class="dropdown-item" type="button" (click)="profile(entreprise.id)">Consulter Profile </button></li>
             </ul>
-
           </li>
           <li>
-
             <a (click)="accuiel(entreprise.id)" >
               <i class="bi bi-house"></i>Accueil
             </a>
           </li>
-
           <li>
             <a >
               <i class="bi bi-chat"></i>Messagerie</a>
@@ -49,14 +43,17 @@
               <i class="bi bi-receipt"></i>Facture</a>
           </li>
           <li>
-            <a class="active" (click)="rendez_vous(entreprise.id)">
-              <i class="bi bi-calendar-date"></i>Rendez_Vous</a>
+            <a class=" dropdown-toggle"  style="height: 20%" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-calendar-date"></i>Rendez_vous
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><button class="dropdown-item" type="button" (click)="rendez_vous(entreprise.id)">Afficher calendrier  </button></li>
+              <li><button class="dropdown-item" type="button" (click)="rdv(entreprise.id)">Manipuler les rendez_vous </button></li>
+            </ul>
           </li>
           <li>
-            <a href="#">
-              <i class="bi bi-box-arrow-right"></i>deconnexion</a>
+            <a  (click)="avis(entreprise.id)" >
+              <i class="bi bi-chat-square-text"></i>Commentaire</a>
           </li>
-
         </ul>
       </nav>
     </div>
@@ -184,17 +181,17 @@
                           <h6>Categorie :</h6>
                           <span>{{entreprise.categorie}}</span>
                         </li>
-                        <li>
+                       <!-- <li>
                           <h6>Social Profile :</h6>
                           <ul class="social-profile">
                             <li class="bg-fb"><a href="https://www.facebook.com"><i class="ion-social-facebook"></i></a></li>
                             <li class="bg-tt"><a href="https://www.twitter.com"><i class="ion-social-twitter"></i></a></li>
                             <li class="bg-ig"><a href="https://www.instagram.com"><i class="ion-social-instagram"></i></a></li>
                           </ul>
-                        </li>
+                        </li>-->
 
                       </ul>
-                      <a (click)="gotoeditprofile()" class="btn v5">Modifier profile</a>
+                      <a (click)="gotoeditprofile()" class="btn v5" >Modifier profile</a>
                       <a (click)="delete(entreprise)" class="btn v5" style="margin-left: 80%;background-color: red">Desactiver votre compte</a>
                     </div>
                   </div>

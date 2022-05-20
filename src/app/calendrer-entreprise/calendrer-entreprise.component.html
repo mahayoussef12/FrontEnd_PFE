@@ -19,25 +19,19 @@
       <nav class="navbar-sidebar2">
         <ul class="list-unstyled navbar__list">
           <li>
-          <li>
-
             <a class=" dropdown-toggle"  style="height: 20%" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
-
               My Profile
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><button class="dropdown-item" type="button" (click)="edit(entreprise.id)">Parametre Profile </button></li>
               <li><button class="dropdown-item" type="button" (click)="profile(entreprise.id)">Consulter Profile </button></li>
             </ul>
-
           </li>
           <li>
-
             <a (click)="accuiel(entreprise.id)" >
               <i class="bi bi-house"></i>Accueil
             </a>
           </li>
-
           <li>
             <a >
               <i class="bi bi-chat"></i>Messagerie</a>
@@ -47,14 +41,17 @@
               <i class="bi bi-receipt"></i>Facture</a>
           </li>
           <li>
-            <a class="active" (click)="rendez_vous(entreprise.id)">
-              <i class="bi bi-calendar-date"></i>Rendez_Vous</a>
+            <a class=" dropdown-toggle"  style="height: 20%" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-calendar-date"></i>Rendez_vous
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><button class="dropdown-item" type="button" (click)="rendez_vous(entreprise.id)">Afficher calendrier  </button></li>
+              <li><button class="dropdown-item" type="button" (click)="rdv(entreprise.id)">Manipuler les rendez_vous </button></li>
+            </ul>
           </li>
           <li>
-            <a href="#">
-              <i class="bi bi-box-arrow-right"></i>deconnexion</a>
+            <a  (click)="avis(entreprise.id)" >
+              <i class="bi bi-chat-square-text"></i>Commentaire</a>
           </li>
-
         </ul>
       </nav>
     </div>
@@ -81,8 +78,12 @@
                           <ul class="dropdown">
                             <li><a routerLink="">Home</a></li>
                           </ul>
-                        </li>
 
+                        </li>
+                        <li class="has-children">
+                          <p>deconnexion</p>
+
+                        </li>
                       </ul>
                     </div>
                   </nav>
@@ -109,6 +110,8 @@
                 <img src="{{entreprise.image}}" alt="...">
                 <span>{{entreprise.nomSociete}}</span>
               </div>
+
+
 
             </div>
           </div>

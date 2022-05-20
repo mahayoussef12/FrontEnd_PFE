@@ -5,6 +5,9 @@ import {Entreprise} from "../Entreprise";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AvisService} from "../services/avis.service";
 import {avis} from "../avis";
+import {Rendez_vousService} from "../services/rendez_vous.service";
+import {rendez_vous} from "../rendez_vous";
+import {NgToastService} from "ng-angular-popup";
 
 @Component({
   selector: 'app-search-user',
@@ -17,7 +20,8 @@ export class SearchUserComponent implements OnInit {
   aviss: any;
   maha!: avis[];
  newAvis!: avis;
-  constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router) {
+ newRDV= new rendez_vous;
+  constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private rendezvouservice:Rendez_vousService,private toast:NgToastService) {
   }
   ngOnInit(): void {
     this.entrepriseId = this.activatedRoute.snapshot.params["id"];
@@ -44,5 +48,14 @@ export class SearchUserComponent implements OnInit {
     this.router.navigate(['avis/',id])
 
   }
+
+  rdv() {
+this.rendezvouservice.createRDV(this.entrepriseId,this.newRDV).subscribe(prod => {
+  console.log(prod);
+  this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
+  console.log("ajouter avec sucess")
+})}
+
 }
+
 

@@ -22,14 +22,18 @@ import {TicketComponent} from "./ticket/ticket.component";
 import {EditProfileEntrepriseComponent} from "./edit-profile-entreprise/edit-profile-entreprise.component";
 import {EditProfileClientComponent} from "./edit-profile-client/edit-profile-client.component";
 import {CompteEnClientComponent} from "./compte-en-client/compte-en-client.component";
-import {UpdateCalendrierComponent} from "./update-calendrier/update-calendrier.component";
+
 import {PayementPaypalComponent} from "./payement-paypal/payement-paypal.component";
 import {ChoisirTypeCompteComponent} from "./choisir-type-compte/choisir-type-compte.component";
 import {InsripClientComponent} from "./insrip-client/insrip-client.component";
 import {AdminComponent} from "./admin/admin.component";
 import {SuperadminComponent} from "./superadmin/superadmin.component";
 import {SuperadminClientComponent} from "./superadmin-client/superadmin-client.component";
-import {TestComponent} from "./test/test.component";
+
+import {IncriEntrepriseComponent} from "./incri-entreprise/incri-entreprise.component";
+import {RdvEntrepriseComponent} from "./rdv-entreprise/rdv-entreprise.component";
+import {HoraireEntrepriseComponent} from "./horaire-entreprise/horaire-entreprise.component";
+import {AvisEntrepriseComponent} from "./avis-entreprise/avis-entreprise.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -50,7 +54,6 @@ const routes: Routes = [
   {path:'facture/:id',component:DetailsFactureComponent},
   {path:'ds/:id',component:CompteEnFactureComponent},
   {path:'All_facture_Client/:id',component:CompteEnClientComponent},
-  {path:'update',component:UpdateCalendrierComponent},
   {path:'thermal/:id',component:TicketComponent},
   {path:'edit/:id',component:EditProfileEntrepriseComponent},
   {path:'edit_client/:id',component:EditProfileClientComponent},
@@ -60,9 +63,10 @@ const routes: Routes = [
   {path:'super_admin',component:AdminComponent},
   {path:'super_admin/entreprise',component:SuperadminComponent},
   {path:'super_admin/client',component:SuperadminClientComponent},
-  {path:'test',component:TestComponent},
-
-
+  {path:'entreprise',component:IncriEntrepriseComponent},
+  {path:'rddv/:id',component:RdvEntrepriseComponent},
+  {path:'avis_en/:id',component:AvisEntrepriseComponent},
+  {path:'horaire',component:HoraireEntrepriseComponent},
   {path:'**',component:NotfoundComponent}
 
 

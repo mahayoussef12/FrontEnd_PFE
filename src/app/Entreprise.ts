@@ -15,6 +15,5 @@ email?:string;
    adresse?:string;
   test?:string;
   time?:Date;
-
   creationEntreprise?: Date;
 }

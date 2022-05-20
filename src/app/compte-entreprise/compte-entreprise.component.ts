@@ -31,6 +31,7 @@ export class CompteEntrepriseComponent implements OnInit {
     this.entrepriseId = this.route.snapshot.params["id"];
     console.log(this.entrepriseId)
     this.entrepriseService. getEntrepriseById(this.entrepriseId).subscribe((response)=>{
+      console.log(response)
       this.entreprise = response
       /* localStorage.setItem('monObjet', JSON.stringify(this.entreprise.id))*/
     },(error) => {
@@ -68,5 +69,13 @@ export class CompteEntrepriseComponent implements OnInit {
   edit(id: any) {
 
     this.router.navigate(['edit/',id])
+  }
+  avis(id: any) {
+    this.router.navigate(['avis_en/',id])
+
+  }
+  rdv(id: any) {
+
+    this.router.navigate(['rddv/',id])
   }
 }

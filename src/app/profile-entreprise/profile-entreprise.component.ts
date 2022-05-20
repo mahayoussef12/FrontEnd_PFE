@@ -114,4 +114,12 @@ export class ProfileEntrepriseComponent implements OnInit {
 
     this.router.navigate(['edit/',id])
   }
+  avis(id: any) {
+    this.router.navigate(['avis_en/',id])
+
+  }
+  rdv(id: any) {
+
+    this.router.navigate(['rddv/',id])
+  }
 }

@@ -20,4 +20,6 @@ export class AvisService {
     const url = `${this.apiGett}/${id}`; return this.http.get<avis>(url); }
   getEntrepriseId(id:any | undefined):Observable<avis[]>{
     const url = `${this.api}/${id}`; return this.http.get<avis[]>(url); }
+
+  deleteAvis(id: number | undefined) { const url = `${'http://localhost:8082/api/v1/avis'}/${id}`; return this.http.delete(url); }
 }

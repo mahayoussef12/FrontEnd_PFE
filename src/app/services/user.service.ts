@@ -19,7 +19,7 @@ export class UserService {
   }
 
   createClient(prod: User): Observable<User> {
-    return this.http.post<User>(this.baseUrl, prod);
+    return this.http.post<User>(this.baseUrll, prod);
   }
   create(prod: User): Observable<User> {
     return this.http.post<User>(this.baseUrll, prod);

@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {avis} from "../avis";
 import {AvisService} from "../services/avis.service";
+import {NgToastService} from "ng-angular-popup";
 
 @Component({
   selector: 'app-avis',
@@ -19,7 +20,7 @@ export class AvisComponent implements OnInit {
 
 
 
-  constructor( private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private avisservice:AvisService) {
+  constructor(private toast:NgToastService, private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private avisservice:AvisService) {
 
 
   }
@@ -36,7 +37,7 @@ export class AvisComponent implements OnInit {
 
   test() {
     this.avisservice.createAvis(this.entrepriseId,this.newAvis).subscribe(prod => {
-      console.log(prod);
-      console.log("ajouter avec sucess")
+      this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
+      this.router.navigate(['user-search',this.entrepriseId])
   })}
 }
