@@ -1,0 +1,23 @@
+<div id="wrapper" style="margin-top: 2%">
+
+  <div id="dialog">
+
+    <h3>Veuillez saisir le code de vérification à 4 chiffres que nous vous avons envoyé par SMS :</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+<div>
+  <img src="assets/mail-sms.png" alt="" style="margin-right: 30%;margin-bottom:-10%">
+</div>
+    <br>
+    <br>
+    <br>
+    <div id="form">
+
+      <input type="text" maxLength="5" size="5"  pattern="[0-9]{5}" [(ngModel)]="code" style="width: 90%" />
+      <br>
+      <button class="btn btn-primary btn-embossed" (click)="save()">Verify</button>
+    </div>
+  </div>
+</div>

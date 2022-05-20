@@ -34,6 +34,7 @@ import {IncriEntrepriseComponent} from "./incri-entreprise/incri-entreprise.comp
 import {RdvEntrepriseComponent} from "./rdv-entreprise/rdv-entreprise.component";
 import {HoraireEntrepriseComponent} from "./horaire-entreprise/horaire-entreprise.component";
 import {AvisEntrepriseComponent} from "./avis-entreprise/avis-entreprise.component";
+import {CodeConfirmationComponent} from "./code-confirmation/code-confirmation.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -67,6 +68,7 @@ const routes: Routes = [
   {path:'rddv/:id',component:RdvEntrepriseComponent},
   {path:'avis_en/:id',component:AvisEntrepriseComponent},
   {path:'horaire',component:HoraireEntrepriseComponent},
+  {path:'code/:id',component:CodeConfirmationComponent},
   {path:'**',component:NotfoundComponent}
 
 

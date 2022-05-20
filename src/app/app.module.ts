@@ -53,6 +53,7 @@ import { IncriEntrepriseComponent } from './incri-entreprise/incri-entreprise.co
 import { RdvEntrepriseComponent } from './rdv-entreprise/rdv-entreprise.component';
 import { HoraireEntrepriseComponent } from './horaire-entreprise/horaire-entreprise.component';
 import { AvisEntrepriseComponent } from './avis-entreprise/avis-entreprise.component';
+import { CodeConfirmationComponent } from './code-confirmation/code-confirmation.component';
 
 
 @NgModule({
@@ -74,7 +75,7 @@ import { AvisEntrepriseComponent } from './avis-entreprise/avis-entreprise.compo
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent
   ],
   imports: [
 

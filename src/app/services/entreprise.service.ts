@@ -74,9 +74,9 @@ export class EntrepriseService {
   testcountclient(id: number): Observable<any[]> {
     const url = `${'http://localhost:8082/api/v1/sumClient'}/${id}`;
     return this.http.get<any[]>(url)}
-  verif(prod: code, cle: number): Observable<any> {
-
-    return this.http.post<Entreprise>(`${this.maha}/${cle}`, prod);
+  verif(id:any,prod:any):Observable<any> {
+    const url = `${this.maha}/${id}`;
+    return this.http.post<any>( url,prod);
   }
 
   CountGategorie(categorie: string): Observable<any> {
@@ -102,4 +102,10 @@ export class EntrepriseService {
     return this.http.put(`${this.baseUrll}/${id}`, value);
   }
   deleteEntreprise(id: number | undefined) { const url = `${this.apiDelete}/${id}`; return this.http.delete(url); }
+  sumAllclient(): Observable<any[]> {
+  return this.http.get<any[]>('http://localhost:8082/api/v1/countClient');
+}
+  sumAllentreprise(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8082/api/v1/countEntreprise');
+  }
 }
