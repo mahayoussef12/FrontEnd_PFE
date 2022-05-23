@@ -1,0 +1,96 @@
+<div  *ngFor=" let admin of admins ">
+<aside class="menu-sidebar js-right-sidebar d-block d-lg-none " >
+  <div class="logo" style="height: 12%">
+    <a href="#">
+      <h6>Mawaaied</h6>
+    </a>
+  </div>
+  <div class="menu-sidebar__content js-scrollbar2">
+
+    <div class="account-img">
+      <img src="assets/admin.png"  />
+    </div>
+    <br>
+    <h4 class="name">{{admin.name}}</h4>
+    <nav class="navbar-sidebar2">
+      <ul class="list-unstyled navbar__list">
+        <li>
+          <a routerLink="/admin/statistique">
+            <i class="bi bi-person"></i>Statistique </a>
+        </li>
+        <li>
+          <a routerLink="/admin/entreprises" >
+            <i class="bi bi-person"></i>entreprise</a>
+        </li>
+        <li>
+          <a routerLink="/admin/clients">
+            <i class="bi bi-person"></i>Client</a>
+        </li>
+        <li>
+          <a routerLink="/admin/statistique" >
+            <i class="bi bi-person"></i>Facture</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bi bi-box-arrow-right"></i>deconnexion</a>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+
+</aside>
+
+<div class="dash-content-wrap">
+
+  <!-- Top header starts-->
+  <header class="db-top-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-9 col-sm-6 col-4">
+          <div class="site-navbar-wrap v2">
+            <div class="site-navbar">
+              <div class="row align-items-center">
+                <nav class="site-navigation float-left">
+                  <div class="container">
+                    <ul class="site-menu js-clone-nav d-none d-lg-block">
+                      <li class="has-children">
+                        <p>Home</p>
+                        <ul class="dropdown">
+                          <li><a routerLink="">Home</a></li>
+                        </ul>
+                      </li>
+
+                    </ul>
+                  </div>
+                </nav>
+                <div class="d-lg-none sm-right">
+                  <a href="#" class="mobile-bar js-menu-toggle">
+                    <span class="ion-android-menu"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="site-mobile-menu">
+              <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close  js-menu-toggle">
+                </div>
+              </div>
+              <div class="site-mobile-menu-body"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-8">
+          <div class="header-button">
+            <div class="header-button-item js-sidebar-btn">
+              <img src="assets/admin.png" alt="...">
+              <span>{{admin.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+</div>
+<router-outlet></router-outlet>

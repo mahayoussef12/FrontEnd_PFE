@@ -1,0 +1,84 @@
+
+<body>
+<div class="page-wrapper">
+  <div class="dash-content-wrap">
+    <div class="dash-breadcrumb">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dash-breadcrumb-content">
+              <div class="dash-breadcrumb-left">
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li class="active"><p>Home</p></li>
+                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
+                    <li>My Profile</li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="dash-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="recent-activity">
+              <div class="act-title">
+                <h5><i class="ion-person"></i>Profile Details</h5>
+              </div>
+              <div class="profile-wrap">
+                <div class="row">
+                  <div class="col-md-8 offset-md-2 py-4">
+                    <div class="edit-profile-photo text-center">
+                      <img src="{{entreprise.image}}" alt="">
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="my-profile">
+                      <ul class="db-profile-info">
+                        <li>
+                          <h6>First Name :</h6>
+                          <span>{{entreprise.nomSociete}}</span>
+                        </li>
+                        <li>
+                          <h6>Last Name :</h6>
+                          <span> {{entreprise.nom_gerant}}</span>
+                        </li>
+                        <li>
+                          <h6>Email Id :</h6>
+                          <span> {{entreprise.email}}</span>
+                        </li>
+                        <li>
+                          <h6>Phone :</h6>
+                          <span> {{entreprise.tel}}</span>
+                        </li>
+                        <li>
+                          <h6>Address :</h6>
+                          <span>{{entreprise.adresse}} {{entreprise.ville}}</span>
+                        </li>
+                        <li>
+                          <h6>Categorie :</h6>
+                          <span>{{entreprise.categorie}}</span>
+                        </li>
+                      </ul>
+                      <a  class="btn v5" >Modifier profile</a>
+                      <a (click)="delete(entreprise)" class="btn v5" style="margin-left: 80%;background-color: red">Desactiver votre compte</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+

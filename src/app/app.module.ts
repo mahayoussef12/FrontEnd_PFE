@@ -5,20 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { SearchComponent } from './search/search.component';
-import { CompteClientComponent } from './compte-client/compte-client.component';
-import { ProfileClientComponent } from './profile-client/profile-client.component';
+import { SearchComponent } from './search_view/search/search.component';
+
+
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { CompteEntrepriseComponent } from './compte-entreprise/compte-entreprise.component';
+import { CompteEntrepriseComponent } from './views/entreprise_view/compte-entreprise/compte-entreprise.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgChartsModule } from 'ng2-charts';
-import { ProfileEntrepriseComponent } from './profile-entreprise/profile-entreprise.component';
-import { SearchUserComponent } from './search-user/search-user.component';
+import { ProfileEntrepriseComponent } from './views/entreprise_view/profile-entreprise/profile-entreprise.component';
+import { SearchUserComponent } from './search_view/search-user/search-user.component';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ContactComponent } from './contact/contact.component';
-import { SearchCategorieComponent } from './search-categorie/search-categorie.component';
-import { SearchVilleComponent } from './search-ville/search-ville.component';
+import { SearchCategorieComponent } from './search_view/search-categorie/search-categorie.component';
+import { SearchVilleComponent } from './search_view/search-ville/search-ville.component';
 import { AvisComponent } from './avis/avis.component';
 import {
   SocialLoginModule,
@@ -33,27 +33,27 @@ import {DayPilotModule} from 'daypilot-pro-angular';
 import { CalendrierComponent } from './calendrier/calendrier.component';
 import { CalendrerEntrepriseComponent } from './calendrer-entreprise/calendrer-entreprise.component';
 import { CalendComponent } from './calendrer-entreprise/calend/calend.component';
-import { SchedulerModule } from './calendrier/scheduler/scheduler.module';
-import { DetailsFactureComponent } from './details-facture/details-facture.component';
-import { CompteEnFactureComponent } from './compte-en-facture/compte-en-facture.component';
+import { DetailsFactureComponent } from './views/client_view/details-facture/details-facture.component';
+import { CompteEnFactureComponent } from './views/entreprise_view/compte-en-facture/compte-en-facture.component';
 import { TicketComponent } from './ticket/ticket.component';
-import { EditProfileEntrepriseComponent } from './edit-profile-entreprise/edit-profile-entreprise.component';
-import { EditProfileClientComponent } from './edit-profile-client/edit-profile-client.component';
-import { CompteEnClientComponent } from './compte-en-client/compte-en-client.component';
-
+import { EditProfileEntrepriseComponent } from './views/entreprise_view/edit-profile-entreprise/edit-profile-entreprise.component';
+import { CompteEnClientComponent } from './views/client_view/compte-en-client/compte-en-client.component';
 import { PayementPaypalComponent } from './payement-paypal/payement-paypal.component';
-import { ChoisirTypeCompteComponent } from './choisir-type-compte/choisir-type-compte.component';
-import { InsripClientComponent } from './insrip-client/insrip-client.component';
-import { AdminComponent } from './admin/admin.component';
-import { SuperadminClientComponent } from './superadmin-client/superadmin-client.component';
-import { SuperadminComponent } from './superadmin/superadmin.component';
-
+import { AdminComponent } from './views/admin_view/admin/admin.component';
+import { SuperadminClientComponent } from './views/admin_view/superadmin-client/superadmin-client.component';
+import { SuperadminComponent } from './views/admin_view/superadmin/superadmin.component';
 import {NgToastModule} from "ng-angular-popup";
-import { IncriEntrepriseComponent } from './incri-entreprise/incri-entreprise.component';
-import { RdvEntrepriseComponent } from './rdv-entreprise/rdv-entreprise.component';
-import { HoraireEntrepriseComponent } from './horaire-entreprise/horaire-entreprise.component';
+import { IncriEntrepriseComponent } from './inscription_entreprise/incri-entreprise/incri-entreprise.component';
+import { RdvEntrepriseComponent } from './views/entreprise_view/rdv-entreprise/rdv-entreprise.component';
+import { HoraireEntrepriseComponent } from './inscription_entreprise/horaire-entreprise/horaire-entreprise.component';
 import { AvisEntrepriseComponent } from './avis-entreprise/avis-entreprise.component';
 import { CodeConfirmationComponent } from './code-confirmation/code-confirmation.component';
+import { TestComponent } from './test/test.component';
+import {LayoutsModule} from "./layouts/layouts.module";
+import { EditProfileComponent } from './views/client_view/edit-profile/edit-profile.component';
+import {SchedulerModule} from "./calendrier/scheduler/scheduler.module";
+import { InscriptionClientComponent } from './inscription-client/inscription-client.component';
+
 
 
 @NgModule({
@@ -61,8 +61,6 @@ import { CodeConfirmationComponent } from './code-confirmation/code-confirmation
     AppComponent,
     HomeComponent,
     SearchComponent,
-    CompteClientComponent,
-    ProfileClientComponent,
     LoginComponent,
     NotfoundComponent,
     CompteEntrepriseComponent,
@@ -75,7 +73,7 @@ import { CodeConfirmationComponent } from './code-confirmation/code-confirmation
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, EditProfileClientComponent, CompteEnClientComponent, PayementPaypalComponent, ChoisirTypeCompteComponent, InsripClientComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, TestComponent, EditProfileComponent, InscriptionClientComponent
   ],
   imports: [
 
@@ -86,7 +84,7 @@ import { CodeConfirmationComponent } from './code-confirmation/code-confirmation
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule,SocialLoginModule,DayPilotModule,SchedulerModule,
-    NgToastModule
+    NgToastModule,LayoutsModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',

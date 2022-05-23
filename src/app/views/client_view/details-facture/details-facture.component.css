@@ -1,0 +1,56 @@
+
+body{
+margin-bottom: 80%;
+  background:#eee;
+
+}
+.invoice-from {
+  border:1px solid black;
+
+  width: 8cm;
+}
+#impression{
+  display : none;
+}
+
+
+@media print {
+  .btn-secondary{ display:none;}
+  #color{background-color:rgb(172, 180, 177);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust:exact;}
+
+}
+
+
+
+.cc{
+  background-color:rgb(255, 115, 0);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust:exact;
+
+}
+#color{background-color:rgb(172, 180, 177);}
+
+
+
+
+#cadre{
+  border:1px solid black ;
+  width: 8cm;
+  margin-left: 15cm;
+  margin-top: 1cm;
+}
+#cadre2{
+  border:1px solid black ;
+  width: 8cm;
+  margin-left: 15cm;
+  margin-top: -5%;
+}
+hr {
+  border: 1px solid rgb(255, 115, 0);
+}
+.cc{
+  background-color:rgb(255, 115, 0);
+}
+#color{background-color:rgb(172, 180, 177);}

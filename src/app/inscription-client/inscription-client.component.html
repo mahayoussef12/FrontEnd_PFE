@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+
+
+<body>
+<!--Page Wrapper starts-->
+<div class="page-wrapper">
+  <div class="user-login-section section-padding bg-fixed" style="background-image: url(../../assets/hero-5.jpg)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1  text-center">
+          <div class="login-wrapper" style="width: 60%">
+            <ul class="ui-list nav nav-tabs justify-content-center mar-bot-30" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#login" role="tab" aria-selected="true">S'incrire client</a>
+              </li>
+            </ul>
+            <div class="ui-dash tab-content">
+              <div class="tab-pane fade show active" id="login" role="tabpanel">
+                <form [formGroup]="brandForm"  (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nom:" value="" formControlName="nom"  >
+                    <div class="alert-danger">
+                      <div *ngIf="isSubmitted && _fc['nom'].errors">* Required</div>
+                      <div *ngIf="_fc['nom'].errors && brandForm.controls['nom'].hasError('minlength')">Minimum length is 4</div>
+                      <div *ngIf="_fc['nom'].touched && brandForm.controls['nom'].hasError('maxlength')">Max length is 10</div>
+
+                    </div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <input type="text" name="prenom" id="username" tabindex="1" class="form-control" placeholder="Prenom:" value="" formControlName="prenom">
+                    <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['prenom'].errors">* Required</div></div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mot de passe: " formControlName="mdp">
+                    <div class="alert-danger">
+                    <div *ngIf="isSubmitted && _fc['mdp'].errors">* Required</div>
+                    <div *ngIf="_fc['mdp'].errors && brandForm.controls['mdp'].hasError('minlength')">Minimum length is 4</div>
+                    <div *ngIf="_fc['mdp'].touched && brandForm.controls['mdp'].hasError('maxlength')">Max length is 10</div>
+
+                    </div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <input type="text" name="tel" id="username" tabindex="1" class="form-control" placeholder="Télephone" value="" formControlName="tel">
+                    <div class="alert-danger">  <div *ngIf="isSubmitted && _fc['tel'].errors">* Required</div></div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <input type="email" name="email"id="username" tabindex="1" class="form-control" placeholder="Email:" value="" formControlName="email" >
+                    <div class="alert-danger">
+                    <div *ngIf="isSubmitted && _fc['nom'].errors">* Required</div>
+                    <div *ngIf="brandForm.controls['email'].hasError('email')">Invalid</div>
+
+                  </div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <input type="text" name="adresse" id="username" tabindex="1" class="form-control" placeholder="Adresse:" value="" formControlName="adress">
+                    <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['adresse'].errors">* Required</div>    </div>
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <input type="text" name="ville" id="username" tabindex="1" class="form-control" placeholder="Ville:" value="" formControlName="ville">
+                    <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['ville'].errors">* Required</div></div>
+                  </div>
+                  <br>
+
+
+                  <select class="form-control"  id="power"
+                          required
+                          formControlName="pays"  >
+                    <option value=""  >Choisir Votre Pays...</option>
+                    <option  value="tunisie">Tunisie</option>
+                    <option  value="algerie">Algerie</option>
+                    <option  value="libya">Libya</option>
+                    <option  value="egypt">Egypt</option>
+                  </select>
+                  <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['pays'].errors">* Required</div></div>
+
+
+                  <br>
+                  <div class="form-group">
+                    <input type="radio" id="html" name="fav_language" value="femme" formControlName="genre">
+                    <label for="html">Femme</label><br>
+                    <input type="radio" id="css" name="fav_language" value="homme" formControlName="genre">
+                    <label for="css">Homme</label><br>
+                    <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['genre'].errors">* Required</div></div>
+                  </div>
+                  <br>
+                  <!--                <div class="form-group">
+                                    <input type="file"
+                                           id="avatar" name="avatar"
+                                           accept="image/png, image/jpeg">
+                                  </div>-->
+                  <div class="form-group">
+                    <input type="text" formControlName="images">
+                    <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['images'].errors">* Required</div></div>
+                  </div>
+                  <br>
+                  <div class="res-box text-center mar-top-30">
+                    <button type="submit" class="btn v3"> Log In</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--User login section ends-->
+  <!--Login section ends-->
+
+</div>
+<!--Page Wrapper ends-->
+
+
+</body>
+
+</html>

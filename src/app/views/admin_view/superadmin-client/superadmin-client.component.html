@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body>
+<div class="page-wrapper"  *ngFor=" let admin of admins ">
+  <div class="dash-content-wrap">
+    <div class="dash-breadcrumb">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dash-breadcrumb-content">
+              <div class="dash-breadcrumb-left">
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li class="active"><a >Home</a></li>
+                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
+                    <li>Client</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-6 offset-md-3 ">
+
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="dash-footer">
+      <div class="container">
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">nom de client</th>
+            <th scope="col">email de client </th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+
+
+          <tr  *ngFor=" let entreprise of clients" >
+            <td>{{entreprise.id}}</td>
+            <td>{{entreprise.nom}}</td>
+            <td>{{entreprise.email}}</td>
+            <td><a class="btn btn-danger"[routerLink]="['/client/', entreprise.id,'dashbord',entreprise.id]"><i class="bi bi-check-square-fill"></i></a>
+
+
+
+          </tbody>
+        </table>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="copyright">
+              <p>© 2019 Listagram . All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard footer ends-->
+  </div>
+  <!--Dashboard content Wrapper ends-->
+
+</div>
+
+</body>
+
+</html>

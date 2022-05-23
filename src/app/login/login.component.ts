@@ -58,4 +58,8 @@ export class LoginComponent implements OnInit {
   loginWithFacebook():void{
     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID)
   }
+
+  choisir() {
+this.router.navigate(['client'])
+  }
 }

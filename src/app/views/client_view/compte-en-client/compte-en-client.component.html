@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="page-wrapper">
+
+  <div class="dash-content-wrap">
+
+    <div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div>
+              <div >
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li><p>Home</p> </li>
+                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
+                    <li>Facture</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-hover" style="margin-top: 5%">
+      <thead>
+      <tr>
+        <th scope="col">Numero facture </th>
+        <th scope="col">Nom Entreprise </th>
+        <th scope="col">Email Entreprise </th>
+        <th scope="col">    </th>
+
+      </tr>
+      </thead>
+      <tbody *ngFor="let rdvv of tab_fac">
+      <tr>
+        <td>{{rdvv.num_facture}}</td>
+        <td>{{rdvv.entreprise?.nomSociete}}</td>
+        <td>{{rdvv.entreprise?.email}}</td>
+
+        <td><a type="button" class="btn btn-info"  [routerLink]="['/client/', client.id,'facture_details',client.id]"><i class="bi bi-check-square-fill"></i> </a></td>
+        <!--           <td><button type="button" class="btn btn-info" (click)="consulterr(rdvv)">Consulter </button></td>-->
+
+      </tr>
+      </tbody>
+    </table>
+
+       <div *ngIf="tab_fac?.length == 0" style="margin-left: 15%; width: 60%">
+          <div class="alert alert-danger" role="alert">
+            Ne trouve pas des Rendez-vous !
+          </div>
+        </div>
+    <!--Dashboard footer starts-->
+  </div>
+</div>
+
+</body>
+
+</html>

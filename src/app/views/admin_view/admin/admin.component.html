@@ -1,0 +1,99 @@
+<div class="page-wrapper">
+  <div class="dash-content-wrap">
+    <div class="dash-breadcrumb">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dash-breadcrumb-content">
+              <div class="dash-breadcrumb-left">
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li class="active"><a href="#">Home</a></li>
+                    <li>Dashboard</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard breadcrumb ends-->
+
+    <!-- Dashboard Statistics starts-->
+    <div class="statistic-wrap">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-3 col-md-6 col-12">
+            <div class="statistic__item item--green">
+              <h2 class="counter-value">18</h2>
+              <span class="desc">Published Listings</span>
+              <div class="icon">
+                <img src="../../../../assets/images/dashboard/map-of-roads.png" alt="...">
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-12">
+            <div class="statistic__item item--orange">
+              <h2 class="counter-value">115</h2>
+              <span class="desc">Total Reviews</span>
+              <div class="icon">
+                <img src="../../../../assets/images/dashboard/review.png" alt="...">
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-12">
+            <div class="statistic__item item--blue">
+              <h2 class="counter-value">800</h2>
+              <span class="desc">Total Views</span>
+              <div class="icon">
+                <img src="../../../../assets/images/dashboard/bar-chart.png" alt="...">
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-12">
+            <div class="statistic__item item--red">
+              <h2 class="counter-value">15</h2>
+              <span class="desc">times Bookmarked</span>
+              <div class="icon">
+                <img src="../../../../assets/images/dashboard/like.png" alt="...">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Dashboard Statistics ends-->
+
+    <!--Dashboard content starts-->
+    <div class="dash-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-6 col-md-6 col-12">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [type]="barChartType">
+          </canvas>
+          </div>
+          <div class="col-xl-6 col-md-6 col-12">
+          <canvas baseChart
+                  [datasets]="barChartrep"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [type]="barChartType">
+          </canvas>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+</div>
+

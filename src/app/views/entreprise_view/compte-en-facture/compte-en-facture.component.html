@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="page-wrapper">
+
+  <div class="dash-content-wrap">
+
+
+    <br> <br> <br>
+    <table class="container">
+      <thead>
+      <tr>
+        <th><h1>Num Facture</h1></th>
+        <th><h1>Date creation </h1></th>
+
+        <th><h1>  Nom client </h1></th>
+        <th><h1>Email client</h1></th>
+        <th><h1>Total</h1></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let rdvv of Facture" >
+      <tr>
+        <td>{{rdvv.num_facture}}</td>
+        <td>{{rdvv.date_creation}}</td>
+
+        <td>{{rdvv.client?.nom}} {{rdvv.client?.prenom}}</td>
+        <td>{{rdvv.client?.email}}</td>
+        <td>{{rdvv.tolale_TTC}}</td>
+        <td><button type="button" class="btn btn-info"[routerLink]="['/entreprise/', entreprise.id,'facture_details',entreprise.id]">Consulter </button></td>
+      </tr>
+
+      </tbody>
+    </table>
+    <!--Dashboard footer starts-->
+    <div class="dash-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright">
+              <p>© 2022 Codynet</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard footer ends-->
+  </div>
+  <!--Dashboard content Wrapper ends-->
+</div>
+</body>
+
+</html>

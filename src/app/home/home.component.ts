@@ -9,8 +9,8 @@ import {EntrepriseService} from "../services/entreprise.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  categorie!: string;
-  nom!: string;
+  categorie!: any;
+  nom!: any;
 
   test: any;
   Restaurent: any;
@@ -59,9 +59,23 @@ export class HomeComponent implements OnInit {
   search() {
     console.log(this.nom)
     console.log(this.categorie)
-    localStorage.setItem('monNom', this.nom)
-    localStorage.setItem('monCategorie', this.categorie)
-    this.router.navigate(['search',this.nom,this.categorie]);
+/*    if (this.categorie=== ""){
+      console.log(this.categorie)
+    }
+    else {
+      this.router.navigate(['search', this.nom, this.categorie]);
+    }*/
+    if (this.categorie==undefined) {
+      this.router.navigate(['search_categorie',this.nom]);
+    }
+
+
+      if (this.nom==undefined){
+        this.router.navigate(['search_ville',this.categorie]);
+      }
+    /*  if ((this.nom==this.nom)&&(this.categorie==this.categorie)){
+        this.router.navigate(['search',this.nom,this.categorie])
+      }*/
 
   }
 
