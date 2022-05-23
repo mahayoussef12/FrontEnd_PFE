@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Entreprise} from "../Entreprise";
+import {Entreprise} from "../../../Entreprise";
 import {ActivatedRoute, Router} from "@angular/router";
-import {EntrepriseService} from "../services/entreprise.service";
+import {EntrepriseService} from "../../../services/entreprise.service";
 import {NgToastService} from "ng-angular-popup";
-import {AvisService} from "../services/avis.service";
-import {avis} from "../avis";
+import {AvisService} from "../../../services/avis.service";
+import {avis} from "../../../avis";
 
 @Component({
   selector: 'app-avis-entreprise',
@@ -59,9 +59,9 @@ export class AvisEntrepriseComponent implements OnInit {
   delete(avis: avis) {
     let conf = confirm("Etes-vous sûr du supprimer ?");
     if (conf)
-      this.avisservice.deleteAvis(avis.id_avis).subscribe(() => {
+      this.avisservice.update(avis.id_avis).subscribe(() => {
         console.log("supprimé");
-        this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
+        this.toast.success({detail:'Bravo..',summary:'desactiver commentaire avec success',position:'br',duration:5000})
 
       })
 

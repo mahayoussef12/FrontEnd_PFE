@@ -27,7 +27,7 @@ import {SuperadminClientComponent} from "./views/admin_view/superadmin-client/su
 import {IncriEntrepriseComponent} from "./inscription_entreprise/incri-entreprise/incri-entreprise.component";
 import {RdvEntrepriseComponent} from "./views/entreprise_view/rdv-entreprise/rdv-entreprise.component";
 import {HoraireEntrepriseComponent} from "./inscription_entreprise/horaire-entreprise/horaire-entreprise.component";
-import {AvisEntrepriseComponent} from "./avis-entreprise/avis-entreprise.component";
+import {AvisEntrepriseComponent} from "./views/entreprise_view/avis-entreprise/avis-entreprise.component";
 import {CodeConfirmationComponent} from "./code-confirmation/code-confirmation.component";
 import {TestComponent} from "./test/test.component";
 import {ClientLayoutComponent} from "./layouts/client-layout/client-layout.component";

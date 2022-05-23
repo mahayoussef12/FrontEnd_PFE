@@ -71,42 +71,42 @@
       <div class="row">
         <div class="col-lg-18 col-md-30">
           <div class="list-details-wrap">
-<div id="add_review" class="list-details-section mar-top-10">
-  <h4>Add Review</h4>
-  <div  class="contact-form" id="leave-review">
+            <div id="add_review" class="list-details-section mar-top-10">
+              <h4>Add Review</h4>
+              <div  class="contact-form" id="leave-review">
 
-    <h4 class="contact-form__title">
-      Rate us and Write a Review
-    </h4>
-    <div class="row">
-      <div class="col-md-6 col-sm-7 col-12">
-        <p class="contact-form__rate">
-          Your rating for this listing:
-        </p>
+                <h4 class="contact-form__title">
+                  Rate us and Write a Review
+                </h4>
+                <div class="row">
+                  <div class="col-md-6 col-sm-7 col-12">
+                    <p class="contact-form__rate">
+                      Your rating for this listing:
+                    </p>
 
-        <ngx-star-rating [(ngModel)]="newAvis.start" [id]="'rating'" ></ngx-star-rating>
-        <p>{{newAvis.start}}</p>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <input class="contact-form__input-text" type="text" name="name" id="name" placeholder="Name:" [(ngModel)]="newAvis.nom_auteur">
-        </div>
+                    <ngx-star-rating [(ngModel)]="newAvis.start" [id]="'rating'" ></ngx-star-rating>
+                    <p>{{newAvis.start}}</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <input class="contact-form__input-text" type="text" name="name" id="name" placeholder="Name:" [(ngModel)]="newAvis.nom_auteur">
+                    </div>
 
-        <div class="col-md-4">
-          <input class="contact-form__input-text" type="text" name="prenom" id="prenom" placeholder="Prenom:" [(ngModel)]="newAvis.prenom_auteur">
-        </div>
-        <div class="col-md-4">
-          <input class="contact-form__input-text" type="email" name="mail" id="mail" placeholder="Email:" [(ngModel)]="newAvis.email_auteur">
-        </div>
-      </div>
-      <textarea class="contact-form__textarea" name="comment" id="comment" placeholder="Comment" [(ngModel)]="newAvis.description"></textarea>
-      <input  type="submit" class="btn v1" value="Submit" (click)="test()">
-    </div>
-  </div>
-</div>
+                    <div class="col-md-4">
+                      <input class="contact-form__input-text" type="text" name="prenom" id="prenom" placeholder="Prenom:" [(ngModel)]="newAvis.prenom_auteur">
+                    </div>
+                    <div class="col-md-4">
+                      <input class="contact-form__input-text" type="email" name="mail" id="mail" placeholder="Email:" [(ngModel)]="newAvis.email_auteur">
+                    </div>
+                  </div>
+                  <textarea class="contact-form__textarea" name="comment" id="comment" placeholder="Comment" [(ngModel)]="newAvis.description"></textarea>
+                  <input  type="submit" class="btn v1" value="Submit" (click)="test()">
+                </div>
+              </div>
+            </div>
           </div></div>
-          </div>
-</div>
+      </div>
+    </div>
 
   </div>
 </div>

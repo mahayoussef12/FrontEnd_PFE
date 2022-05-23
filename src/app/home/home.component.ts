@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {ActivatedRoute, Router} from "@angular/router";
 import {EntrepriseService} from "../services/entreprise.service";
+import {NgToastService} from "ng-angular-popup";
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor( private activatedRoute: ActivatedRoute,private router:Router,private entrepriseService:EntrepriseService) { }
+  constructor( private activatedRoute: ActivatedRoute,private router:Router,private entrepriseService:EntrepriseService,private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.entrepriseService.CountGategorie("fieance").subscribe((response) => {
@@ -57,26 +58,18 @@ export class HomeComponent implements OnInit {
 
 
   search() {
-    console.log(this.nom)
-    console.log(this.categorie)
-/*    if (this.categorie=== ""){
-      console.log(this.categorie)
-    }
-    else {
-      this.router.navigate(['search', this.nom, this.categorie]);
-    }*/
     if (this.categorie==undefined) {
       this.router.navigate(['search_categorie',this.nom]);
+      this.toast.success({detail:'Bravo...',summary:'recherche avec success par categorie',position:'br',duration:5000})
     }
-
-
       if (this.nom==undefined){
         this.router.navigate(['search_ville',this.categorie]);
+        this.toast.success({detail:'Bravo...',summary:'recherche avec success par ville',position:'br',duration:5000})
       }
-    /*  if ((this.nom==this.nom)&&(this.categorie==this.categorie)){
+      if ((this.nom==this.nom)&&(this.categorie==this.categorie)){
         this.router.navigate(['search',this.nom,this.categorie])
-      }*/
-
+        this.toast.success({detail:'Bravo...',summary:'recherche avec success(categorie/ville)',position:'br',duration:5000})
+      }
   }
 
 

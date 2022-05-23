@@ -25,10 +25,10 @@ export class CodeConfirmationComponent implements OnInit {
       console.log(response)
       if (response == true) {
         console.log("code verifier ")
-        this.toast.success({detail: 'Success', summary: 'This is Success', position: 'br', duration: 5000})
+        this.toast.success({detail: 'Bravo..', summary: 'Le code de confirmation est équitable', position: 'br', duration: 7000})
       } else {
         console.log("code non verifier")
-        this.toast.error({detail: 'Erreur', summary: 'Verifier Votre Code Confirmation', position: 'br', duration: 5000})
+        this.toast.error({detail: 'Erreur...', summary: 'Code de confirmation est faux', position: 'br', duration: 5000})
       }
     });
   }

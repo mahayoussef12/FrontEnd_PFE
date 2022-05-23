@@ -3,6 +3,7 @@ import {ChartDataset, ChartOptions, ChartType} from "chart.js";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ClientService} from "../../../services/client.service";
 import {EntrepriseService} from "../../../services/entreprise.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-dashbord',
@@ -19,6 +20,7 @@ export class DashbordComponent implements OnInit {
   barChartLabels!: any[];
   barChartType: ChartType = 'line';
 detailId: any;
+  pipe = new DatePipe('en-US');
 
   constructor(private route: ActivatedRoute,private clientservice:ClientService, private router: Router,private entrepriseService:EntrepriseService) { }
 
@@ -34,7 +36,7 @@ detailId: any;
 
     this.entrepriseService.testcountclient(this.detailId).subscribe(data => {
       console.log(data)
-      this.barChartLabels = data.map(item => item.type);
+      this.barChartLabels = data.map(item => this.pipe.transform(item.type, 'd/M/yy, h:mm a'));
       this.barChartData = [
         {data: data.map(item => item.count), label: 'rendez_vous'},
 

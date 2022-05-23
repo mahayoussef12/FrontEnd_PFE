@@ -14,19 +14,27 @@ import {NgToastService} from "ng-angular-popup";
 })
 export class AvisComponent implements OnInit {
   entreprise!: Entreprise;
-  private entrepriseId: any;
+ entrepriseId: any;
   rating: any;
   newAvis = new avis();
 
+  brandForm!:FormGroup;
+  isSubmitted = false;
 
-
-  constructor(private toast:NgToastService, private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private avisservice:AvisService) {
+  constructor(private toast:NgToastService, private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private avisservice:AvisService, private _fb: FormBuilder) {
 
 
   }
 
 
   ngOnInit(): void {
+    this.brandForm = this._fb.group({
+      start:['', Validators.required],
+      nom_auteur:['', Validators.required],
+      prenom_auteur:['', Validators.required],
+      email_auteur:['', Validators.required],
+      description:['', Validators.required],
+    });
     this.entrepriseId = this.activatedRoute.snapshot.params["id"];
     console.log(this.entrepriseId)
     this.entrepriseService.getEntrepriseById(this.entrepriseId).subscribe((response) => {
@@ -36,8 +44,8 @@ export class AvisComponent implements OnInit {
   }
 
   test() {
-    this.avisservice.createAvis(this.entrepriseId,this.newAvis).subscribe(prod => {
-      this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
+    this.avisservice.createAvis(this.entrepriseId,this.brandForm.value).subscribe(prod => {
+      this.toast.success({detail:'Bravo..',summary:'Ajouter votre avis avec Success',position:'br',duration:5000})
       this.router.navigate(['user-search',this.entrepriseId])
   })}
 }

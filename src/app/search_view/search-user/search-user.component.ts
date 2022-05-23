@@ -17,21 +17,29 @@ import {NgToastService} from "ng-angular-popup";
 export class SearchUserComponent implements OnInit {
   entreprise!: Entreprise;
   entrepriseId: any;
-  aviss: any;
-  maha!: avis[];
- newAvis!: avis;
  newRDV= new rendez_vous;
   count: any;
-  constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private rendezvouservice:Rendez_vousService,private toast:NgToastService) {
+   aviss!: avis;
+maha!: avis[];
+  brandForm!:FormGroup;
+  isSubmitted = false;
+  constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private rendezvouservice:Rendez_vousService,private toast:NgToastService,private _fb: FormBuilder) {
   }
   ngOnInit(): void {
+    this.brandForm = this._fb.group({
+      start:['', Validators.required],
+      nom_auteur:['', Validators.required],
+      prenom_auteur:['', Validators.required],
+      email_auteur:['', Validators.required],
+      description:['', Validators.required],
+    });
     this.entrepriseId = this.activatedRoute.snapshot.params["id"];
     console.log(this.entrepriseId)
     this.entrepriseService.getEntrepriseById(this.entrepriseId).subscribe((response) => {
       this.entreprise = response
     })
-    this.avisservice.count(this.entrepriseId).subscribe(prod => {
-      this.aviss = prod;
+    this.avisservice.count(this.entrepriseId).subscribe(test => {
+      this.aviss = test;
 
     });
     this.avisservice.getEntrepriseId(this.entrepriseId).subscribe((response) => {
@@ -45,7 +53,7 @@ export class SearchUserComponent implements OnInit {
 
   }
   test() {
-    this.avisservice.createAvis(this.entrepriseId,this.newAvis).subscribe(prod => {
+    this.avisservice.createAvis(this.entrepriseId,this.brandForm.value).subscribe(prod => {
       console.log(prod);
       console.log("ajouter avec sucess")
     })}
@@ -62,6 +70,20 @@ this.rendezvouservice.createRDV(this.entrepriseId,this.newRDV).subscribe(prod =>
   console.log("ajouter avec sucess")
 })}
 
+  onSubmit() {
+    this.isSubmitted = true;
+    if (this.brandForm.valid) {
+      this.avisservice.createAvis(this.entrepriseId, this.brandForm.value).subscribe(prod => {
+        console.log(prod);
+        window.location.reload();
+        this.toast.success({detail: "Success Message", summary: "update avec success", duration: 5000})
+      })
+    }
+  }
+
+  login() {
+    this.router.navigate(['/login'])
+  }
 }
 
 

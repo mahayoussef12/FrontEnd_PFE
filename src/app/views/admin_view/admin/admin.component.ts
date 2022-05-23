@@ -45,6 +45,7 @@ export class AdminComponent implements OnInit {
       console.log(data)
       this.barChartLabels = data.map(item => item.type);
       this.barChartData = [
+
         {data: data.map(item => item.count), label: 'rendez_vous client '},
 
       ];

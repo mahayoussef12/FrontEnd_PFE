@@ -24,4 +24,10 @@ export class AvisService {
   deleteAvis(id: number | undefined) { const url = `${'http://localhost:8082/api/v1/avis'}/${id}`; return this.http.delete(url); }
   countAvisEntrepriseId(id: number | undefined):Observable<any>{
     const url = `${'http://localhost:8082/api/v1/nbAvis'}/${id}`; return this.http.get<any>(url); }
+
+  update(id: number | undefined): Observable<Object> {
+    return this.http.put(`${'http://localhost:8082/api/v1/avis/modifier'}/${id}`,Object);
+  }
+
+
 }

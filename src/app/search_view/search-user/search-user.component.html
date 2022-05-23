@@ -15,6 +15,9 @@
         <div class="site-navbar">
           <div class="row align-items-center">
             <div class="col-md-4 col-6">
+<!--
+              <img src="assets/step_1_make_an_appointment_3.png" style="width: 30%;height: 30%">
+-->
         <p>Mawaaied</p>
             </div>
             <div class="col-md-8 col-6">
@@ -56,7 +59,7 @@
   </header>
   <!--Header ends-->
   <!--Listing Details Hero starts-->
-  <div class="listing-details-wrapper bg-f" style="background-image: url(../../../assets/images/single-listing/single-list-3.jpg)">
+  <div class="listing-details-wrapper bg-f" style="background-image: url(../../../assets/step_1_make_an_appointment_3.png);height: 100vh">
     <div class="overlay op-3"></div>
     <div class="container">
       <div class="row">
@@ -67,7 +70,7 @@
                 <div class="single-listing-title float-left">
                   <p><a href="#" class="btn v6">{{entreprise.categorie}}</a></p>
                   <h2>{{entreprise.nomSociete}} <i class="icofont-tick-boxed"></i></h2>
-                  <p><i class="ion-ios-location"></i> {{entreprise.adresse}}</p>
+                  <p><i class="bi bi-cursor"></i> {{entreprise.adresse}}</p>
                 </div>
               </div>
             </div>
@@ -90,88 +93,99 @@
                 <p class="mar-bot-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, dicta, impedit. Eveniet incidunt provident minima totam aut facilis tenetur quam officia omnis dolorem! Autem iste fugit mollitia rerum quae, veritatis perferendis voluptas magni aliquam consequuntur, minima repellendus eveniet laboriosam iure.</p>
               </div>
             </div>
+            <div class="list-details-section section-padding">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-18 col-md-30">
+                    <div class="list-details-wrap">
+                      <div id="add_review" class="list-details-section mar-top-10">
+                        <h4>Ajouter un commentaire</h4>
+                        <div class="contact-form" id="leave-review">
 
-            <div id="reviews" class="list-details-section">
-              <h4>Avis <span>({{count}})</span></h4>
-              <div class="review-box" >
-                <ul class="review_wrap">
-                  <li>
-                    <div class="customer-review_wrap" *ngFor="let avis of maha" >
-                      <div class="reviewer-img">
-                        <p>{{avis.nom_auteur}} {{avis.nom_auteur}}</p>
-                      </div>
-                      <div class="customer-content-wrap">
-                        <div class="customer-content">
-                          <div class="customer-rating">{{avis.start}}</div>
+                          <h4 class="contact-form__title">
+                            Évaluez-nous et rédigez un avis
+                          </h4>
+                          <form [formGroup]="brandForm"  (ngSubmit)="onSubmit()">
+                            <div class="row">
+                              <div class="col-md-6 col-sm-7 col-12">
+                                <p class="contact-form__rate">
+                                  Votre note pour cette annonce :
+                                </p>
+
+                                <ngx-star-rating  formControlName="start" [id]="'rating'" ></ngx-star-rating>
+
+                              </div>
+                              <div class="row">
+                                <div class="col-md-4">
+                                  <input class="contact-form__input-text" type="text" name="name" id="name" placeholder="Name:" formControlName="nom_auteur">
+                                </div>
+
+                                <div class="col-md-4">
+                                  <input class="contact-form__input-text" type="text" name="prenom" id="prenom" placeholder="Prenom:" formControlName="prenom_auteur">
+                                </div>
+                                <div class="col-md-4">
+                                  <input class="contact-form__input-text" type="email" name="mail" id="mail" placeholder="Email:"  formControlName="email_auteur">
+                                </div>
+                              </div>
+                              <textarea class="contact-form__textarea" name="comment" id="comment" placeholder="Comment" formControlName="description"></textarea>
+                              <input  type="submit" class="btn v1" value="Submit" >
+                            </div>
+                          </form>
                         </div>
-                        <p class="customer-text">{{avis.description}}
-                        </p>
                       </div>
-                    </div>
-                    <div *ngIf="maha?.length == 0" style="margin-left: 25%; width: 50%">
-                      <div class="alert alert-danger" role="alert">
-                        Ne trouve pas des Avis ici ....
-                      </div>
-                    </div>-->
-                  </li>
-
-                </ul>
+                    </div></div>
+                </div>
               </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
             <div id="reviews" class="list-details-section">
-
-              <div class="review-box" >
+              <h4>Commentaires: <span>{{count}}</span></h4>
+              <div class="review-box" *ngFor="let avis of maha">
                 <ul class="review_wrap">
                   <li>
-                    <div class="customer-review_wrap"  >
-                      <div class="d-grid gap-2" >
-                        <p>Vous pouvez donner votre avis sur cette entreprise Cliquer ici ...</p>
-                        <br>
-                        <br>
-                        <button class="btn btn-success" type="button" (click)="gotoavis(entreprise.id)">Ajouter Votre Avis</button>
+                    <div class="customer-review_wrap" >
+                      <div class="reviewer-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-uuBoKwlqF1r4AGiZFHefAdLe430T-0CiEQ&usqp=CAU" class="img-fluid" alt="...">
+                        <p>{{avis.nom_auteur}}  {{avis.prenom_auteur}}</p>
                       </div>
-                      <div class="customer-content-wrap">
-                        <p class="customer-text">
+                      <div class="customer-content-wrap" style="margin-left: 30%">
+                        <div class="customer-content">
+                          <div class="customer-review">
+                            <h6>Commentaire:</h6>
+                            <p></p>
+                          </div>
+                          <ngx-star-rating  [ngModel]="avis.start" [id]="'rating'" ></ngx-star-rating>
+                        </div>
+                        <p class="customer-text">{{avis.description}} </p>
+                        <div class="like-btn mar-top-40">
 
-                        </p>
+                        </div>
                       </div>
+
                     </div>
 
-                  </li>
-
                 </ul>
-              </div>
+
             </div>
           </div>
-              </div>
-
+          </div>
+        </div>
         <div class="col-lg-4 col-md-12">
           <div class="listing-sidebar">
             <div class="sidebar-widget info">
               <h3><i class="bi bi-calendar3"></i>Rendez vous </h3>
-                <div class="col-md-12 mar-bot-15">
-                  <div id="datepicker-from" class="input-group date" data-date-format="dd-mm-yyyy">
-                    <input class="form-control" type="datetime-local" placeholder="Date rendez vous:" [(ngModel)]="newRDV.date_rdv">
-                    <span class="input-group-addon"><i class="bi bi-calendar3"></i></span>
-                  </div>
-                </div>
               <div class="book-btn text-center">
-                <a  (click)="rdv()">Prise un Rendez_vous</a>
+                <a (click)="login()">Prendre un rendez vous</a>
               </div>
             </div>
             <div class="sidebar-widget info">
               <h3><i class="bi bi-file-earmark-person"></i>Information Societe </h3>
               <div class="col-md-12 mar-bot-15">
                 <div class="address">
-                  <span class="ion-ios-location"><i class="bi bi-geo-alt"></i></span>
+                  <span ><i class="bi bi-geo-alt"></i></span>
                   <p> {{entreprise.adresse}} {{entreprise.ville}}</p>
                 </div>
                 <div class="address">
-                  <span class="ion-ios-telephone"><i class="bi bi-telephone"></i></span>
+                  <span><i class="bi bi-telephone"></i></span>
                   <p> {{entreprise.tel}}</p>
                 </div>
               </div>
@@ -193,63 +207,117 @@
     </div>
   </div>
   </div>
-
-
   <!--Listing Details Info ends-->
   <!-- Scroll to top starts-->
-  <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
+
   <!-- Scroll to top ends-->
-<div style="margin-right: -20%">
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Folow us </h3>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bi bi-google"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
+<div class="footer-wrapper no-pad-tb footer-fixed v1" style="background-image: url(assets/images/bg/footer-bg-1.png)">
+  <div class="overlay op-1"></div>
+  <div class="footer-top-area section-padding" >
+    <div class="container">
+      <div class="row nav-folderized">
+        <div class="col-lg-3 col-md-12">
+          <div class="footer-logo">
+            <a href="index.html"> <img src="assets/step_1_make_an_appointment_3.png" alt="logo"></a>
+            <h6 style="margin-left: 20%;color: #1ec38b">Mawaaied</h6>
+            <div class="company-desc">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio excepturi nam totam sequi, ipsam consequatur repudiandae libero illum.
+              </p>
             </div>
           </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+        </div>
+        <div class="col-lg-3 col-md-12">
+          <div class="footer-content nav">
+            <h2 class="title">Helpful Links</h2>
+            <ul class="list">
+              <li><a class="link-hov style2" href="#">Login</a></li>
+              <li><a class="link-hov style2" href="#">My Account</a></li>
+              <li><a class="link-hov style2" href="#">Add Listing</a></li>
+              <li><a class="link-hov style2" href="#">Privacy policy</a></li>
             </ul>
           </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+        </div>
+        <div class="col-lg-3 col-md-12">
+          <div class="footer-content nav">
+            <h2 class="title">Category</h2>
+            <ul class="list">
+              <li><a class="link-hov style2" href="#">Shop</a></li>
+              <li><a class="link-hov style2" href="#">Travel</a></li>
+              <li><a class="link-hov style2" href="#">Sport</a></li>
+              <li><a class="link-hov style2" href="#">Restaurant</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12">
+          <div class="footer-content nav">
+            <h2 class="title">Contact us</h2>
+            <ul class="list footer-list">
+              <li>
+                <div class="contact-info">
+                  <div class="icon">
+                    <i class="ion-ios-location"></i>
+                  </div>
+                  <div class="text">13th North Ave, Florida, USA</div>
+                </div>
+              </li>
+              <li>
+                <div class="contact-info">
+                  <div class="icon">
+                    <i class="ion-email"></i>
+                  </div>
+                  <div class="text"><a href="#">info@listagram.com</a></div>
+                </div>
+              </li>
+              <li>
+                <div class="contact-info">
+                  <div class="icon">
+                    <i class="ion-ios-telephone"></i>
+                  </div>
+                  <div class="text">+44 078 767 595</div>
+                </div>
+              </li>
+            </ul>
+            <ul class="social-buttons style2">
+              <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+              <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+              <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
+              <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+              <li><a href="#"><i class="ion-social-dribbble"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-
+  </div>
+  <div class="footer-bottom-area">
     <div class="container">
-      <div class="copyright" style="margin-right: 35%">
-        &copy; Copyright <strong><span>Codynet</span></strong>. All Rights Reserved
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <p>&copy; 2019 listagram. All Rights Reserved.</p>
+        </div>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </div>
+</div>
+<div class="color-switcher hide-color-switcher">
+  <a class="switcher-button"><i class="bi bi-gear"></i></a>
+  <div class="color-switcher-title text-center">
+    <h5>Switch Colors</h5>
+  </div>
+  <div class="color-list text-center">
+    <a class="color green-theme" title="green"></a>
+    <a class="color red-theme" title="red"></a>
+    <a class="color blue-theme" title="blue"></a>
+    <a class="color orange-theme" title="orange"></a>
+    <a class="color pink-theme" title="pink"></a>
+    <a class="color purple-theme" title="purple"></a>
+    <a class="color violet-theme" title="violet"></a>
+    <a class="color aqua-theme" title="aqua"></a>
+  </div>
 </div>
 <!--Scripts ends-->
 </body>
 
 </html>
+
