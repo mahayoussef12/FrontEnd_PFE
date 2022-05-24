@@ -1,0 +1,22 @@
+
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">N°</div>
+      <div class="col col-2">L'heure</div>
+      <div class="col col-3">Nom Client</div>
+      <div class="col col-4">temps reste</div>
+    </li>
+    <div  *ngFor="let tt of listDate;let i = index ">
+      <div *ngFor="let j of listClient">
+    <li class="table-row">
+      <div class="col col-1" data-label="Job Id">{{i+1}}</div>
+      <div class="col col-2" data-label="Customer Name">{{tt|date:'HH:mm'}}</div>
+      <div class="col col-3" data-label="Amount">{{j}}</div>
+   <div class="col col-4" data-label="Amount" *ngFor="let a of arr"> {{a| formatTime}}</div>
+
+    </li>
+      </div>
+    </div>
+  </ul>
+</div>

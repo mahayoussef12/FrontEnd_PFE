@@ -27,7 +27,7 @@ this.router.navigate(['entreprise'])
     this.id = localStorage.getItem('cle')
 
     this.horaireservice.ajouterhoraire(this.id, this.newHoraire).subscribe(prod => {
-      this.toast.success({detail: 'Success', summary: 'This is Success', position: 'br', duration: 5000})
+      this.toast.success({detail: 'Bravo..', summary: 'Ajouter votre Horaire avec sucess', position: 'br', duration: 5000})
     });
   }
 }

@@ -21,7 +21,7 @@ export class IncriEntrepriseComponent implements OnInit {
 
   enregistre() {
     this.entrepriseService.createEntreprise(this.newEN).subscribe(prod => {
-        this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
+        this.toast.success({detail:'Bravo...',summary:'Ajouter entreprise avec success ',position:'br',duration:5000})
       this.router.navigate(['horaire'])
         localStorage.setItem('cle', JSON.stringify(prod.id));
     }

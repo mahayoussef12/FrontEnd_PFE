@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="page-wrapper">
+
+
+    <!-- Top header ends-->
+
+    <!--Dashboard breadcrumb starts-->
+    <div class="dash-breadcrumb">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="dash-breadcrumb-content">
+              <div class="dash-breadcrumb-left">
+                <div class="breadcrumb-menu text-right sm-left">
+                  <ul>
+                    <li class="active"><p>Home</p></li>
+                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
+                    <li>My Profile</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard breadcrumb ends-->
+    <!--Dashboard content starts-->
+    <div class="dash-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="table-wrapper">
+            <table class="fl-table" style="margin-left:-5%">
+              <thead>
+              <tr>
+                <th>Nom :</th>
+                <th>prenom:</th>
+                <th>Email:</th>
+                <th>Nombre des etoile </th>
+                <th>Commentaire</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody *ngFor="let avis of maha">
+              <tr>
+                <td>{{avis.nom_auteur}}</td>
+                <td>{{avis.prenom_auteur}}</td>
+                <td>{{avis.email_auteur}}</td>
+                <td>{{avis.start}}</td>
+                <td>{{avis.description}}</td>
+                <td><button type="button" class="btn btn-danger"  style="background-color: red" (click)="delete(avis)">
+                  <i class="bi bi-x-square"></i>
+                Desactiver Commentaire</button>
+                </td>
+              </tr>
+              <tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Dashboard content ends-->
+
+    <!--Dashboard footer starts-->
+
+  </div>
+  <!--Dashboard content Wrapper ends-->
+
+
+
+</body>
+
+</html>
+

@@ -13,7 +13,7 @@ import {NgToastService} from "ng-angular-popup";
 })
 export class InscriptionClientComponent implements OnInit {
 
-  newClient = new Client;
+
   brandForm!:FormGroup;
   isSubmitted = false;
 

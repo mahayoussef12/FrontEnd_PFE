@@ -5346,17 +5346,18 @@ section {
 }
 /*Design les objectif */
 .features .feature-box {
-  padding: 24px 20px;
+  padding: 40px 20px;
   box-shadow: 0px 0 30px 	rgb(98,219,150);
   transition: 0.3s;
-  height: 50%;
+  height: 30%;
+  width:105%;
   margin-right: 10%;
 }
-.features .feature-box h3 {
-  font-size: 18px;
+.features .feature-box h4 {
+  font-size: 120%;
   color: #012970;
-  font-weight: 700;
-  margin: 0;
+  font-weight: 600;
+  margin: 2%;
 }
 .features .feature-box i {
   line-height: 0;

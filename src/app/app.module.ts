@@ -48,16 +48,18 @@ import { RdvEntrepriseComponent } from './views/entreprise_view/rdv-entreprise/r
 import { HoraireEntrepriseComponent } from './inscription_entreprise/horaire-entreprise/horaire-entreprise.component';
 import { AvisEntrepriseComponent } from './views/entreprise_view/avis-entreprise/avis-entreprise.component';
 import { CodeConfirmationComponent } from './code-confirmation/code-confirmation.component';
-import { TestComponent } from './test/test.component';
+
 import {LayoutsModule} from "./layouts/layouts.module";
 import { EditProfileComponent } from './views/client_view/edit-profile/edit-profile.component';
 import {SchedulerModule} from "./calendrier/scheduler/scheduler.module";
 import { InscriptionClientComponent } from './inscription-client/inscription-client.component';
+import {FormatTimePipe, TvComponent} from './tv/tv.component';
 
 
 
 @NgModule({
   declarations: [
+    FormatTimePipe,
     AppComponent,
     HomeComponent,
     SearchComponent,
@@ -73,10 +75,9 @@ import { InscriptionClientComponent } from './inscription-client/inscription-cli
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, TestComponent, EditProfileComponent, InscriptionClientComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent
   ],
   imports: [
-
     BrowserModule,
     AppRoutingModule,
     FormsModule,

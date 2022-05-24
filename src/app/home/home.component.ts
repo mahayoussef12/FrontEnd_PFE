@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   constructor( private activatedRoute: ActivatedRoute,private router:Router,private entrepriseService:EntrepriseService,private toast:NgToastService) { }
 
   ngOnInit(): void {
-    this.entrepriseService.CountGategorie("fieance").subscribe((response) => {
+    this.entrepriseService.CountGategorie("hotel").subscribe((response) => {
       this.test=response
 
     })
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
 
 
   cv() {
-    this.router.navigate(['search_categorie',"fieance"]);
+    this.router.navigate(['search_categorie',"hotel"]);
   }
 
   restau() {

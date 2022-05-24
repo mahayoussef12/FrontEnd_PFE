@@ -29,11 +29,12 @@ import {RdvEntrepriseComponent} from "./views/entreprise_view/rdv-entreprise/rdv
 import {HoraireEntrepriseComponent} from "./inscription_entreprise/horaire-entreprise/horaire-entreprise.component";
 import {AvisEntrepriseComponent} from "./views/entreprise_view/avis-entreprise/avis-entreprise.component";
 import {CodeConfirmationComponent} from "./code-confirmation/code-confirmation.component";
-import {TestComponent} from "./test/test.component";
+
 import {ClientLayoutComponent} from "./layouts/client-layout/client-layout.component";
 import {EntrepriseLayoutComponent} from "./layouts/entreprise-layout/entreprise-layout.component";
 import {InscriptionClientComponent} from "./inscription-client/inscription-client.component";
 import {LayoutAdminComponent} from "./layouts/layout-admin/layout-admin.component";
+import {TvComponent} from "./tv/tv.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -49,11 +50,10 @@ const routes: Routes = [
   {path:'payment',component:PayementPaypalComponent},
   {path:'entreprise',component:IncriEntrepriseComponent},
   {path:'rddv/:id',component:RdvEntrepriseComponent},
-  {path:'avis_en/:id',component:AvisEntrepriseComponent},
   {path:'horaire',component:HoraireEntrepriseComponent},
   {path:'code/:id',component:CodeConfirmationComponent},
-  {path:'test',component:TestComponent},
   {path:'client',component:InscriptionClientComponent},
+  {path:'tv/:id',component:TvComponent},
   {path:'client/:id',component:ClientLayoutComponent,
     children:[
       {path:'dashbord',loadChildren:()=>import('./views/client_view/dashbord/dashbord.module').then(m=>m.DashbordModule)},
@@ -70,7 +70,8 @@ const routes: Routes = [
       {path:'profil',loadChildren:()=>import('./views/entreprise_view/profile-entreprise/profile-entreprise/profile-entreprise.module').then(m=>m.ProfileEntrepriseModule)},
       {path:'facture',loadChildren:()=>import('./views/entreprise_view/compte-en-facture/compte-en-facture/compte-en-facture.module').then(m=>m.CompteEnFactureModule)},
       {path:'edit',loadChildren:()=>import('./views/entreprise_view/edit-profile-entreprise/edit-profile-entreprise/edit-profile-entreprise.module').then(m=>m.EditProfileEntrepriseModule)},
-      {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)}
+      {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)},
+      {path:'avisEntreprise',loadChildren:()=>import('./views/entreprise_view/avis-entreprise/avis-entreprise/avis-entreprise.module').then(m=>m.AvisEntrepriseModule)}
 
 
     ]},
