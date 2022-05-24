@@ -250,9 +250,8 @@
 
               <p>S'il vous plait, payez cette facture avant:{{x| date: 'dd/MM/yyyy'}}</p>
               <p>Nous vous remercions de votre confiance et de votre prompt règlement</p>
-              <div class="qrcode-img">
-                <div id="qrcode"></div>
-              </div>
+            <div>
+              <qrcode [qrdata]="qrdata" ></qrcode>
             </div>
             <div class="text-center mar-top-20"><a (click)="onPrint()" class="btn v3">Print this invoice</a></div>
           </div>

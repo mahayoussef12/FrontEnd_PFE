@@ -4,6 +4,7 @@ import {EntrepriseService} from "../../../services/entreprise.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ChartData, ChartDataset, ChartOptions, ChartType} from 'chart.js';
 import {coutType} from "../../../coutType";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-compte-entreprise',
@@ -11,7 +12,7 @@ import {coutType} from "../../../coutType";
   styleUrls: ['./compte-entreprise.component.css']
 })
 export class CompteEntrepriseComponent implements OnInit {
-
+  pipe = new DatePipe('en-US');
   entrepriseId:any;
   entreprise!:Entreprise;
   barChartOptions: ChartOptions = {
@@ -39,7 +40,7 @@ export class CompteEntrepriseComponent implements OnInit {
     })
     this.entrepriseService.testcount(this.route.snapshot.params["id"]).subscribe(data => {
       console.log(data)
-      this.barChartLabels = data.map(item => item.type);
+      this.barChartLabels = data.map(item => this.pipe.transform(item.type, 'd/M/yy, h:mm a'));
       this.barChartData = [
         {data: data.map(item => item.count), label: 'rendez_vous'},
 

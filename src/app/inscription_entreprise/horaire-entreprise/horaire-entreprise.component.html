@@ -88,26 +88,88 @@
               <a data-toggle="tab" >Horaire</a>
             </li>
           </ul>
-          <div class="tab-content mar-tb-30 add_list_content">
+          <div class="tab-content mar-tb-40 add_list_content">
             <div class="tab-pane fade show active" id="general_info">
-              <h4> <i class="ion-ios-information"></i> Horaire :</h4>
-              <div class="row">
 
+              <form [formGroup]="brandForm"  (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="row mar-bot-30">
+                <div class="col-md-2">
+                  <h4> Horaire :</h4>
+                </div>
+                <div class="col-md-2">
+                  <h5 style="color: #1ec38b"> ouverture Matin:</h5>
+                </div>
+                  <div class="col-md-2">
+                    <h5 style="color: #1ec38b"> Fermeture Matin:</h5>
+                  </div>
+                  <div class="col-md-2">
+                    <h5 style="color: #1ec38b"> ouverture Midi:</h5>
+                  </div>
+                <div class="col-md-2">
+                  <h5 style="color: #1ec38b"> Fermeture Midi:</h5>
+                </div>
+              </div>
                 <div class="row mar-bot-30">
                   <div class="col-md-2">
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" value="lundi"  [(ngModel)]="newHoraire.Day">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Lundi </label>
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Lundi</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+
+                  <div class="col-md-2">
+
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.opentime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentime">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.closeTime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closeTime">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentimemidi">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closetimemidi">
+                    </div>
+                  </div>
+
+                  <div class="col-md-2">
+                    <button  class="btn btn-outline-success" style="background-color: #5ECFB1"  type="Submit">Confirmer</button>
+                  </div>
+                </div>
+                <div class="row mar-bot-30">
+                  <div class="col-md-2">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Mardi</label>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentime">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closeTime">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentimemidi">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"formControlName="closetimemidi">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -117,18 +179,29 @@
                 <div class="row mar-bot-30">
                   <div class="col-md-2">
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" value="lundi"  [(ngModel)]="newHoraire.Day">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Mardi </label>
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Mercredi</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
+
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.opentime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentime">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.closeTime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closeTime">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentimemidi">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"formControlName="closetimemidi">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -138,18 +211,29 @@
                 <div class="row mar-bot-30">
                   <div class="col-md-2">
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" value="lundi"  [(ngModel)]="newHoraire.Day">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Mercredi </label>
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Jeudi</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
+
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.opentime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentime">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.closeTime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closeTime">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentimemidi">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"formControlName="closetimemidi">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -159,18 +243,29 @@
                 <div class="row mar-bot-30">
                   <div class="col-md-2">
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" value="lundi"  [(ngModel)]="newHoraire.Day">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Jeudi </label>
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Vendredi</label>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
+
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.opentime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentime">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.closeTime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closeTime">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentimemidi">
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"formControlName="closetimemidi">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -180,39 +275,29 @@
                 <div class="row mar-bot-30">
                   <div class="col-md-2">
                     <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" value="lundi"  [(ngModel)]="newHoraire.Day">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Vendredi </label>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.opentime">
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.closeTime">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Samedi</label>
                     </div>
                   </div>
                   <div class="col-md-2">
-                    <button  class="btn btn-outline-success" style="background-color: #5ECFB1"  (click)="enregistre()">Confirmer</button>
+
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentime">
+                    </div>
                   </div>
-                </div>
-                <div class="row mar-bot-30">
                   <div class="col-md-2">
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" value="lundi"  [(ngModel)]="newHoraire.Day">
-                      <label class="form-check-label" for="flexSwitchCheckDefault">Samedi </label>
+                    <div class="input-group mb-3">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="closeTime">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.opentime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="opentimemidi">
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <div class="input-group mb-3">
-                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="newHoraire.closeTime">
+                      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"formControlName="closetimemidi">
                     </div>
                   </div>
                   <div class="col-md-2">
@@ -220,12 +305,14 @@
                   </div>
                 </div>
               </div>
+              </form>
               </div>
 
           </div>
         </div>
       </div>
     </div>
+    >
   </div>
   <!--Add Listing ends-->
   <!-- Scroll to top starts-->

@@ -54,6 +54,7 @@ import { EditProfileComponent } from './views/client_view/edit-profile/edit-prof
 import {SchedulerModule} from "./calendrier/scheduler/scheduler.module";
 import { InscriptionClientComponent } from './inscription-client/inscription-client.component';
 import {FormatTimePipe, TvComponent} from './tv/tv.component';
+import {QRCodeModule} from "angularx-qrcode";
 
 
 
@@ -85,7 +86,7 @@ import {FormatTimePipe, TvComponent} from './tv/tv.component';
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule,SocialLoginModule,DayPilotModule,SchedulerModule,
-    NgToastModule,LayoutsModule
+    NgToastModule,LayoutsModule, QRCodeModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',

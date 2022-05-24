@@ -6,16 +6,17 @@ import {ClientService} from "../../../services/client.service";
 import {Entreprise} from "../../../Entreprise";
 import {Client} from "../../../Client";
 import {admin} from "../../../admin";
-import {ChartDataset, ChartOptions, ChartType} from "chart.js";
 
+import {DatePipe} from "@angular/common";
 
+import {ChartOptions, ChartType, ChartDataset} from 'chart.js';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+  pipe = new DatePipe('en-US');
   entreprises: Entreprise[] | undefined
   entreprise: any;
   entrepriseId:any;
@@ -23,14 +24,24 @@ export class AdminComponent implements OnInit {
   admins: admin[] | undefined;
   barChartOptions: ChartOptions = {
     responsive: true,
-  };
+    scales: {
+
+        ticks: {
+          min: 0,
+          max: 10,
+        }
+
+    }
+              }
+
+
+
   barChartLegend = true;
   barChartPlugins = [];
   barChartData: ChartDataset[] = [];
-  barChartLabels!: any[];
+  barChartLabels!: (string | null)[];
   barChartType: ChartType = 'line';
   barChartrep: ChartDataset[] = [];
-
 
   constructor(private route: ActivatedRoute,private adminService:AdminService,private clientservise:ClientService,private entrepriseService:EntrepriseService, private router: Router) { }
 
@@ -43,7 +54,7 @@ export class AdminComponent implements OnInit {
     )
     this.entrepriseService.sumAllclient().subscribe(data => {
       console.log(data)
-      this.barChartLabels = data.map(item => item.type);
+      this.barChartLabels = data.map(item => this.pipe.transform(item.type, 'd/M/yy, h:mm a'));
       this.barChartData = [
 
         {data: data.map(item => item.count), label: 'rendez_vous client '},
@@ -52,7 +63,7 @@ export class AdminComponent implements OnInit {
     });
     this.entrepriseService.sumAllentreprise().subscribe(rep => {
       console.log(rep)
-      this.barChartLabels = rep.map(item => item.date);
+      this.barChartLabels =rep.map(item => this.pipe.transform(item.date, 'd/M/yy, h:mm a'));
       this.barChartrep = [
         {data: rep.map(item => item.somme), label: 'rendez_vous entreprise'},
 

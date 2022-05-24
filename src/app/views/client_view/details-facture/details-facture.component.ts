@@ -3,8 +3,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FactureService} from "../../../services/facture.service";
 import QRCode from "easyqrcodejs";
 import domtoimage from "dom-to-image";
-
+import * as bcrypt from 'bcryptjs';
 import {Facture} from "../../../Facture";
+
 
 
 
@@ -20,6 +21,9 @@ letre: any;
  tv: any;
  x!: Date;
   public qrcode: any = null;
+ code!: string;
+ pass: any;
+  qrdata! :string;
 
   constructor(private route: ActivatedRoute,private factureservice:FactureService, private router: Router,
               ) { }
@@ -29,6 +33,11 @@ letre: any;
     console.log(this.detailId)
     this.factureservice.getfacById(this.detailId).subscribe((response)=>{
       this.details = response
+      this.code=this.details.tolale_TTC+""+this.details.entreprise?.nomSociete+this.details.num_facture
+      console.log(this.code)
+      this.pass =bcrypt.hashSync(this.code, 5)
+      console.log(this.pass)
+      this.qrdata=this.pass+    "lien:http://www.mawaaied.com"
       localStorage.setItem('total', JSON.stringify(response.tolale_TTC));
 
       function addDaysToDate(date: any | number | Date, days: number): Date{
@@ -37,36 +46,7 @@ letre: any;
         return res;
       }
       this.x=addDaysToDate(this.details.date_creation,5);
-      let codeText = 'BEGIN:VCARD\r\nVERSION:3.0\r\nN:';
-      codeText += this.details.entreprise?.nomSociete +'\r\n';
-      codeText += 'FN:' + this.details.entreprise?.nomSociete+ '\r\n';
-      codeText += 'NOTE:' + this.details.description+ '\r\n';
-      codeText += 'NOTE:' + 'Facture Non Payee' +this.details.tolale_TTC+ '\r\n';
-      codeText += 'END:VCARD';
-      codeText = decodeURIComponent(codeText);
 
-      console.log(codeText);
-      let imagesize = 150;
-      if (screen.width < 480) { imagesize = 110; }
-      console.log(imagesize);
-
-      const config = {
-        title: 'Logo',
-        config: {
-          text: codeText, // Content
-          width: imagesize, // Widht
-          height: imagesize, // Height
-          colorDark: '#000000', // Dark color
-          colorLight: '#ffffff', // Light color
-          // === Logo
-          logo: 'assets/logo.png', // LOGO
-          logoBackgroundColor: '#ffffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
-          logoBackgroundTransparent: false, // Whether use transparent image, default is false
-          correctLevel: QRCode.CorrectLevel.L // L, M, Q, H
-        }
-      };
-      if (this.qrcode != null) { this.qrcode.clear(); }
-      this.qrcode = new QRCode(document.getElementById('qrcode'), config.config);
     },(error) => {
       console.log(error);
     })
