@@ -55,6 +55,7 @@ import {SchedulerModule} from "./calendrier/scheduler/scheduler.module";
 import { InscriptionClientComponent } from './inscription-client/inscription-client.component';
 import {FormatTimePipe, TvComponent} from './tv/tv.component';
 import {QRCodeModule} from "angularx-qrcode";
+import { PrendreRdvComponent } from './prendre-rdv/prendre-rdv.component';
 
 
 
@@ -76,7 +77,7 @@ import {QRCodeModule} from "angularx-qrcode";
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent
   ],
   imports: [
     BrowserModule,

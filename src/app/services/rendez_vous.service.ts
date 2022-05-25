@@ -22,9 +22,8 @@ export class Rendez_vousService {
 
   constructor(private http: HttpClient) {
   }
-  createRDV(id:any,prod:rendez_vous): Observable<rendez_vous> {
-    const url = `${this.baseUrl}/${id}`;
-    return this.http.post<rendez_vous>(url,prod);
+  createRDV(prod:rendez_vous): Observable<rendez_vous> {
+    return this.http.post<rendez_vous>(this.baseUrl,prod);
   }
   deleteRDV(id: number | undefined) { const url = `${this.apiDelete}/${id}`; return this.http.delete(url); }
   getRdvDate(cle:number):Observable<Date[]>{
@@ -38,6 +37,12 @@ export class Rendez_vousService {
   def(cle:number):Observable<number[]>{
     const url = `${this.appdef}/${cle}`;
     return this.http.get<number[]>(url);}
+  getAllRdvEntrepriseNo(cle:number):Observable<rendez_vous[]>{
+    const url = `${'http://localhost:8082/api/v1/entreprise/nonaccepter'}/${cle}`;
+    return this.http.get<rendez_vous[]>(url);}
+  accepterrdv(id: number | undefined): Observable<Object> {
+    return this.http.put(`${'http://localhost:8082/api/v1/acceptation'}/${id}`,Object);
+  }
   }
 
 

@@ -34,30 +34,10 @@ export class AvisEntrepriseComponent implements OnInit {
       console.log(this.maha)
     })
   }
-  facture(id: any) {
-    this.router.navigate(['ds/',id])
-  }
 
-  rendez_vous(id: any) {
-
-    this.router.navigate(['calendrier/en/',id])
-  }
-  profile(id: any) {
-    this.router.navigate(['profile_entreprise/',id])
-
-  }
-
-  accuiel(id: any) {
-
-    this.router.navigate(['compte_entreprise/',id])
-  }
-  edit(id: any) {
-
-    this.router.navigate(['edit/',id])
-  }
 
   delete(avis: avis) {
-    let conf = confirm("Etes-vous sûr du supprimer ?");
+    let conf = confirm("Etes-vous sûr du desactiver le commentaire ?");
     if (conf)
       this.avisservice.update(avis.id_avis).subscribe(() => {
         console.log("supprimé");

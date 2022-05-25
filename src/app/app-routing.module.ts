@@ -35,6 +35,7 @@ import {EntrepriseLayoutComponent} from "./layouts/entreprise-layout/entreprise-
 import {InscriptionClientComponent} from "./inscription-client/inscription-client.component";
 import {LayoutAdminComponent} from "./layouts/layout-admin/layout-admin.component";
 import {TvComponent} from "./tv/tv.component";
+import {PrendreRdvComponent} from "./prendre-rdv/prendre-rdv.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:'code/:id',component:CodeConfirmationComponent},
   {path:'client',component:InscriptionClientComponent},
   {path:'tv/:id',component:TvComponent},
+  {path:'rdv',component:PrendreRdvComponent},
   {path:'client/:id',component:ClientLayoutComponent,
     children:[
       {path:'dashbord',loadChildren:()=>import('./views/client_view/dashbord/dashbord.module').then(m=>m.DashbordModule)},
@@ -71,8 +73,9 @@ const routes: Routes = [
       {path:'facture',loadChildren:()=>import('./views/entreprise_view/compte-en-facture/compte-en-facture/compte-en-facture.module').then(m=>m.CompteEnFactureModule)},
       {path:'edit',loadChildren:()=>import('./views/entreprise_view/edit-profile-entreprise/edit-profile-entreprise/edit-profile-entreprise.module').then(m=>m.EditProfileEntrepriseModule)},
       {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)},
-      {path:'avisEntreprise',loadChildren:()=>import('./views/entreprise_view/avis-entreprise/avis-entreprise/avis-entreprise.module').then(m=>m.AvisEntrepriseModule)}
-
+      {path:'avisEntreprise',loadChildren:()=>import('./views/entreprise_view/avis-entreprise/avis-entreprise/avis-entreprise.module').then(m=>m.AvisEntrepriseModule)},
+      {path:'password',loadChildren:()=>import('./views/entreprise_view/modifier-password/modifier-password.module').then(m=>m.ModifierPasswordModule)},
+      {path:'accepter',loadChildren:()=>import('./views/entreprise_view/acceptation-rdv/acceptation-rdv.module').then(m=>m.AcceptationRdvModule)},
 
     ]},
   {path:'admin',component:LayoutAdminComponent,
@@ -80,6 +83,7 @@ const routes: Routes = [
       {path:'statistique',loadChildren:()=>import('./views/admin_view/admin/admin/admin.module').then(m=>m.AdminModule)},
       {path:'entreprises',loadChildren:()=>import('./views/admin_view/superadmin/superadmin/superadmin.module').then(m=>m.SuperadminModule)},
       {path:'clients',loadChildren:()=>import('./views/admin_view/superadmin-client/superadmin-client/superadmin-client.module').then(m=>m.SuperadminClientModule)},
+
     ]
   },
   {path:'**',component:NotfoundComponent}

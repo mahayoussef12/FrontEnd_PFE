@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ClientService} from "../../../services/client.service";
 import {FactureService} from "../../../services/facture.service";
 import {Facture} from "../../../Facture";
+import {render} from "creditcardpayments/creditCardPayments";
 
 @Component({
   selector: 'app-compte-en-client',
@@ -13,15 +14,14 @@ import {Facture} from "../../../Facture";
 export class CompteEnClientComponent implements OnInit {
 
   detailId: any;
- client!: Client
- tab_fac!: Facture[];
+  client!: Client
+  tab_fac!: Facture[];
 
-  constructor(private route: ActivatedRoute, private clientservice: ClientService, private router: Router,private factureservice:FactureService) {
+  constructor(private route: ActivatedRoute, private clientservice: ClientService, private router: Router, private factureservice: FactureService) {
   }
 
 
   ngOnInit(): void {
-
     this.detailId = this.route.snapshot.params["id"];
     console.log(this.detailId)
     this.clientservice.getClientById(this.detailId).subscribe((response) => {
@@ -29,35 +29,18 @@ export class CompteEnClientComponent implements OnInit {
     }, (error) => {
       console.log(error);
     })
-this.factureservice.getFacByclient(this.detailId).subscribe((response) => {
-  this.tab_fac = response
-}, (error) => {
-  console.log(error);
-})
+    this.factureservice.getFacByclient(this.detailId).subscribe((response) => {
+      this.tab_fac = response
+    }, (error) => {
+      console.log(error);
+    })
   }
 
   consulter(rdvv: Facture) {
-    this.router.navigate(['facture/',rdvv.id_facture])
-  }
-  profile(id: any) {
-    this.router.navigate(['profile/',id])
+    this.router.navigate(['facture/', rdvv.id_facture])
   }
 
-  accuiel(id: any) {
-
-    this.router.navigate(['compte/',id])
-  }
-
-  facture(id: any) {
-    this.router.navigate(['All_facture_Client/',id])
-  }
-
-  rendez_vous(id: any) {
-
-    this.router.navigate(['calendrier/',id])
-
-  }
-  edit(id: any) {
-    this.router.navigate(['edit_client/',id])
+  gotodetails() {
+    this.router.navigate([])
   }
 }

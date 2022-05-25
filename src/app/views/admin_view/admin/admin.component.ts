@@ -24,12 +24,17 @@ export class AdminComponent implements OnInit {
   admins: admin[] | undefined;
   barChartOptions: ChartOptions = {
     responsive: true,
+
     scales: {
 
         ticks: {
           min: 0,
           max: 10,
+          beginAtZero: true,
+
+
         }
+
 
     }
               }

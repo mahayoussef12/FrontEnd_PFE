@@ -5,6 +5,8 @@ import QRCode from "easyqrcodejs";
 import domtoimage from "dom-to-image";
 import * as bcrypt from 'bcryptjs';
 import {Facture} from "../../../Facture";
+import {render} from "creditcardpayments/creditCardPayments";
+import {NgToastService} from "ng-angular-popup";
 
 
 
@@ -25,10 +27,11 @@ letre: any;
  pass: any;
   qrdata! :string;
 
-  constructor(private route: ActivatedRoute,private factureservice:FactureService, private router: Router,
+  constructor(private route: ActivatedRoute,private factureservice:FactureService, private router: Router,private toast:NgToastService
               ) { }
 
   ngOnInit(): void {
+
     this.detailId = this.route.snapshot.params["id"];
     console.log(this.detailId)
     this.factureservice.getfacById(this.detailId).subscribe((response)=>{
@@ -46,7 +49,15 @@ letre: any;
         return res;
       }
       this.x=addDaysToDate(this.details.date_creation,5);
+      render({
+        id:'#myPaypalButtons',
+        currency:'USD',
+        value:String(this.details.tolale_TTC),
+        onApprove :(details)=>{ this.toast.success({detail:'Bravo..',summary:'vous avez payer votre avec success ',position:'br',duration:5000})
+        this.router.navigate(['thermal',this.details.id_facture])
 
+        }
+      })
     },(error) => {
       console.log(error);
     })

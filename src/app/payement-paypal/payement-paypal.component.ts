@@ -19,7 +19,9 @@ export class PayementPaypalComponent implements OnInit {
         id:'#myPaypalButtons',
         currency:'USD',
         value:String(localStorage.getItem('total')),
-        onApprove :(details)=>{alert ('transaction success')}
+        onApprove :(details)=>{
+          console.log("payer")
+        }
       })
     }
 

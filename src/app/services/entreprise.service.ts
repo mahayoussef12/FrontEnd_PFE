@@ -108,4 +108,7 @@ export class EntrepriseService {
   sumAllentreprise(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:8082/api/v1/countEntreprise');
   }
+  update(id: number | undefined,prod:any): Observable<any> {
+    return this.http.post(`${'http://localhost:8082/api/v1/entreprise/modifier'}/${id}`,prod);
+  }
 }
