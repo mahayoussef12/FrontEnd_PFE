@@ -36,6 +36,7 @@ import {InscriptionClientComponent} from "./inscription-client/inscription-clien
 import {LayoutAdminComponent} from "./layouts/layout-admin/layout-admin.component";
 import {TvComponent} from "./tv/tv.component";
 import {PrendreRdvComponent} from "./prendre-rdv/prendre-rdv.component";
+import {RdvComponent} from "./rdv/rdv.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -55,7 +56,7 @@ const routes: Routes = [
   {path:'code/:id',component:CodeConfirmationComponent},
   {path:'client',component:InscriptionClientComponent},
   {path:'tv/:id',component:TvComponent},
-  {path:'rdv',component:PrendreRdvComponent},
+  {path:'rdv',component:RdvComponent},
   {path:'client/:id',component:ClientLayoutComponent,
     children:[
       {path:'dashbord',loadChildren:()=>import('./views/client_view/dashbord/dashbord.module').then(m=>m.DashbordModule)},
@@ -76,16 +77,19 @@ const routes: Routes = [
       {path:'avisEntreprise',loadChildren:()=>import('./views/entreprise_view/avis-entreprise/avis-entreprise/avis-entreprise.module').then(m=>m.AvisEntrepriseModule)},
       {path:'password',loadChildren:()=>import('./views/entreprise_view/modifier-password/modifier-password.module').then(m=>m.ModifierPasswordModule)},
       {path:'accepter',loadChildren:()=>import('./views/entreprise_view/acceptation-rdv/acceptation-rdv.module').then(m=>m.AcceptationRdvModule)},
-
+      {path:'can',loadChildren:()=>import('./calendrer-entreprise/calendrer-entreprise/calendrer-entreprise.module').then(m=>m.CalendrerEntrepriseModule)},
     ]},
   {path:'admin',component:LayoutAdminComponent,
     children:[
       {path:'statistique',loadChildren:()=>import('./views/admin_view/admin/admin/admin.module').then(m=>m.AdminModule)},
       {path:'entreprises',loadChildren:()=>import('./views/admin_view/superadmin/superadmin/superadmin.module').then(m=>m.SuperadminModule)},
       {path:'clients',loadChildren:()=>import('./views/admin_view/superadmin-client/superadmin-client/superadmin-client.module').then(m=>m.SuperadminClientModule)},
+      {path:'factures',loadChildren:()=>import('./views/admin_view/ad-fac/ad-fac.module').then(m=>m.AdFacModule)},
 
     ]
   },
+  { path: 'messagelogin',loadChildren:()=>import('./messagerie/login/login.module').then(m=>m.LoginModule)  },
+  { path: 'messagerie', loadChildren:()=>import( './messagerie/layout/home/home.module').then(m=>m.HomeModule) },
   {path:'**',component:NotfoundComponent}
 
 

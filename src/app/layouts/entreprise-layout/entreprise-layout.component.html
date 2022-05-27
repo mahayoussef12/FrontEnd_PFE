@@ -23,6 +23,8 @@
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><button class="dropdown-item" type="button"  [routerLink]="['/entreprise/', entreprise.id,'edit',entreprise.id]">Parametre Profile </button></li>
             <li><button class="dropdown-item" type="button"  [routerLink]="['/entreprise/', entreprise.id,'profil',entreprise.id]" >Consulter Profile </button></li>
+            <li><button class="dropdown-item" type="button"  [routerLink]="['/entreprise/', entreprise.id,'password',entreprise.id]" >Modifier mot de passe </button></li>
+
           </ul>
 
         </li>
@@ -39,23 +41,23 @@
           <a [routerLink]="['/entreprise/', entreprise.id,'facture',entreprise.id]" >
             <i class="bi bi-receipt"></i>Facture</a>
         </li>
-        <li>
+      <!--  <li>
           <a [routerLink]="['/entreprise/', entreprise.id,'can',entreprise.id]" >
             <i class="bi bi-calendar-date"  ></i>Rendez_Vous</a>
-        </li>
+        </li>-->
         <li>
           <a class=" dropdown-toggle"  style="height: 20%" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i>
            Rendez vous
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><button class="dropdown-item" type="button"  [routerLink]="['/entreprise/', entreprise.id,'can',entreprise.id]">Calendrier </button></li>
-            <li><button class="dropdown-item" type="button" >Manipuler les rendez vous  </button></li>
+            <li><button class="dropdown-item" type="button" [routerLink]="['/entreprise/', entreprise.id,'accepter',entreprise.id]" >Manipuler les rendez vous  </button></li>
           </ul>
 
         </li>
         <li>
           <a [routerLink]="['/entreprise/', entreprise.id,'avisEntreprise',entreprise.id]" >
-            <i class="bi bi-chat-right-text"></i>Rendez_Vous</a>
+            <i class="bi bi-chat-right-text"></i>Commentaire</a>
         </li>
         <li>
           <a href="#">

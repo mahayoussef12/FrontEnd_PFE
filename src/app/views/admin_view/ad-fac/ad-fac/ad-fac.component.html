@@ -1,0 +1,39 @@
+<div class="page-wrapper">
+
+  <div class="dash-content-wrap">
+    <br>
+    <br>
+    <br>
+  <div class="container">
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">numéro de facture</th>
+
+        <th scope="col">Date de creation</th>
+        <th scope="col">date de validation</th>
+        <th scope="col">Action</th>
+
+      </tr>
+      </thead>
+      <tbody>
+
+
+      <tr  *ngFor=" let fac of factures" >
+        <td>{{fac.id_facture}}</td>
+        <td>{{fac.num_facture}}</td>
+        <td>{{fac.date_creation}}</td>
+        <td>{{fac.date_validation  | date: 'dd-MM-yyyy'}}</td>
+
+        <button type="button" class="btn btn-outline-success">consulter</button>
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

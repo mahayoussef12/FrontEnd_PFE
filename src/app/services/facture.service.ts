@@ -34,4 +34,7 @@ export class FactureService {
     const ap = `${this.ap}/${cle}`;
     return this.http.get<any>(ap);
   }
+  getAllFacture(): Observable<Facture[]> {
+    return this.http.get<Facture[]>('http://localhost:8082/api/v1/factures');
+  }
 }

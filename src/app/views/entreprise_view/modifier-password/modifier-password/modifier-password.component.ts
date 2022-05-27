@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as bcrypt from 'bcryptjs';
 import {EntrepriseService} from "../../../../services/entreprise.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Entreprise} from "../../../../Entreprise";
 import {NgToastService} from "ng-angular-popup";
 @Component({
@@ -15,7 +15,7 @@ entrepriseId: any;
    entreprise!: Entreprise;
   nvpsswd!: any;
 
-  constructor(private entrepriseService: EntrepriseService,private route: ActivatedRoute,private toast:NgToastService) { }
+  constructor(private entrepriseService: EntrepriseService,private route: ActivatedRoute,private toast:NgToastService,private router:Router) { }
 
   ngOnInit(): void {
     this.entrepriseId = this.route.snapshot.params["id"];
@@ -42,6 +42,8 @@ entrepriseId: any;
             position: 'br',
             duration: 7000
           })
+          this.router.navigate(['entreprise',this.entreprise.id,"profil",this.entreprise.id])
+
         } else {
           console.log("non update")
           this.toast.error({detail: 'Erreur...', summary: 'la Changement non parfaite', position: 'br', duration: 5000})

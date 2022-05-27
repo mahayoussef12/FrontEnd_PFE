@@ -37,6 +37,10 @@ export class TvComponent implements OnInit {
   private hour!: number;
   private min!: number;
   private seconde!: number;
+  private sous_hour!: string;
+  private sous_minute!: string;
+  private sous_seconde!: string;
+  private maha!: string;
 
 
 
@@ -57,10 +61,23 @@ export class TvComponent implements OnInit {
       this.lists= response
 
       for (let i in this.lists){
-        this.hour=Number(this.lists[i].substring(0,1))
-        this.min=Number(this.lists[i].substring(2,4))
-        this.seconde=Number(this.lists[i].substring(5,7));
+        this.maha=this.lists[i].substring(0,1)+0+0+0+this.lists[i].substring(2,4)+ 0+this.lists[i].substring(5,7)
+
+        this.sous_hour=this.lists[i].substring(0,1);
+
+
+  this.sous_minute=this.maha.substring(2,5)
+        console.log(this.sous_minute)
+        this.sous_seconde=this.maha.substring(7,10)
+        console.log(this.sous_seconde)
+        this.hour=Number(this.sous_hour);
+
+        this.min=Number(this.sous_minute);
+
+        this.seconde=Number(this.sous_seconde);
+        console.log(this.hour)
         this.enSeconde=this.hour*3600+this.min*60+this.seconde
+        console.log(this.enSeconde)
         this.arr.push(this.enSeconde)
         for(let i in this.arr){
           this.countDown = timer(0, this.tick).subscribe(() => --this.arr[i]);

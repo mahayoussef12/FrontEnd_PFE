@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntrepriseLayoutComponent } from './entreprise-layout.component';
+import { AdFacComponent } from './ad-fac.component';
 
-describe('EntrepriseLayoutComponent', () => {
-  let component: EntrepriseLayoutComponent;
-  let fixture: ComponentFixture<EntrepriseLayoutComponent>;
+describe('AdFacComponent', () => {
+  let component: AdFacComponent;
+  let fixture: ComponentFixture<AdFacComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EntrepriseLayoutComponent ]
+      declarations: [ AdFacComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntrepriseLayoutComponent);
+    fixture = TestBed.createComponent(AdFacComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

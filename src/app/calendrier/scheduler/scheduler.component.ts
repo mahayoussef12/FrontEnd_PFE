@@ -19,7 +19,7 @@ import {ClientService} from "../../services/client.service";
         <daypilot-navigator [config]="configNavigator" [events]="events" #navigator></daypilot-navigator>
       </div>
       <div class="content">
-        <daypilot-calendar [config]="configCalendar" [events]="events" #calendar></daypilot-calendar>
+        <daypilot-calendar [config]="configCalendar" [events]="events" #calendar min="2022-05-26T14:30"></daypilot-calendar>
       </div>
     </div>
 

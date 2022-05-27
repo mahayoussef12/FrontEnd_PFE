@@ -1,4 +1,15 @@
-<input type="datetime-local" id="birthdaytime" name="birthdaytime" [(ngModel)]="newrdv.date_rdv">
+<!--<input type="datetime-local" id="birthdaytime" name="birthdaytime" [(ngModel)]="newrdv.date_rdv">
 <input type="text" [(ngModel)]="newrdv.client" />
 <input type="text"   [(ngModel)]="newrdv.entreprise">
-<button type="submit" (click)="test()">test</button>
+<button type="submit" (click)="test()">test</button>-->
+<!--<div class="container">
+  <input type="datetime-local" min="{{min}}" #input (change)="onChange(input.value)"/>
+
+</div>-->
+
+<div class="input-box-container">
+  <input class="input-box" placeholder="Click to select a date"
+         angular-mydatepicker name="mydate" (click)="dp.toggleCalendar()"
+         [(ngModel)]="model" [options]="myDpOptions"
+         #dp="angular-mydatepicker"/>
+</div>

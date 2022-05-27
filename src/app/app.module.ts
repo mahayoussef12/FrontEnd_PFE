@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SearchComponent } from './search_view/search/search.component';
-
-
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CompteEntrepriseComponent } from './views/entreprise_view/compte-entreprise/compte-entreprise.component';
@@ -48,7 +46,6 @@ import { RdvEntrepriseComponent } from './views/entreprise_view/rdv-entreprise/r
 import { HoraireEntrepriseComponent } from './inscription_entreprise/horaire-entreprise/horaire-entreprise.component';
 import { AvisEntrepriseComponent } from './views/entreprise_view/avis-entreprise/avis-entreprise.component';
 import { CodeConfirmationComponent } from './code-confirmation/code-confirmation.component';
-
 import {LayoutsModule} from "./layouts/layouts.module";
 import { EditProfileComponent } from './views/client_view/edit-profile/edit-profile.component';
 import {SchedulerModule} from "./calendrier/scheduler/scheduler.module";
@@ -56,9 +53,13 @@ import { InscriptionClientComponent } from './inscription-client/inscription-cli
 import {FormatTimePipe, TvComponent} from './tv/tv.component';
 import {QRCodeModule} from "angularx-qrcode";
 import { PrendreRdvComponent } from './prendre-rdv/prendre-rdv.component';
-
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {AngularMyDatePickerModule} from "angular-mydatepicker";
+import { RdvComponent } from './rdv/rdv.component';
 @NgModule({
   declarations: [
     FormatTimePipe,
@@ -77,9 +78,13 @@ import { PrendreRdvComponent } from './prendre-rdv/prendre-rdv.component';
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent, RdvComponent
   ],
   imports: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -87,7 +92,7 @@ import { PrendreRdvComponent } from './prendre-rdv/prendre-rdv.component';
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule,SocialLoginModule,DayPilotModule,SchedulerModule,
-    NgToastModule,LayoutsModule, QRCodeModule
+    NgToastModule,LayoutsModule, QRCodeModule, BrowserAnimationsModule,AngularMyDatePickerModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',

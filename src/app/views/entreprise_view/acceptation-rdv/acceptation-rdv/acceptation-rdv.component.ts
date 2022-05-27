@@ -22,11 +22,23 @@ export class AcceptationRdvComponent implements OnInit {
   }
 
   accepter(rdv: rendez_vous) {
-    let conf = confirm("Etes-vous sûr du desactiver le commentaire ?");
+    let conf = confirm("Etes-vous sûr du accepter rendez vous ?");
     if (conf)
       this.rdvservice.accepterrdv(rdv.id_RDV).subscribe(() => {
 
-        this.toast.success({detail:'Bravo..',summary:'desactiver commentaire avec success',position:'br',duration:9000})
+        this.toast.success({detail:'Bravo..',summary:'Acceptation rendez vous',position:'br',duration:9000})
+
+      })
+
+
+  }
+
+  delete(rdv: rendez_vous) {
+    let conf = confirm("Etes-vous sûr du n'accepte pas rendez vous ?");
+    if (conf)
+      this.rdvservice.deleteRDV(rdv.id_RDV).subscribe(() => {
+
+        this.toast.warning({detail:'Bravo..',summary:'Refuse les rendez vous ',position:'br',duration:9000})
 
       })
 

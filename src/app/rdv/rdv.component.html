@@ -1,0 +1,143 @@
+<!--<mat-form-field appearance="fill">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [dateFilter]="myFilter" [rangePicker]="picker" [max]="maxDate">
+    <input matStartDate placeholder="Start date" [(ngModel)]="startDate" (dateChange)="startDateChanged($event)"/>
+    <input matEndDate placeholder="End date" [(ngModel)]="endDate"/>
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+<br/>
+<button mat-button (click)="clearSelection()">Clear</button>-->
+
+<!--<mat-datepicker-toggle [for]="resultPicker"></mat-datepicker-toggle>
+<mat-form-field>
+  <mat-label>Pick a date</mat-label>
+  <input matInput
+         #resultPickerModel="ngModel"
+         [matDatepicker]="resultPicker"
+         [(ngModel)]="date"
+         [matDatepickerFilter]="dateFilter">
+  <mat-datepicker #resultPicker>
+  </mat-datepicker>
+  <mat-error *ngIf="resultPickerModel.hasError('matDatepickerParse')">
+    "{{resultPickerModel.getError('matDatepickerParse').text}}"
+    is not a valid date!
+  </mat-error>
+  <mat-error *ngIf="resultPickerModel.hasError('matDatepickerFilter')">
+    Date unavailable! It's a weekend.
+  </mat-error>
+</mat-form-field>-->
+<body>
+
+<!--Page Wrapper starts-->
+<div class="page-wrapper fixed-footer">
+  <!--header starts-->
+  <header class="transparent scroll-hide">
+    <!--Main Menu starts-->
+    <div class="site-navbar-wrap v1">
+      <div class="container">
+        <div class="site-navbar">
+          <div class="row align-items-center">
+            <div class="col-md-4 col-6">
+              <!--
+                            <img src="assets/step_1_make_an_appointment_3.png" style="width: 30%;height: 30%">
+              -->
+              <p>Mawaaied</p>
+            </div>
+            <div class="col-md-8 col-6">
+              <nav class="site-navigation float-left">
+                <div class="container">
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="has-children">
+                      <a href="#">Home</a>
+                      <ul class="dropdown">
+                        <li><a href="home-v1.html">Home Tab</a></li>
+
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="d-lg-none sm-right">
+                <a href="#" class="mobile-bar js-menu-toggle">
+                  <span class="ion-android-menu"></span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--mobile-menu starts -->
+        <div class="site-mobile-menu">
+          <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close  js-menu-toggle">
+              <span class="ion-ios-close-empty"></span>
+            </div>
+          </div>
+          <div class="site-mobile-menu-body"></div>
+        </div>
+        <!--mobile-menu ends-->
+      </div>
+    </div>
+    <!--Main Menu ends-->
+  </header>
+  <div class="listing-details-wrapper bg-f" style="background-image: url(../../../assets/step_1_make_an_appointment_3.png);height: 100vh">
+    <div class="overlay op-3"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="list-details-title v1">
+            <div class="row">
+              <div class="col-lg-6 col-md-7 col-sm-12">
+                <div class="single-listing-title float-left">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div >
+    <br>
+    <br>
+    <br>
+    <div class="listing-sidebar">
+      <div class="sidebar-widget info">
+        <h3><i class="bi bi-calendar"></i>Prendre un Rendez Vous : </h3>
+        <div class="row">
+          <div class="col-md-12 mar-bot-15">
+            <div class="nice-select filter-input mar-top-0" tabindex="0"><span class="current">Choisir votre entreprise</span>
+              <ul class="list">
+                <li class="option selected focus">Standard Single Room </li>
+                <li class="option" *ngFor="let en of test" value="{{en.id}}">{{en.nomSociete}}</li>
+              </ul>
+            </div>
+          </div>
+         <div>
+           <mat-form-field style="width: 100%">
+
+             <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myHolidayFilter"  placeholder="choisir date ">
+
+             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+             <mat-datepicker #picker ></mat-datepicker>
+
+           </mat-form-field>
+         </div>
+          <div> <textarea placeholder="Decrire Sujet de votre rendez vous "cols="180" rows="6"></textarea>
+
+      </div>
+        <div class="book-btn text-center">
+          <a href="booking.html"> prendre un rendez vous</a>
+        </div>
+      </div>
+</div>
+    </div>
+  </div>
+</div>
+</body>
