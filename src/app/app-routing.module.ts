@@ -37,6 +37,8 @@ import {LayoutAdminComponent} from "./layouts/layout-admin/layout-admin.componen
 import {TvComponent} from "./tv/tv.component";
 import {PrendreRdvComponent} from "./prendre-rdv/prendre-rdv.component";
 import {RdvComponent} from "./rdv/rdv.component";
+import {TestComponent} from "./test/test.component";
+import {EntrepriseServiceComponent} from "./inscription_entreprise/entreprise-service/entreprise-service.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -57,6 +59,7 @@ const routes: Routes = [
   {path:'client',component:InscriptionClientComponent},
   {path:'tv/:id',component:TvComponent},
   {path:'rdv',component:RdvComponent},
+  {path:'test',component:EntrepriseServiceComponent},
   {path:'client/:id',component:ClientLayoutComponent,
     children:[
       {path:'dashbord',loadChildren:()=>import('./views/client_view/dashbord/dashbord.module').then(m=>m.DashbordModule)},
@@ -72,7 +75,7 @@ const routes: Routes = [
       {path:'dashbord',loadChildren:()=>import('./views/entreprise_view/compte-entreprise/compte-entreprise/compte-entreprise.module').then(m=>m.CompteEntrepriseModule)},
       {path:'profil',loadChildren:()=>import('./views/entreprise_view/profile-entreprise/profile-entreprise/profile-entreprise.module').then(m=>m.ProfileEntrepriseModule)},
       {path:'facture',loadChildren:()=>import('./views/entreprise_view/compte-en-facture/compte-en-facture/compte-en-facture.module').then(m=>m.CompteEnFactureModule)},
-      {path:'edit',loadChildren:()=>import('./views/entreprise_view/edit-profile-entreprise/edit-profile-entreprise/edit-profile-entreprise.module').then(m=>m.EditProfileEntrepriseModule)},
+      {path:'editen',loadChildren:()=>import('./views/entreprise_view/edit-profile-entreprise/edit-profile-entreprise/edit-profile-entreprise.module').then(m=>m.EditProfileEntrepriseModule)},
       {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)},
       {path:'avisEntreprise',loadChildren:()=>import('./views/entreprise_view/avis-entreprise/avis-entreprise/avis-entreprise.module').then(m=>m.AvisEntrepriseModule)},
       {path:'password',loadChildren:()=>import('./views/entreprise_view/modifier-password/modifier-password.module').then(m=>m.ModifierPasswordModule)},

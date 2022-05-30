@@ -23,6 +23,9 @@ export class SearchUserComponent implements OnInit {
 maha!: avis[];
   brandForm!:FormGroup;
   isSubmitted = false;
+
+  p: number=1;
+
   constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private rendezvouservice:Rendez_vousService,private toast:NgToastService,private _fb: FormBuilder) {
   }
   ngOnInit(): void {

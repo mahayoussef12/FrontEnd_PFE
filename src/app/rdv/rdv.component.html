@@ -28,7 +28,7 @@
     Date unavailable! It's a weekend.
   </mat-error>
 </mat-form-field>-->
-<body>
+
 
 <!--Page Wrapper starts-->
 <div class="page-wrapper fixed-footer">
@@ -113,12 +113,21 @@
           <div class="col-md-12 mar-bot-15">
             <div class="nice-select filter-input mar-top-0" tabindex="0"><span class="current">Choisir votre entreprise</span>
               <ul class="list">
-                <li class="option selected focus">Standard Single Room </li>
-                <li class="option" *ngFor="let en of test" value="{{en.id}}">{{en.nomSociete}}</li>
+                <li class="option selected focus">Choisir un entreprise </li>
+                <li class="option" *ngFor="let en of entreprise" value="{{en.id}}">{{en.nomSociete}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12 mar-bot-15">
+            <div class="nice-select filter-input mar-top-0" tabindex="0"><span class="current">Choisir Service  </span>
+              <ul class="list">
+                <li class="option selected focus"> Choisir Service</li>
+                <li class="option" *ngFor="let en of serv" value="{{en.id_service}}">{{en.lib_service}}</li>
               </ul>
             </div>
           </div>
          <div>
+
            <mat-form-field style="width: 100%">
 
              <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myHolidayFilter"  placeholder="choisir date ">
@@ -133,11 +142,10 @@
 
       </div>
         <div class="book-btn text-center">
-          <a href="booking.html"> prendre un rendez vous</a>
+          <a > prendre un rendez vous</a>
         </div>
       </div>
 </div>
     </div>
   </div>
 </div>
-</body>

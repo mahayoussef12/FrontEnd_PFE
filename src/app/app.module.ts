@@ -60,6 +60,11 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {AngularMyDatePickerModule} from "angular-mydatepicker";
 import { RdvComponent } from './rdv/rdv.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { TestComponent } from './test/test.component';
+import { EntrepriseServiceComponent } from './inscription_entreprise/entreprise-service/entreprise-service.component'
+import {MatCardModule} from "@angular/material/card";
+import {NgxMatDatetimePickerModule, NgxMatTimepickerModule} from "@angular-material-components/datetime-picker";
 @NgModule({
   declarations: [
     FormatTimePipe,
@@ -78,7 +83,7 @@ import { RdvComponent } from './rdv/rdv.component';
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent, RdvComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent, RdvComponent, TestComponent, EntrepriseServiceComponent
   ],
   imports: [
     MatDatepickerModule,
@@ -91,8 +96,8 @@ import { RdvComponent } from './rdv/rdv.component';
     HttpClientModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
-    }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule,SocialLoginModule,DayPilotModule,SchedulerModule,
-    NgToastModule,LayoutsModule, QRCodeModule, BrowserAnimationsModule,AngularMyDatePickerModule
+    }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule, SocialLoginModule, DayPilotModule, SchedulerModule,
+    NgToastModule, LayoutsModule, QRCodeModule, BrowserAnimationsModule, AngularMyDatePickerModule, NgxPaginationModule, MatCardModule, NgxMatDatetimePickerModule, NgxMatTimepickerModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',

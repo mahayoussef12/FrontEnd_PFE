@@ -1,6 +1,7 @@
 
 <body>
 <div class="page-wrapper">
+  <div class="dash-content-wrap">
     <div class="dash-breadcrumb">
       <div class="container-fluid">
         <div class="row">
@@ -9,7 +10,7 @@
               <div class="dash-breadcrumb-left">
                 <div class="breadcrumb-menu text-right sm-left">
                   <ul>
-                    <li class="active"><p>Home</p></li>
+                    <li class="active"><p>Accueil</p></li>
                     <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
                     <li>My Profile</li>
                     <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
@@ -76,17 +77,17 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label>Email id</label>
+                          <label>Email </label>
                           <input type="email" class="form-control filter-input" required [(ngModel)]="employee.email" name="Email id" >
                         </div>
                       </div>
 
-                      <div class="col-md-6">
+                 <!--     <div class="col-md-6">
                         <div class="form-group">
                           <label>Mdp</label>
-                          <input type="email" class="form-control filter-input" required [(ngModel)]="employee.mdp" name="mdp" >
+                          <input type="password" class="form-control filter-input" required [(ngModel)]="employee.mdp" name="mdp" >
                         </div>
-                      </div>
+                      </div>-->
                       <div class="col-md-6">
                         <div class="form-group">
                           <label>categorie</label>
@@ -108,12 +109,12 @@
                       </div>
 
                       <div class="col-md-6">
-                        <div class="form-group">
+                     <!--   <div class="form-group">
                           <label>date creation </label>
                           <input type="date" class="form-control filter-input" required [(ngModel)]="employee.creationEntreprise" name="creation" >
-                        </div>
+                        </div>-->
                       <div class="col-md-12">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success">Modifier</button>
                       </div>
                     </div>
 
@@ -128,4 +129,5 @@
               </div>
             </div>
           </div>
+</div>
 </body>

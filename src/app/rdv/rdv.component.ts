@@ -2,6 +2,9 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Rendez_vousService} from "../services/rendez_vous.service";
 import {EntrepriseService} from "../services/entreprise.service";
 import {Entreprise} from "../Entreprise";
+import {DatePipe} from "@angular/common";
+import {ServiseService} from "../services/servise.service";
+import {service} from "../servise";
 
 @Component({
   selector: 'app-rdv',
@@ -10,37 +13,45 @@ import {Entreprise} from "../Entreprise";
   encapsulation: ViewEncapsulation.None
 })
 export class RdvComponent implements OnInit {
+  selectedTime: Date | null = null;
+  date: any;
 
-  date : any;
+  pipe = new DatePipe('en-US');
+  private day!: string;
+  private month!: string;
+  private year!: number;
+
+  private test!: any;
+  private maha: Date[]=[];
+ min!: Date;
+ entreprise!: Entreprise[];
+serv!: service[];
 
 
-  private min!: string;
-test!: Entreprise[];
 
-constructor(private rdv:Rendez_vousService,private entrepriseservice:EntrepriseService) {
-}
+  constructor(private rdv: Rendez_vousService, private entrepriseservice: EntrepriseService,private service:ServiseService) {
+  }
+
   ngOnInit() {
-    /* this.rdv.test(1).subscribe((prod)=>{
-       this.test=prod
-       for (let i of this.test){
-           var tdate:any=this.test[i]
-           var date:any=tdate.getDate()
-           if(date<10){
-             date="0"+date;
-           }
-           var month:any=tdate.getMonth()+1
-           if(month<10){month="0"+month}
-           var year:any=tdate.getFullYear();
-           var hours:any=tdate.getHours();
-           var minutes:any=tdate.getMinutes()
-           if(minutes<10){minutes="0"+minutes}
-           this.min=month+"/"+date+"/"+year
-       }
-       console.log(prod)
-     })*/
-    this.entrepriseservice.getAllEntreprise().subscribe((prod) => {
+
+    this.rdv.test(1).subscribe((prod) => {
       this.test = prod
+      for (let i in this.test) {
+this.year=this.test[i].substring(0,4)
+        this.month=this.test[i].substring(5,7)
+        this.day=this.test[i].substring(8,10)
+        this.date=this.month+"/"+this.day+"/"+this.year
+       this.maha.push(new Date(this.date))
+      }
+      console.log(this.maha)
     })
+     this.entrepriseservice.getAllEntreprise().subscribe((prod) => {
+       this.entreprise = prod
+     })
+    this.service.listService(2).subscribe(prod => {
+      this.serv = prod;
+      console.log(this.serv)  }
+    )
   }
 
   dateFilter: (date: Date | null) => boolean =
@@ -53,28 +64,16 @@ constructor(private rdv:Rendez_vousService,private entrepriseservice:EntrepriseS
 
 
 
-  myHolidayDates = [
-
-    new Date("05/18/2022"),
-
-    new Date("28/18/2022"),
 
 
-
-
-  ];
-
-
-  myHolidayFilter = (d: Date|null) : boolean => {
-    const date = d || new Date();
-
-    const time=d!.getTime()
-    const day = date!.getDay();
-    const test=day !== 0 && day !== 6
-    return !this.myHolidayDates.find(x=>x.getTime()==time)&& test;
-
+  myHolidayFilter = (d: Date| null): boolean => {
+    const time=d!.getTime();
+    const day = d!.getDay();
+    const weekend=day !== 0 && day !== 6;
+    return !this.maha.find(x=>x.getTime()==time)&&weekend;
 
   }
+
 }
 
 

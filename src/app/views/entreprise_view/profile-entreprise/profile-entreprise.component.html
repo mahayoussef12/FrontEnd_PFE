@@ -10,15 +10,15 @@
               <div class="dash-breadcrumb-left">
                 <div class="breadcrumb-menu text-right sm-left">
                   <ul>
-                    <li class="active"><p>Home</p></li>
-                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
-                    <li>My Profile</li>
+                    <li class="active"><a href="#">Accueil</a></li>
+                    <li>Profile</li>
                   </ul>
                 </div>
               </div>
+
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
           <div class="col-md-10 offset-md-1">
             <div class="recent-activity">
               <div class="act-title">
-                <h5><i class="ion-person"></i>Profile Details</h5>
+                <h5><i class="bi bi-person"></i>Profile Details</h5>
               </div>
               <div class="profile-wrap">
                 <div class="row">
@@ -64,9 +64,19 @@
                           <h6>Categorie :</h6>
                           <span>{{entreprise.categorie}}</span>
                         </li>
+                        <li>
+                          <div id="image-content">
+                            <div class="qrcode-img">
+                              <div id="qrcode"></div>
+                            </div>
+                          </div>
+                          <button type="button" class="btn btn-outline-dark" (click)="saveImage()" style="margin-left: 20%;">Telecharger CodeQR</button>
+                        </li>
                       </ul>
                       <a  class="btn v5" >Modifier profile</a>
+<!--
                       <a (click)="delete(entreprise)" class="btn v5" style="margin-left: 80%;background-color: red">Desactiver votre compte</a>
+-->
                     </div>
                   </div>
                 </div>

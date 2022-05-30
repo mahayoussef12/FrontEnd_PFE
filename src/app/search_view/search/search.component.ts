@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   nom!: string | null;
   entreprise!: Entreprise[];
    aviss:any;
+  p: number=1;
 
   constructor(private entrepriseService:EntrepriseService, private activatedRoute: ActivatedRoute,private router:Router,private avisservice:AvisService) {
   }

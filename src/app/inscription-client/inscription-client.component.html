@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
 
 
-
-<body>
 <!--Page Wrapper starts-->
 <div class="page-wrapper">
   <div class="user-login-section section-padding bg-fixed" style="background-image: url(../../assets/hero-5.jpg)">
@@ -18,7 +14,7 @@
             </ul>
             <div class="ui-dash tab-content">
               <div class="tab-pane fade show active" id="login" role="tabpanel">
-                <form [formGroup]="brandForm"  (ngSubmit)="onSubmit()">
+                <form [formGroup]="brandForm"  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                   <div class="form-group">
                     <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nom:" value="" formControlName="nom"  >
                     <div class="alert-danger">
@@ -91,14 +87,19 @@
                     <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['genre'].errors">* Required</div></div>
                   </div>
                   <br>
-                  <!--                <div class="form-group">
+                                 <!-- <div class="form-group">
                                     <input type="file"
-                                           id="avatar" name="avatar"
+                                           id="avatar" formControlName="images"
                                            accept="image/png, image/jpeg">
                                   </div>-->
-                  <div class="form-group">
+                 <!-- <div class="form-group">
                     <input type="text" formControlName="images">
                     <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['images'].errors">* Required</div></div>
+                  </div>-->
+                  <div class="form-group">
+                    <label>File Upload  </label>
+                    <input type="file" accept="image/*" (change)="onSelectFile($event)">
+                    <img [src]="imgURL" height="200" *ngIf="imgURL">
                   </div>
                   <br>
                   <div class="res-box text-center mar-top-30">
@@ -118,7 +119,3 @@
 </div>
 <!--Page Wrapper ends-->
 
-
-</body>
-
-</html>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpRequest} from '@angular/common/http';
 import {Observable} from "rxjs";
 import {Client} from "../Client";
 import {User} from "../User";
@@ -22,8 +22,8 @@ export class ClientService {
   /*  create(data: any): Observable<any> {
       return this.http.post(baseUrl, data);
     }*/
-    create(prod: Client): Observable<Client> {
-    return this.http.post<Client>(this.baseUrl, prod);
+  create(formData: FormData): Observable<any> {
+    return this.http.post<Client>(this.baseUrl,formData);
   }
 
   getClientById(cle: number): Observable<Client> {
@@ -47,5 +47,16 @@ export class ClientService {
     const url = `${'http://localhost:8082/api/v1/user/maha'}/${email}`;
     return this.http.get<User>(url);
 
+  }
+
+  uploadFile(file: File): Observable<HttpEvent<{}>> {
+    const formdata: FormData = new FormData();
+    formdata.append('file', file);
+    const req = new HttpRequest('POST', '<Server URL of the file upload>', formdata, {
+      reportProgress: true,
+      responseType: 'text'
+    });
+
+    return this.http.request(req);
   }
 }

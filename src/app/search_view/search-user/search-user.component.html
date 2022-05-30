@@ -1,9 +1,4 @@
 
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-
-
-<body>
 
 <!--Page Wrapper starts-->
 <div class="page-wrapper fixed-footer">
@@ -139,7 +134,7 @@
             </div>
             <div id="reviews" class="list-details-section">
               <h4>Commentaires: <span>{{count}}</span></h4>
-              <div class="review-box" *ngFor="let avis of maha">
+              <div class="review-box" *ngFor="let avis of maha| paginate: { itemsPerPage: 3, currentPage: p }">
                 <ul class="review_wrap">
                   <li>
                     <div class="customer-review_wrap" >
@@ -167,6 +162,7 @@
 
             </div>
           </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
         </div>
         <div class="col-lg-4 col-md-12">
@@ -317,7 +313,5 @@
   </div>
 </div>
 <!--Scripts ends-->
-</body>
 
-</html>
 

@@ -37,11 +37,10 @@ export class AvisEntrepriseComponent implements OnInit {
 
 
   delete(avis: avis) {
-    let conf = confirm("Etes-vous sûr du desactiver le commentaire ?");
+    let conf = confirm("Etes-vous sûr d'activer le commentaire ?");
     if (conf)
       this.avisservice.update(avis.id_avis).subscribe(() => {
-        console.log("supprimé");
-        this.toast.success({detail:'Bravo..',summary:'desactiver commentaire avec success',position:'br',duration:5000})
+        this.toast.success({detail:'Bravo..',summary:'Activation du commentaire avec success',position:'br',duration:5000})
 
       })
 
