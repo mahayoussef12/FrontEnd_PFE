@@ -19,19 +19,61 @@ export class LoginComponent implements OnInit {
   newUser = new User();
   clients!: Client;
   private entreprise!: Entreprise[];
+  private tab!: User;
+  private id!: any;
+  email: any;
+  mdp: any;
+  private en!: Client;
+  private entre!: Entreprise;
 
   constructor(private socialAuthService: SocialAuthService,private registerService: ClientService, private entrepriseService: EntrepriseService, private userservice: UserService, private activatedRoute: ActivatedRoute,private router:Router) {
   }
 
   ngOnInit(): void {
+
+
   }
 
 
 
   register() {
-    this.registerService.testing(this.newUser.email).subscribe(prod => {
+    this.registerService.testing(this.email).subscribe(prod => {
+      this.tab = prod;
+      if (this.tab.role == "entreprise") {
+        this.registerService.en(this.email).subscribe(prod => {
+          this.id = prod
+          console.log(prod)
+          this.entrepriseService.getEntrepriseById(this.id).subscribe(prod => {
+            this.entre = prod
+            if (bcrypt.compareSync(this.mdp, <string>this.entre.mdp)) {
+              this.router.navigate(['/entreprise/', this.id, 'dashbord', this.id])
+              localStorage.setItem("entreprise", JSON.stringify(this.id));
+            }
 
+          })
+        })
+
+      }
+
+      if (this.tab.role == "client") {
+        this.registerService.test(this.email).subscribe(prod => {
+          this.id = prod
+
+            this.registerService.getClientById(this.id).subscribe(prod => {
+              this.en = prod
+            if (bcrypt.compareSync(this.mdp, <string>this.en.mdp)) {
+
+              this.router.navigate(['/client/', this.id, 'dashbord', this.id])
+              localStorage.setItem("client", JSON.stringify(this.id));
+            }
+          })
+        })
+      }
     })
+  }
+
+
+
    /* this.registerService.getAllEmail(this.newUser.email).subscribe(async prod => {
       this.clients = prod;
       console.log(prod)
@@ -49,7 +91,7 @@ export class LoginComponent implements OnInit {
     this.entrepriseService.getAllEmail(this.newUser.email).subscribe(prod=>{
       this.entreprise=prod;
     })*/
-  }
+
 
 
   loginWithGoogle() :void {

@@ -22,8 +22,10 @@ export class Rendez_vousService {
 
   constructor(private http: HttpClient) {
   }
-  createRDV(prod:rendez_vous): Observable<rendez_vous> {
-    return this.http.post<rendez_vous>(this.baseUrl,prod);
+
+  createRDV(prod: rendez_vous, idEntreprise: number|null, idClient: string|null, idService: number): Observable<rendez_vous> {
+    const url = `${'http://localhost:8082/api/v1/RDV/create'}/${idEntreprise}/${idClient}/${idService}`;
+    return this.http.post<rendez_vous>(url,prod);
   }
   deleteRDV(id: number | undefined) { const url = `${this.apiDelete}/${id}`; return this.http.delete(url); }
   getRdvDate(cle:number):Observable<Date[]>{

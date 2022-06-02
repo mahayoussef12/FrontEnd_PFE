@@ -148,7 +148,8 @@
                             <h6>Commentaire:</h6>
                             <p></p>
                           </div>
-                          <ngx-star-rating style="width: 20%"  [ngModel]="avis.start" [id]="'rating'" ></ngx-star-rating>
+                          <div class="star">
+                          <ngx-star-rating   [ngModel]="avis.start" [id]="'rating'" style="height: 20%" ></ngx-star-rating></div>
                         </div>
                         <p class="customer-text">{{avis.description}} </p>
                         <div class="like-btn mar-top-40">

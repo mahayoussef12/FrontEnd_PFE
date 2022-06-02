@@ -30,7 +30,7 @@ export class HoraireEntrepriseComponent implements OnInit {
   }
   get _fc() { return this.brandForm.controls; }
   horaire() {
-this.router.navigate(['entreprise'])
+this.router.navigate(['service'])
   }
 
   enregistre() {

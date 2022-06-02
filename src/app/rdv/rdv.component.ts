@@ -5,6 +5,8 @@ import {Entreprise} from "../Entreprise";
 import {DatePipe} from "@angular/common";
 import {ServiseService} from "../services/servise.service";
 import {service} from "../servise";
+import {rendez_vous} from "../rendez_vous";
+import {NgToastService} from "ng-angular-popup";
 
 @Component({
   selector: 'app-rdv',
@@ -26,10 +28,11 @@ export class RdvComponent implements OnInit {
  min!: Date;
  entreprise!: Entreprise[];
 serv!: service[];
+newrdv=new rendez_vous()
+   id!: string|null;
 
 
-
-  constructor(private rdv: Rendez_vousService, private entrepriseservice: EntrepriseService,private service:ServiseService) {
+  constructor(private toast: NgToastService,private rdv: Rendez_vousService, private entrepriseservice: EntrepriseService,private service:ServiseService) {
   }
 
   ngOnInit() {
@@ -73,7 +76,18 @@ this.year=this.test[i].substring(0,4)
     return !this.maha.find(x=>x.getTime()==time)&&weekend;
 
   }
+  ent: any;
+  ser: any;
 
+  submit() {
+    this.id=localStorage.getItem('client')
+    console.log(this.ser)
+    console.log(this.ent)
+    console.log(this.newrdv.date_rdv)
+    this.rdv.createRDV(this.newrdv,this.ent,this.id,this.ser).subscribe(prod=>{
+      this.toast.success({detail: "Rendez vous ajouter avec sucess", summary: "Bravo..", duration: 9000})
+    })
+  }
 }
 
 

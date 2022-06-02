@@ -16,7 +16,7 @@
               <div class="tab-pane fade show active" id="login" role="tabpanel">
                 <form [formGroup]="brandForm"  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
                   <div class="form-group">
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nom:" value="" formControlName="nom"  >
+                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Nom:" value="" formControlName="nom"  [(ngModel)]="newUser.username"  >
                     <div class="alert-danger">
                       <div *ngIf="isSubmitted && _fc['nom'].errors">* Required</div>
                       <div *ngIf="_fc['nom'].errors && brandForm.controls['nom'].hasError('minlength')">Minimum length is 4</div>
@@ -31,7 +31,7 @@
                   </div>
                   <br>
                   <div class="form-group">
-                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mot de passe: " formControlName="mdp">
+                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Mot de passe: " formControlName="mdp" [(ngModel)]="newUser.mdp">
                     <div class="alert-danger">
                     <div *ngIf="isSubmitted && _fc['mdp'].errors">* Required</div>
                     <div *ngIf="_fc['mdp'].errors && brandForm.controls['mdp'].hasError('minlength')">Minimum length is 4</div>
@@ -46,11 +46,10 @@
                   </div>
                   <br>
                   <div class="form-group">
-                    <input type="email" name="email"id="username" tabindex="1" class="form-control" placeholder="Email:" value="" formControlName="email" >
+                    <input type="email" name="email"id="username" tabindex="1" class="form-control" placeholder="Email:" value="" formControlName="email"  [(ngModel)]="newUser.email">
                     <div class="alert-danger">
                     <div *ngIf="isSubmitted && _fc['nom'].errors">* Required</div>
                     <div *ngIf="brandForm.controls['email'].hasError('email')">Invalid</div>
-
                   </div>
                   </div>
                   <br>
@@ -64,8 +63,6 @@
                     <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['ville'].errors">* Required</div></div>
                   </div>
                   <br>
-
-
                   <select class="form-control"  id="power"
                           required
                           formControlName="pays"  >
@@ -76,8 +73,6 @@
                     <option  value="egypt">Egypt</option>
                   </select>
                   <div class="alert-danger"> <div *ngIf="isSubmitted && _fc['pays'].errors">* Required</div></div>
-
-
                   <br>
                   <div class="form-group">
                     <input type="radio" id="html" name="fav_language" value="femme" formControlName="genre">

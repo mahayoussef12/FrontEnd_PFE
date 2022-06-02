@@ -14,7 +14,9 @@ export class ClientService {
   apiURL = 'http://localhost:8082/api/v1/client';
   apiGett='http://localhost:8082/api/v1/clientEmail'
   apiDelete='http://localhost:8082/api/v1/client/delete'
+  host :string = "http://localhost:8082/api/v1/Imgarticles";
 
+  listData! : Client[];
 
   constructor(private http: HttpClient) {
   }
@@ -46,17 +48,23 @@ export class ClientService {
   testing(email: string | undefined):Observable<User>{
     const url = `${'http://localhost:8082/api/v1/user/maha'}/${email}`;
     return this.http.get<User>(url);
-
   }
+  en(email: string | undefined):Observable<any>{
+    const url = `${'http://localhost:8082/api/v1/user/entreprise'}/${email}`;
+    return this.http.get<any>(url);}
 
-  uploadFile(file: File): Observable<HttpEvent<{}>> {
-    const formdata: FormData = new FormData();
-    formdata.append('file', file);
-    const req = new HttpRequest('POST', '<Server URL of the file upload>', formdata, {
+  download(filename: string | undefined): Observable<HttpEvent<Blob>> {
+    return this.http.get(`${'http://localhost:8082/api/v1/download'}/${filename}`, {
       reportProgress: true,
-      responseType: 'text'
+      observe: 'events',
+      responseType: 'blob'
     });
+  }
+  test(email: string | undefined):Observable<any>{
+    const url = `${'http://localhost:8082/api/v1/user/maaha'}/${email}`;
+    return this.http.get<any>(url);}
+  getAll(): Observable<any> {
 
-    return this.http.request(req);
+    return this.http.get(`${'http://localhost:8082/api/v1/getAll'}`);
   }
 }

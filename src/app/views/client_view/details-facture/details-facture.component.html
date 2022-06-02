@@ -1,5 +1,5 @@
 
-<div class="page-wrapper">
+<div class="page-wrapper"  >
   <div class="dash-content-wrap">
 <div class="dash-breadcrumb">
   <div class="container-fluid">
@@ -67,10 +67,10 @@
             </ul>
           </div>
           <div class="invoice-items">
-            <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0">
+            <div class="table-responsive" style="overflow: hidden; outline: none;" tabindex="0" style="-webkit-print-color-adjust: exact;">
               <table class="table table-bordered">
                 <thead>
-                <tr class="cc">
+                <tr class="cc" >
                   <th class="per70 text-center">Description</th>
                   <th class="per5 text-center">Qty</th>
                   <th class="per25 text-center">Prix unitaire HT</th>
@@ -115,11 +115,12 @@
             <div style="margin-left: 45% ">
               <qrcode [qrdata]="qrdata" [width]="256"     ></qrcode>
             </div>
+              <div class="invisiblee">
             <div class="text-center mar-top-20"><a (click)="onPrint()" class="btn v3" style="width: 45%;background-color: #1e7e34">Imprimer cette facture</a></div>
               <div class="text-center mar-top-20"> <button type="button" class="btn v3" data-toggle="modal" data-target="#staticBackdrop" style="width: 45%;background-color: #1e7e34"> Payer
               </button></div>
               <!-- Modal -->
-
+              </div>
             </div>
         </div>
       </div>

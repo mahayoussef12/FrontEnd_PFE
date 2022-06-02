@@ -12,12 +12,9 @@ import {avis} from "../../../avis";
   styleUrls: ['./avis-entreprise.component.css']
 })
 export class AvisEntrepriseComponent implements OnInit {
-
-
   entrepriseId: any;
   entreprise!: Entreprise;
  maha!: avis[];
-
   constructor(private route: ActivatedRoute,private entrepriseService:EntrepriseService, private router: Router,private toast:NgToastService,private avisservice:AvisService) { }
 
   ngOnInit(): void {
@@ -29,7 +26,7 @@ export class AvisEntrepriseComponent implements OnInit {
     },(error) => {
       console.log(error)
     })
-    this.avisservice.getEntrepriseId(this.entrepriseId).subscribe((response) => {
+    this.avisservice.getEntrepriseIdNonActive(this.entrepriseId).subscribe((response) => {
       this.maha = response
       console.log(this.maha)
     })
@@ -41,16 +38,8 @@ export class AvisEntrepriseComponent implements OnInit {
     if (conf)
       this.avisservice.update(avis.id_avis).subscribe(() => {
         this.toast.success({detail:'Bravo..',summary:'Activation du commentaire avec success',position:'br',duration:5000})
-
       })
 
   }
-  rdv(id: any) {
 
-    this.router.navigate(['rddv/',id])
-  }
-  avis(id: any) {
-    this.router.navigate(['avis_en/',id])
-
-  }
 }

@@ -4,6 +4,7 @@ import {ChartDataset, ChartOptions, ChartType} from "chart.js";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ClientService} from "../../services/client.service";
 import {EntrepriseService} from "../../services/entreprise.service";
+import {HttpErrorResponse, HttpEvent} from "@angular/common/http";
 
 @Component({
   selector: 'app-client-layout',
@@ -14,8 +15,11 @@ export class ClientLayoutComponent implements OnInit {
 
   detailId:any;
   client!:Client
+  test!: HttpEvent<Blob>;
+  image: any;
 
-  constructor(private route: ActivatedRoute,private clientservice:ClientService, private router: Router,private entrepriseService:EntrepriseService) { }
+
+  constructor(private route: ActivatedRoute,public clientservice:ClientService, private router: Router,private entrepriseService:EntrepriseService) { }
 
 
   ngOnInit(): void {
@@ -23,10 +27,8 @@ export class ClientLayoutComponent implements OnInit {
     console.log(this.detailId)
     this.clientservice. getClientById( this.detailId ).subscribe((response)=>{
       this.client = response
-    },(error) => {
-      console.log(error);
-    })
 
+    })
   }
 
 }

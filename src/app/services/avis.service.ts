@@ -28,6 +28,7 @@ export class AvisService {
   update(id: number | undefined): Observable<Object> {
     return this.http.put(`${'http://localhost:8082/api/v1/avis/modifier'}/${id}`,Object);
   }
-
+  getEntrepriseIdNonActive(id:any | undefined):Observable<avis[]>{
+    const url = `${'http://localhost:8082/api/v1/avisNonActiver'}/${id}`; return this.http.get<avis[]>(url); }
 
 }

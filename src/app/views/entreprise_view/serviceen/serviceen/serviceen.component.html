@@ -1,0 +1,125 @@
+<div class="page-wrapper">
+  <div class="dash-content-wrap">
+<div class="dash-breadcrumb">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dash-breadcrumb-content">
+          <div class="dash-breadcrumb-left">
+            <div class="breadcrumb-menu text-right sm-left">
+              <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="#">Dashboard</a></li>
+                <li>Invoices</li>
+              </ul>
+            </div>
+          </div>
+          <a class="btn v3"  data-bs-toggle="modal" href="#exampleModalToggle" role="button"><i class="bi bi-plus"></i>Add Listing </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Dashboard breadcrumb ends-->
+<!--Dashboard content starts-->
+<div class="dash-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="invoice-panel">
+          <div class="act-title">
+            <h5><i class="bi bi-textarea"></i> Service</h5>
+          </div>
+          <div class="invoice-body">
+            <div class="table-responsive">
+              <table class="invoice-table">
+                <thead>
+                <tr class="invoice-headings">
+                  <th>Nom Service</th>
+                  <th>Description</th>
+                  <th>Montant</th>
+                </tr>
+                </thead>
+                <tbody *ngFor="let item of serv">
+                <tr>
+                  <td>
+                    {{item.lib_service}} </td>
+                  <td>
+                    {{item.description}}
+                  </td>
+
+                  <td>
+                    <span class="amount">{{item.prix_unitaire_HT}}</span> </td>
+                  <td>
+                    <a  data-bs-toggle="modal" href="#exampleModalToggle2" role="button" title="update"> <i class="bi bi-pencil-fill"></i></a>
+                    <a href="#" class="invoice-action" data-toggle="tooltip" title="Delete"> <i class="ion-android-delete"></i></a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel" style="color: #1ec38b;margin-left: 35%;font-size: 100%">Ajouter des autres Service:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Nom de service:</label>
+          <input type="text" class="form-control filter-input"  [(ngModel)]="newSER.lib_service" placeholder="entre votre service" >
+        </div>
+        <div class="form-group">
+          <label>coût de service: </label>
+          <input type="text" class="form-control filter-input" placeholder=" entre le coût de service"   [(ngModel)]="newSER.prix_unitaire_HT">
+        </div>
+        <div class="form-group">
+          <label>description </label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="faire une petite description de votre service"  [(ngModel)]="newSER.description"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn v3" (click)="add()"><i class="bi bi-plus"></i>Confirmer</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2" style="color: #1ec38b;margin-left: 35%;font-size: 100%">Ajouter des autres Service:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Nom de service:</label>
+          <input type="text" class="form-control filter-input"  [(ngModel)]="newSER.lib_service" placeholder="entre votre service" >
+        </div>
+        <div class="form-group">
+          <label>coût de service: </label>
+          <input type="text" class="form-control filter-input" placeholder=" entre le coût de service"   [(ngModel)]="newSER.prix_unitaire_HT">
+        </div>
+        <div class="form-group">
+          <label>description </label>
+          <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" placeholder="faire une petite description de votre service"  [(ngModel)]="newSER.description"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn v3" (click)="update()"><i class="bi bi-plus"></i>Confirmer</a>
+
+      </div>
+    </div>
+  </div>
+</div>

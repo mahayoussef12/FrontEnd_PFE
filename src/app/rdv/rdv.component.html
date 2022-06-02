@@ -111,26 +111,25 @@
         <h3><i class="bi bi-calendar"></i>Prendre un Rendez Vous : </h3>
         <div class="row">
           <div class="col-md-12 mar-bot-15">
-            <div class="nice-select filter-input mar-top-0" tabindex="0"><span class="current">Choisir votre entreprise</span>
-              <ul class="list">
-                <li class="option selected focus">Choisir un entreprise </li>
-                <li class="option" *ngFor="let en of entreprise" value="{{en.id}}">{{en.nomSociete}}</li>
-              </ul>
-            </div>
+            <select class="form-control"  id="power"
+                    [(ngModel)]="ent"  >
+              <option value=""  >Choisir votre entreprise</option>
+              <option *ngFor="let en of entreprise" value="{{en.id}}">{{en.nomSociete}}</option>
+            </select>
           </div>
+
           <div class="col-md-12 mar-bot-15">
-            <div class="nice-select filter-input mar-top-0" tabindex="0"><span class="current">Choisir Service  </span>
-              <ul class="list">
-                <li class="option selected focus"> Choisir Service</li>
-                <li class="option" *ngFor="let en of serv" value="{{en.id_service}}">{{en.lib_service}}</li>
-              </ul>
-            </div>
+            <select class="form-control"  id="power"
+                    [(ngModel)]="ser"  >
+              <option value=""  >Choisir votre entreprise</option>
+              <option *ngFor="let en of serv" value="{{en.id_service}}">{{en.lib_service}}</option>
+            </select>
           </div>
          <div>
 
            <mat-form-field style="width: 100%">
 
-             <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myHolidayFilter"  placeholder="choisir date ">
+             <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myHolidayFilter"  placeholder="choisir date " [(ngModel)]="newrdv.date_rdv">
 
              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
 
@@ -142,7 +141,7 @@
 
       </div>
         <div class="book-btn text-center">
-          <a > prendre un rendez vous</a>
+          <a (click)="submit()"> prendre un rendez vous</a>
         </div>
       </div>
 </div>

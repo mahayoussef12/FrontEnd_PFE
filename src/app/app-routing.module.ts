@@ -59,7 +59,7 @@ const routes: Routes = [
   {path:'client',component:InscriptionClientComponent},
   {path:'tv/:id',component:TvComponent},
   {path:'rdv',component:RdvComponent},
-  {path:'test',component:EntrepriseServiceComponent},
+  {path:'service',component:EntrepriseServiceComponent},
   {path:'client/:id',component:ClientLayoutComponent,
     children:[
       {path:'dashbord',loadChildren:()=>import('./views/client_view/dashbord/dashbord.module').then(m=>m.DashbordModule)},
@@ -81,6 +81,9 @@ const routes: Routes = [
       {path:'password',loadChildren:()=>import('./views/entreprise_view/modifier-password/modifier-password.module').then(m=>m.ModifierPasswordModule)},
       {path:'accepter',loadChildren:()=>import('./views/entreprise_view/acceptation-rdv/acceptation-rdv.module').then(m=>m.AcceptationRdvModule)},
       {path:'can',loadChildren:()=>import('./calendrer-entreprise/calendrer-entreprise/calendrer-entreprise.module').then(m=>m.CalendrerEntrepriseModule)},
+      {path:'service/entreprise/:id',loadChildren:()=>import('./views/entreprise_view/serviceen/serviceen.module').then(m=>m.ServiceenModule)},
+
+
     ]},
   {path:'admin',component:LayoutAdminComponent,
     children:[
@@ -88,6 +91,7 @@ const routes: Routes = [
       {path:'entreprises',loadChildren:()=>import('./views/admin_view/superadmin/superadmin/superadmin.module').then(m=>m.SuperadminModule)},
       {path:'clients',loadChildren:()=>import('./views/admin_view/superadmin-client/superadmin-client/superadmin-client.module').then(m=>m.SuperadminClientModule)},
       {path:'factures',loadChildren:()=>import('./views/admin_view/ad-fac/ad-fac.module').then(m=>m.AdFacModule)},
+      {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)}
 
     ]
   },

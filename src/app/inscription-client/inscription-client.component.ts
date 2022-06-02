@@ -5,6 +5,7 @@ import {Client} from "../Client";
 
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NgToastService} from "ng-angular-popup";
+import {User} from "../User";
 
 @Component({
   selector: 'app-inscription-client',
@@ -20,6 +21,8 @@ export class InscriptionClientComponent implements OnInit {
   public imagePath: any;
   imgURL: any;
   public message!: string;
+ client!: Client;
+ newUser=new User();
 
   constructor(private clientService: ClientService, private userservice: UserService, private _fb: FormBuilder, private toast: NgToastService) {
 
@@ -40,6 +43,7 @@ export class InscriptionClientComponent implements OnInit {
 
 
     });
+
   }
 
   get _fc() {
@@ -54,14 +58,14 @@ export class InscriptionClientComponent implements OnInit {
       formData.append('client', JSON.stringify(client));
       formData.append('file', this.userFile);
       this.clientService.create(formData).subscribe(data => {
+        this.client=data
+        console.log(this.client.id)
         this.toast.success({detail: "Success Message", summary: "update avec success", duration: 5000})
-
-      });
-
-      /*   this.clientService.create(this.brandForm.value).subscribe(prod => {
+        this.userservice.createClient(this.client.id,this.newUser).subscribe(prod => {
            console.log(prod);
          this.toast.success({detail:"Success Message",summary:"update avec success",duration:5000})
-         })*/
+         })
+      });
     }
     if (this.brandForm.invalid) {
       this.toast.success({detail: "Success Message", summary: "update avec success", duration: 5000})

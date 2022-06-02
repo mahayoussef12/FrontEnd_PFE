@@ -66,12 +66,14 @@ maha!: avis[];
 
   }
 
+/*
   rdv() {
 this.rendezvouservice.createRDV(this.entrepriseId).subscribe(prod => {
   console.log(prod);
   this.toast.success({detail:'Success',summary:'This is Success',position:'br',duration:5000})
   console.log("ajouter avec sucess")
 })}
+*/
 
   onSubmit() {
     this.isSubmitted = true;
