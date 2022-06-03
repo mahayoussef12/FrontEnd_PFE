@@ -65,6 +65,10 @@ import { TestComponent } from './test/test.component';
 import { EntrepriseServiceComponent } from './inscription_entreprise/entreprise-service/entreprise-service.component'
 import {MatCardModule} from "@angular/material/card";
 import {NgxMatDatetimePickerModule, NgxMatTimepickerModule} from "@angular-material-components/datetime-picker";
+import {MatListModule} from "@angular/material/list";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatButtonModule} from "@angular/material/button";
+import { CodeconclientComponent } from './codeconclient/codeconclient.component';
 @NgModule({
   declarations: [
     FormatTimePipe,
@@ -83,7 +87,7 @@ import {NgxMatDatetimePickerModule, NgxMatTimepickerModule} from "@angular-mater
     DetailsEntrepriseInscriComponent,
     CalendrierComponent,
     SuperadminClientComponent,
-    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent, RdvComponent, TestComponent, EntrepriseServiceComponent
+    CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent, RdvComponent, TestComponent, EntrepriseServiceComponent, CodeconclientComponent
   ],
   imports: [
     MatDatepickerModule,
@@ -97,7 +101,7 @@ import {NgxMatDatetimePickerModule, NgxMatTimepickerModule} from "@angular-mater
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }), NgChartsModule, ReactiveFormsModule, NgxStarRatingModule, SocialLoginModule, DayPilotModule, SchedulerModule,
-    NgToastModule, LayoutsModule, QRCodeModule, BrowserAnimationsModule, AngularMyDatePickerModule, NgxPaginationModule, MatCardModule, NgxMatDatetimePickerModule, NgxMatTimepickerModule
+    NgToastModule, LayoutsModule, QRCodeModule, BrowserAnimationsModule, AngularMyDatePickerModule, NgxPaginationModule, MatCardModule, NgxMatDatetimePickerModule, NgxMatTimepickerModule, MatListModule, MatStepperModule, MatButtonModule
   ],
   providers: [ {
     provide: 'SocialAuthServiceConfig',

@@ -3,6 +3,7 @@ import {Rendez_vousService} from "../../../../services/rendez_vous.service";
 import {ActivatedRoute} from "@angular/router";
 import {rendez_vous} from "../../../../rendez_vous";
 import {NgToastService} from "ng-angular-popup";
+import {FactureService} from "../../../../services/facture.service";
 
 @Component({
   selector: 'app-acceptation-rdv',
@@ -12,7 +13,7 @@ import {NgToastService} from "ng-angular-popup";
 export class AcceptationRdvComponent implements OnInit {
  tab!: rendez_vous[];
 
-  constructor(private rdvservice:Rendez_vousService,private router:ActivatedRoute,private toast:NgToastService) { }
+  constructor(private rdvservice:Rendez_vousService,private router:ActivatedRoute,private toast:NgToastService,private factureservice:FactureService) { }
 
   ngOnInit(): void {
     this.rdvservice.getAllRdvEntrepriseNo(this.router.snapshot.params["id"]).subscribe((prod)=>{
@@ -27,7 +28,10 @@ export class AcceptationRdvComponent implements OnInit {
       this.rdvservice.accepterrdv(rdv.id_RDV).subscribe(() => {
 
         this.toast.success({detail:'Bravo..',summary:'Acceptation rendez vous',position:'br',duration:9000})
+        this.factureservice.createfac(rdv.id_RDV).subscribe((prod) => {
+          console.log(prod)
 
+        })
       })
 
 

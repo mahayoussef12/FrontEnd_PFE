@@ -45,7 +45,8 @@ export class Rendez_vousService {
   accepterrdv(id: number | undefined): Observable<Object> {
     return this.http.put(`${'http://localhost:8082/api/v1/acceptation'}/${id}`,Object);
   }
-  test(cle:number):Observable<Date[]>{
+
+  test(cle: number):Observable<Date[]>{
     const url = `${'http://localhost:8082/api/v1/list'}/${cle}`;
     return this.http.get<Date[]>(url);}
   }

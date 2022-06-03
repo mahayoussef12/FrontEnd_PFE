@@ -111,4 +111,10 @@ export class EntrepriseService {
   update(id: number | undefined,prod:any): Observable<any> {
     return this.http.post(`${'http://localhost:8082/api/v1/entreprise/modifier'}/${id}`,prod);
   }
+
+  renvoiCode(cle: number | null): Observable<any> {
+    const urlr = `${this.baserRen}/${cle}`;
+    return this.http.get<any>(urlr);
+  }
+  baserRen = 'http://localhost:8082/api/v1/renvoi/code';
 }

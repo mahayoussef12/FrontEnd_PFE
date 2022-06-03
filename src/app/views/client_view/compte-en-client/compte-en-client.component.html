@@ -32,6 +32,7 @@
         <th scope="col">Numero facture </th>
         <th scope="col">Nom Entreprise </th>
         <th scope="col">Email Entreprise </th>
+        <th scope="col">Etat Facture </th>
         <th scope="col">    </th>
         <th scope="col">    </th>
 
@@ -42,6 +43,7 @@
         <td>{{rdvv.num_facture}}</td>
         <td>{{rdvv.entreprise?.nomSociete}}</td>
         <td>{{rdvv.entreprise?.email}}</td>
+        <td>{{rdvv.etat}}</td>
 
         <td><a type="button" class="btn btn-info"   [routerLink]="['/client/', client.id,'facture_details',rdvv.id_facture]"><i class="bi bi-check-square-fill"></i> </a></td>
         <!--           <td><button type="button" class="btn btn-info" (click)="consulterr(rdvv)">Consulter </button></td>-->

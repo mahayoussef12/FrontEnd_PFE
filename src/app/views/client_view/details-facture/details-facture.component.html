@@ -117,7 +117,8 @@
             </div>
               <div class="invisiblee">
             <div class="text-center mar-top-20"><a (click)="onPrint()" class="btn v3" style="width: 45%;background-color: #1e7e34">Imprimer cette facture</a></div>
-              <div class="text-center mar-top-20"> <button type="button" class="btn v3" data-toggle="modal" data-target="#staticBackdrop" style="width: 45%;background-color: #1e7e34"> Payer
+              <div
+                class="text-center mar-top-20"> <button type="button" class="btn v3" data-toggle="modal" data-target="#staticBackdrop" style="width: 45%;background-color: #1e7e34" [disabled]="details.etat"> Payer
               </button></div>
               <!-- Modal -->
               </div>

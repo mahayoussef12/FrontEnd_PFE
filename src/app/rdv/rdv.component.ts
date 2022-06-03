@@ -31,30 +31,18 @@ serv!: service[];
 newrdv=new rendez_vous()
    id!: string|null;
 
-
+  isLinear = true;
+  private idd: any;
   constructor(private toast: NgToastService,private rdv: Rendez_vousService, private entrepriseservice: EntrepriseService,private service:ServiseService) {
   }
 
   ngOnInit() {
 
-    this.rdv.test(1).subscribe((prod) => {
-      this.test = prod
-      for (let i in this.test) {
-this.year=this.test[i].substring(0,4)
-        this.month=this.test[i].substring(5,7)
-        this.day=this.test[i].substring(8,10)
-        this.date=this.month+"/"+this.day+"/"+this.year
-       this.maha.push(new Date(this.date))
-      }
-      console.log(this.maha)
-    })
+
      this.entrepriseservice.getAllEntreprise().subscribe((prod) => {
        this.entreprise = prod
      })
-    this.service.listService(2).subscribe(prod => {
-      this.serv = prod;
-      console.log(this.serv)  }
-    )
+
   }
 
   dateFilter: (date: Date | null) => boolean =
@@ -81,12 +69,33 @@ this.year=this.test[i].substring(0,4)
 
   submit() {
     this.id=localStorage.getItem('client')
-    console.log(this.ser)
     console.log(this.ent)
+    console.log(this.ser)
     console.log(this.newrdv.date_rdv)
     this.rdv.createRDV(this.newrdv,this.ent,this.id,this.ser).subscribe(prod=>{
       this.toast.success({detail: "Rendez vous ajouter avec sucess", summary: "Bravo..", duration: 9000})
     })
+  }
+
+
+  valueentreprise() {
+    this.idd=this.ent
+    console.log(this.idd)
+    this.rdv.test(this.idd).subscribe((prod) => {
+      this.test = prod
+      for (let i in this.test) {
+        this.year=this.test[i].substring(0,4)
+        this.month=this.test[i].substring(5,7)
+        this.day=this.test[i].substring(8,10)
+        this.date=this.month+"/"+this.day+"/"+this.year
+        this.maha.push(new Date(this.date))
+      }
+      console.log(this.maha)
+    })
+    this.service.listService(this.idd).subscribe(prod => {
+      this.serv = prod;
+      console.log(this.serv)  }
+    )
   }
 }
 

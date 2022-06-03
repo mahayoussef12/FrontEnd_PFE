@@ -15,6 +15,7 @@ import {Entreprise} from "./Entreprise";
   remise?:number;
   tolale_TTC?:number;
   description?:string;
+  etat?:boolean;
   client?:Client;
   entreprise?:Entreprise;
 

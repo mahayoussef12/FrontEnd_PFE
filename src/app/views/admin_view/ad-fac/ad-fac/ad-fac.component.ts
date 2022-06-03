@@ -6,7 +6,13 @@ import {Facture} from "../../../../Facture";
 @Component({
   selector: 'app-ad-fac',
   templateUrl: './ad-fac.component.html',
-  styleUrls: ['./ad-fac.component.css']
+  styleUrls: ['./ad-fac.component.css'],
+  styles: [
+    `
+      .greenClass { background-color: green }
+      .redClass { background-color: red }
+    `
+  ]
 })
 export class AdFacComponent implements OnInit {
 factures!: Facture[];

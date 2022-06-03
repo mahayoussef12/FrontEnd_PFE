@@ -54,8 +54,9 @@ letre: any;
         currency:'USD',
         value:String(this.details.tolale_TTC),
         onApprove :(details)=>{ this.toast.success({detail:'Bravo..',summary:'vous avez payer votre avec success ',position:'br',duration:5000})
-        this.router.navigate(['thermal',this.details.id_facture])
-
+          this.factureservice.updateStatus(this.detailId).subscribe(prod=>{
+            this.router.navigate(['thermal',this.details.id_facture])
+          });
         }
       })
     },(error) => {

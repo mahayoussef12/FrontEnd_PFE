@@ -13,7 +13,7 @@
         <th scope="col">numéro de facture</th>
 
         <th scope="col">Date de creation</th>
-        <th scope="col">date de validation</th>
+        <th scope="col">Etat</th>
         <th scope="col">Action</th>
 
       </tr>
@@ -25,7 +25,7 @@
         <td>{{fac.id_facture}}</td>
         <td>{{fac.num_facture}}</td>
         <td>{{fac.date_creation}}</td>
-        <td>{{fac.date_validation  | date: 'dd-MM-yyyy'}}</td>
+        <td >{{fac.etat}}</td>
         <button type="button" class="btn btn-outline-success" [routerLink]="['/admin','facture_details',fac.id_facture]">consulter</button>
       </tbody>
     </table>

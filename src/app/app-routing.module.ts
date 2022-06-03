@@ -59,6 +59,7 @@ const routes: Routes = [
   {path:'client',component:InscriptionClientComponent},
   {path:'tv/:id',component:TvComponent},
   {path:'rdv',component:RdvComponent},
+  {path:'step',component:PrendreRdvComponent},
   {path:'service',component:EntrepriseServiceComponent},
   {path:'client/:id',component:ClientLayoutComponent,
     children:[

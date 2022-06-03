@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Facture } from '../Facture';
+import {Entreprise} from "../Entreprise";
 
 @Injectable({
   providedIn: 'root'
@@ -37,4 +38,13 @@ export class FactureService {
   getAllFacture(): Observable<Facture[]> {
     return this.http.get<Facture[]>('http://localhost:8082/api/v1/factures');
   }
+
+  createfac(id: number | undefined):Observable<Object>{
+  const url = `${'http://localhost:8082/api/v1/ajouter/fac'}/${id}`;
+    return this.http.post<any>(url,Object);
+  }
+  updateStatus(id: number | undefined): Observable<Object> {
+    return this.http.put(`${'http://localhost:8082/api/v1/status'}/${id}`,Object);
+  }
+
 }
