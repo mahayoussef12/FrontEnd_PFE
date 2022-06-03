@@ -1,11 +1,4 @@
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-
-
-<body>
 <div class="page-wrapper">
 
   <div class="dash-content-wrap">
@@ -17,9 +10,11 @@
               <div class="dash-breadcrumb-left">
                 <div class="breadcrumb-menu text-right sm-left">
                   <ul>
-                    <li class="active"><a >Home</a></li>
-                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
-                    <li>Entreprise</li>
+                    <li class="active"><a href="#"></a></li>
+                    <ul>
+                      <li class="active"><a href="#">Accueil</a></li>
+                      <li>Entreprise</li>
+                    </ul>
                   </ul>
                 </div>
               </div>
@@ -47,7 +42,14 @@
 
     <div class="dash-footer">
       <div class="container">
-
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search..."
+            [(ngModel)]="filterTerm"
+          />
+        </div>
         <table class="table table-hover">
           <thead>
           <tr>
@@ -60,7 +62,7 @@
           <tbody>
 
 
-          <tr  *ngFor=" let entreprise of entreprises" >
+          <tr  *ngFor=" let entreprise of entreprises |paginate: { itemsPerPage: 3, currentPage: p }| filter: filterTerm" >
             <td>{{entreprise.id}}</td>
             <td>{{entreprise.nomSociete}}</td>
             <td>{{entreprise.email}}</td>
@@ -69,6 +71,7 @@
 
           </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
 
         <div class="row">
           <div class="col-md-12">
@@ -86,6 +89,3 @@
 
 </div>
 
-</body>
-
-</html>

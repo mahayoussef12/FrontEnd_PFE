@@ -15,6 +15,8 @@ export class AvisEntrepriseComponent implements OnInit {
   entrepriseId: any;
   entreprise!: Entreprise;
  maha!: avis[];
+  filterTerm!: string;
+  p: number=1;
   constructor(private route: ActivatedRoute,private entrepriseService:EntrepriseService, private router: Router,private toast:NgToastService,private avisservice:AvisService) { }
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class AvisEntrepriseComponent implements OnInit {
     if (conf)
       this.avisservice.update(avis.id_avis).subscribe(() => {
         this.toast.success({detail:'Bravo..',summary:'Activation du commentaire avec success',position:'br',duration:5000})
+        window.location.reload();
       })
 
   }

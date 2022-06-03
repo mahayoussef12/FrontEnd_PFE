@@ -16,15 +16,15 @@ class admin {
 })
 export class SuperadminComponent implements OnInit {
 
-  entreprises: Entreprise[] | undefined
+  entreprises!: Entreprise[]
   entreprise: any;
   client:Client | undefined;
   entrepriseId:any;
   admins!: admin[];
-
-
+  filterTerm!: string;
 
   clients:Client[] | undefined;
+   p: number=1;
 
 
   constructor(private route: ActivatedRoute,private clientservise:ClientService,private adminService:AdminService,private entrepriseService:EntrepriseService, private router: Router) { }

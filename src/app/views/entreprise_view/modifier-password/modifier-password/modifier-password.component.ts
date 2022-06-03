@@ -43,7 +43,7 @@ entrepriseId: any;
             duration: 7000
           })
           this.router.navigate(['entreprise',this.entreprise.id,"profil",this.entreprise.id])
-
+          window.location.reload();
         } else {
           console.log("non update")
           this.toast.error({detail: 'Erreur...', summary: 'la Changement non parfaite', position: 'br', duration: 5000})

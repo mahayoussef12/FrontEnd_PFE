@@ -10,9 +10,9 @@
           <div class="dash-breadcrumb-left">
             <div class="breadcrumb-menu text-right sm-left">
               <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li class="active"><a href="#">Dashboard</a></li>
-                <li>Invoices</li>
+                <li class="active"><a href="#">Accueil</a></li>
+
+                <li>Acceptation des rendes vous</li>
               </ul>
             </div>
           </div>
@@ -32,26 +32,38 @@
             <h5><i class="bi bi-calendar-check"></i> les rendez vous Non accepter :</h5>
           </div>
           <div class="invoice-body">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search..."
+              [(ngModel)]="filterTerm"
+            />
+            <br>
             <div class="table-responsive">
               <table class="invoice-table">
+                <div class="form-group">
+
+                </div>
                 <thead>
                 <tr class="invoice-headings">
                   <th>N°</th>
                   <th>Date</th>
+                  <th>Nom client</th>
+                  <th>Email client</th>
                   <th>Accepter</th>
                   <th>Supprimer</th>
                 </tr>
                 </thead>
-                <tbody *ngFor="let rdv of tab;let  i = index ">
+                <tbody *ngFor="let rdv of tab| filter: filterTerm;let  i = index ">
                 <tr>
                   <td>
                     {{i+1}} </td>
                   <td>
                    {{rdv.date_rdv}}
                   </td>
-
+                  <td>{{rdv.client?.nom}}</td>
+                  <td>{{rdv.client?.email}}</td>
                   <td>
-
                     <a click class="invoice-action" data-toggle="tooltip" title="accepter rdv " (click)="accepter(rdv)"> <i class="bi bi-calendar-check"></i></a>
                   </td>
                   <td>

@@ -17,4 +17,7 @@ export class HoraireService {
     return this.http.post<horaire>(url, prod);
 
   }
+  gethoraie(id: any): Observable<horaire[]> {
+    const url = `${'http://localhost:8082/api/v1/horaire'}/${id}`;
+    return this.http.get<horaire[]>(url);}
 }

@@ -1,78 +1,4 @@
-<!--
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
 
-
-<body>
-&lt;!&ndash;Page Wrapper starts&ndash;&gt;
-<div class="page-wrapper">
-  <div class="user-login-section section-padding bg-fixed" style="background-image: url(../../assets/hero-5.jpg)">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 offset-md-1  text-center">
-          <div class="login-wrapper">
-            <ul class="ui-list nav nav-tabs justify-content-center mar-bot-30" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#login" role="tab" aria-selected="true">Login</a>
-              </li>
-            </ul>
-            <div class="ui-dash tab-content">
-              <div class="tab-pane fade show active" id="login" role="tabpanel">
-                <div id="login-form">
-                  <div class="form-group">
-                    <input type="text" name="username" id="username" tabindex="1" class="form-control"
-                           placeholder="email" value="" required [(ngModel)]="newUser.email">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" name="password" id="password" tabindex="2" class="form-control"
-                           placeholder="Password" [(ngModel)]="newUser.mdp">
-                  </div>
-                  <div class="row mar-top-20">
-                    <div class="col-md-6 col-12 text-left">
-                      <div class="res-box">
-                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-                        <label for="remember">Remember Me</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-12 text-right">
-                      <div class="res-box sm-left">
-                        <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="res-box text-center mar-top-30">
-                    <button type="submit" class="btn v3" (click)="register()"><i class="ion-log-in"></i> Log In</button>
-                    <button type="submit" class="btn v3" (click)="choisir()"><i class="ion-log-in"></i> s'inscrire
-                    </button>
-                  </div>
-                </div>
-                <div class="social-profile-login text-center mar-top-30">
-                  <h5>or Login with</h5>
-                  <ul class="social-btn">
-                    <li class="bg-fb"><a (click)="loginWithFacebook()"><i class="bi bi-facebook"></i></a></li>
-                    <li class="bg" style="background: red"><a (click)="loginWithGoogle()"><i
-                      class="bi bi-google"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  &lt;!&ndash;User login section ends&ndash;&gt;
-  &lt;!&ndash;Login section ends&ndash;&gt;
-
-</div>
-&lt;!&ndash;Page Wrapper ends&ndash;&gt;
-
-
-</body>
-
-</html>
--->
 <!--Page Wrapper starts-->
 <div class="page-wrapper">
 
@@ -113,15 +39,14 @@
                     </div>
                   </div>
                   <div class="res-box text-center mar-top-30">
-                    <button type="submit" class="btn v3" (click)="register()"><i class="ion-log-in"></i> Connexion</button>
+                    <button type="submit" class="btn v3" (click)="register()"> Connexion</button>
                   </div>
                 </form>
                 <div class="social-profile-login text-center mar-top-30">
                   <h5>ou Connectez-vous avec</h5>
                   <ul class="social-btn">
-                    <li class="bg-fb"><a (click)="loginWithFacebook()"><i class="ion-social-facebook"></i></a></li>
-                    <li class="bg-tt"><a (click)="loginWithGoogle()"><i class="ion-social-twitter"></i></a></li>
-                    <li class="bg-ig"><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    <li class="bg-fb"><a (click)="loginWithFacebook()"><i class="bi bi-facebook"></i></a></li>
+                    <li class="bg-tt" style="background-color: red"><a (click)="loginWithGoogle()"><i class="bi bi-google"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -129,19 +54,18 @@
                 <form id="register-form" >
 
                   <div class="form-group" >
-                    <a class="btn v3" role="button" (click)="choisir()" style="width: 85%" >Espace Professionelle</a>
+                    <a class="btn v3" role="button" routerLink="/entreprise" style="width: 85%" >Espace Professionelle</a>
 
                   </div>
                   <div class="form-group" style="margin-top: 20%">
-                    <a class="btn v3" role="button" (click)="choisir()"  style="width: 85%">Espace Client</a>
+                    <a class="btn v3" role="button" routerLink="/client"  style="width: 85%">Espace Client</a>
                   </div>
                 </form>
                 <div class="social-profile-login text-center mar-top-30">
                   <h5>or Login with</h5>
                   <ul class="social-btn">
-                    <li class="bg-fb"><a (click)="loginWithFacebook()"><i class="ion-social-facebook"></i></a></li>
-                    <li class="bg-tt"><a (click)="loginWithGoogle()"><i class="ion-social-twitter"></i></a></li>
-                    <li class="bg-ig"><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    <li class="bg-fb"><a (click)="loginWithFacebook()"><i class="bi bi-facebook"></i></a></li>
+                    <li class="bg-tt" style="background-color: red"><a (click)="loginWithGoogle()"><i class="bi bi-google"></i></a></li>
                   </ul>
                 </div>
               </div>

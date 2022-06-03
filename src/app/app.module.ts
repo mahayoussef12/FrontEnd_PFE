@@ -69,6 +69,8 @@ import {MatListModule} from "@angular/material/list";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatButtonModule} from "@angular/material/button";
 import { CodeconclientComponent } from './codeconclient/codeconclient.component';
+import {FilterSearchModule} from "ng-filter-search";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 @NgModule({
   declarations: [
     FormatTimePipe,
@@ -90,6 +92,7 @@ import { CodeconclientComponent } from './codeconclient/codeconclient.component'
     CalendrerEntrepriseComponent,CalendComponent, DetailsFactureComponent, CompteEnFactureComponent, TicketComponent, EditProfileEntrepriseComponent, CompteEnClientComponent, PayementPaypalComponent, AdminComponent, SuperadminComponent, IncriEntrepriseComponent, RdvEntrepriseComponent, HoraireEntrepriseComponent, AvisEntrepriseComponent, CodeConfirmationComponent, EditProfileComponent, InscriptionClientComponent, TvComponent, PrendreRdvComponent, RdvComponent, TestComponent, EntrepriseServiceComponent, CodeconclientComponent
   ],
   imports: [
+    Ng2SearchPipeModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,

@@ -6,6 +6,7 @@ import {Client} from "../Client";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NgToastService} from "ng-angular-popup";
 import {User} from "../User";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-inscription-client',
@@ -24,7 +25,7 @@ export class InscriptionClientComponent implements OnInit {
  client!: Client;
  newUser=new User();
 
-  constructor(private clientService: ClientService, private userservice: UserService, private _fb: FormBuilder, private toast: NgToastService) {
+  constructor(private clientService: ClientService, private userservice: UserService, private _fb: FormBuilder, private toast: NgToastService,private router:Router) {
 
   }
 
@@ -64,6 +65,7 @@ export class InscriptionClientComponent implements OnInit {
         this.userservice.createClient(this.client.id,this.newUser).subscribe(prod => {
            console.log(prod);
          this.toast.success({detail:"Success Message",summary:"update avec success",duration:5000})
+          this.router.navigate(['/code/client',this.client.id]);
          })
       });
     }

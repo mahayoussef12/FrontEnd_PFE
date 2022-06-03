@@ -67,4 +67,13 @@ export class ClientService {
 
     return this.http.get(`${'http://localhost:8082/api/v1/getAll'}`);
   }
+  veriff(id:any,prod:any):Observable<any> {
+    const url = `${'http://localhost:8082/api/v1/veriff'}/${id}`;
+    return this.http.post<any>( url,prod);
+  }
+  renvoiCode(cle: number | null): Observable<any> {
+    const urlr = `${this.baserRen}/${cle}`;
+    return this.http.get<any>(urlr);
+  }
+  baserRen = 'http://localhost:8082/api/v1/renvoi';
 }

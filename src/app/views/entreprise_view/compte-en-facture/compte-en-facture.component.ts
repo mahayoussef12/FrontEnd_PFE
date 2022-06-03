@@ -17,6 +17,8 @@ export class CompteEnFactureComponent implements OnInit {
   entreprise!: Entreprise;
 
  Facture!: Facture[];
+  filterTerm!: string;
+  p: number=1;
 
   constructor(private route: ActivatedRoute, private entrepriseService: EntrepriseService, private router: Router,private factureService:FactureService) {
   }

@@ -16,6 +16,8 @@ export class CompteEnClientComponent implements OnInit {
   detailId: any;
   client!: Client
   tab_fac!: Facture[];
+  filterTerm: any;
+  p: number=1;
 
   constructor(private route: ActivatedRoute, private clientservice: ClientService, private router: Router, private factureservice: FactureService) {
   }

@@ -8,6 +8,8 @@ import {avis} from "../../avis";
 import {Rendez_vousService} from "../../services/rendez_vous.service";
 import {rendez_vous} from "../../rendez_vous";
 import {NgToastService} from "ng-angular-popup";
+import {HoraireService} from "../../services/horaire.service";
+import {horaire} from "../../horaire";
 
 @Component({
   selector: 'app-search-user',
@@ -25,8 +27,9 @@ maha!: avis[];
   isSubmitted = false;
 
   p: number=1;
+list!: horaire[];
 
-  constructor( private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private rendezvouservice:Rendez_vousService,private toast:NgToastService,private _fb: FormBuilder) {
+  constructor(private horaieservice:HoraireService, private avisservice:AvisService,private entrepriseService: EntrepriseService, private activatedRoute: ActivatedRoute, private router: Router,private rendezvouservice:Rendez_vousService,private toast:NgToastService,private _fb: FormBuilder) {
   }
   ngOnInit(): void {
     this.brandForm = this._fb.group({
@@ -53,7 +56,9 @@ maha!: avis[];
       this.count = response
       console.log(this.maha)
     })
-
+this.horaieservice.gethoraie(this.entrepriseId).subscribe(prod=>{
+  this.list=prod;
+})
   }
   test() {
     this.avisservice.createAvis(this.entrepriseId,this.brandForm.value).subscribe(prod => {

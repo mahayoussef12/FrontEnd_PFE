@@ -39,6 +39,7 @@ import {PrendreRdvComponent} from "./prendre-rdv/prendre-rdv.component";
 import {RdvComponent} from "./rdv/rdv.component";
 import {TestComponent} from "./test/test.component";
 import {EntrepriseServiceComponent} from "./inscription_entreprise/entreprise-service/entreprise-service.component";
+import {CodeconclientComponent} from "./codeconclient/codeconclient.component";
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -56,6 +57,7 @@ const routes: Routes = [
   {path:'rddv/:id',component:RdvEntrepriseComponent},
   {path:'horaire',component:HoraireEntrepriseComponent},
   {path:'code/:id',component:CodeConfirmationComponent},
+  {path:'code/client/:id',component:CodeconclientComponent},
   {path:'client',component:InscriptionClientComponent},
   {path:'tv/:id',component:TvComponent},
   {path:'rdv',component:RdvComponent},
@@ -77,12 +79,12 @@ const routes: Routes = [
       {path:'profil',loadChildren:()=>import('./views/entreprise_view/profile-entreprise/profile-entreprise/profile-entreprise.module').then(m=>m.ProfileEntrepriseModule)},
       {path:'facture',loadChildren:()=>import('./views/entreprise_view/compte-en-facture/compte-en-facture/compte-en-facture.module').then(m=>m.CompteEnFactureModule)},
       {path:'editen',loadChildren:()=>import('./views/entreprise_view/edit-profile-entreprise/edit-profile-entreprise/edit-profile-entreprise.module').then(m=>m.EditProfileEntrepriseModule)},
-      {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)},
       {path:'avisEntreprise',loadChildren:()=>import('./views/entreprise_view/avis-entreprise/avis-entreprise/avis-entreprise.module').then(m=>m.AvisEntrepriseModule)},
       {path:'password',loadChildren:()=>import('./views/entreprise_view/modifier-password/modifier-password.module').then(m=>m.ModifierPasswordModule)},
       {path:'accepter',loadChildren:()=>import('./views/entreprise_view/acceptation-rdv/acceptation-rdv.module').then(m=>m.AcceptationRdvModule)},
       {path:'can',loadChildren:()=>import('./calendrer-entreprise/calendrer-entreprise/calendrer-entreprise.module').then(m=>m.CalendrerEntrepriseModule)},
       {path:'service/entreprise/:id',loadChildren:()=>import('./views/entreprise_view/serviceen/serviceen.module').then(m=>m.ServiceenModule)},
+      {path:'details-facture',loadChildren:()=>import('./views/entreprise_view/details-facture-entreprise/details-facture-entreprise.module').then(m=>m.DetailsFactureEntrepriseModule)},
 
 
     ]},
@@ -92,7 +94,7 @@ const routes: Routes = [
       {path:'entreprises',loadChildren:()=>import('./views/admin_view/superadmin/superadmin/superadmin.module').then(m=>m.SuperadminModule)},
       {path:'clients',loadChildren:()=>import('./views/admin_view/superadmin-client/superadmin-client/superadmin-client.module').then(m=>m.SuperadminClientModule)},
       {path:'factures',loadChildren:()=>import('./views/admin_view/ad-fac/ad-fac.module').then(m=>m.AdFacModule)},
-      {path:'facture_details',loadChildren:()=>import('./views/client_view/details-facture/details-facture/details-facture.module').then(m=>m.DetailsFactureModule)}
+      {path:'details-facture',loadChildren:()=>import('./views/entreprise_view/details-facture-entreprise/details-facture-entreprise.module').then(m=>m.DetailsFactureEntrepriseModule)},
 
     ]
   },

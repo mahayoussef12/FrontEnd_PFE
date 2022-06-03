@@ -29,6 +29,7 @@ export class EntrepriseServiceComponent implements OnInit {
   enregistre() {
     this.serviser.createServicereS(this.newSER).subscribe(prod => {
         this.toast.success({detail:'Bravo...',summary:'Ajouter service avec success ',position:'br',duration:5000})
+      this.router.navigate(['login'])
       }
       , error => console.log(error));
   }
@@ -39,6 +40,7 @@ export class EntrepriseServiceComponent implements OnInit {
     {
       this.serviser.ajouterservice(this.id,this.newSER).subscribe(prod => {
         this.toast.success({detail: 'Bravo..', summary: 'Ajouter votre service avec sucess', position: 'br', duration: 5000})
+        this.router.navigate(['login'])
       });
     }
 

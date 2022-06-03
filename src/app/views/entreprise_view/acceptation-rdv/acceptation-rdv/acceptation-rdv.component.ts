@@ -12,6 +12,7 @@ import {FactureService} from "../../../../services/facture.service";
 })
 export class AcceptationRdvComponent implements OnInit {
  tab!: rendez_vous[];
+  filterTerm: any;
 
   constructor(private rdvservice:Rendez_vousService,private router:ActivatedRoute,private toast:NgToastService,private factureservice:FactureService) { }
 
@@ -30,7 +31,7 @@ export class AcceptationRdvComponent implements OnInit {
         this.toast.success({detail:'Bravo..',summary:'Acceptation rendez vous',position:'br',duration:9000})
         this.factureservice.createfac(rdv.id_RDV).subscribe((prod) => {
           console.log(prod)
-
+          window.location.reload();
         })
       })
 

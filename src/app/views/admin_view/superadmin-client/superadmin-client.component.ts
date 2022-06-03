@@ -18,7 +18,8 @@ export class SuperadminClientComponent implements OnInit {
   entrepriseId:any;
   clients: Client[] | undefined;
   admins: admin[] | undefined;
-
+  filterTerm!: string;
+  p: number=1;
 
 
   constructor(private route: ActivatedRoute,private adminService:AdminService,private clientservise:ClientService,private entrepriseService:EntrepriseService, private router: Router) { }

@@ -1,13 +1,6 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<body>
 <div class="page-wrapper">
-
-
-    <!-- Top header ends-->
-
-    <!--Dashboard breadcrumb starts-->
+  <div class="dash-content-wrap">
     <div class="dash-breadcrumb">
       <div class="container-fluid">
         <div class="row">
@@ -16,9 +9,8 @@
               <div class="dash-breadcrumb-left">
                 <div class="breadcrumb-menu text-right sm-left">
                   <ul>
-                    <li class="active"><p>Home</p></li>
-                    <li><i class="bi bi-arrow-right-short" style="width: 30%"></i></li>
-                    <li>My Profile</li>
+                    <li class="active"><a href="#">Accueil</a></li>
+                    <li>Les commentaires</li>
                   </ul>
                 </div>
               </div>
@@ -27,51 +19,60 @@
         </div>
       </div>
     </div>
-    <!--Dashboard breadcrumb ends-->
-    <!--Dashboard content starts-->
     <div class="dash-content">
       <div class="container-fluid">
         <div class="row">
-          <div class="table-wrapper">
-            <table class="fl-table" style="margin-left:-5%">
-              <thead>
-              <tr>
-                <th>Nom :</th>
-                <th>prenom:</th>
-                <th>Email:</th>
-                <th>Nombre des etoile </th>
-                <th>Commentaire</th>
-                <th></th>
-              </tr>
-              </thead>
-              <tbody *ngFor="let avis of maha">
-              <tr>
-                <td>{{avis.nom_auteur}}</td>
-                <td>{{avis.prenom_auteur}}</td>
-                <td>{{avis.email_auteur}}</td>
-                <td>{{avis.start}}</td>
-                <td>{{avis.description}}</td>
-                <td><button type="button" class="btn btn-outline-success"   (click)="delete(avis)">
-                  <i class="bi bi-x-square"></i>
-                Activer Commentaire</button>
-                </td>
-              </tr>
-              <tbody>
-            </table>
+          <div class="col-md-12">
+            <div class="invoice-panel">
+              <div class="act-title">
+                <h5><i class="bi bi-chat-square-text-fill" ></i> les commentaires :</h5>
+              </div>
+              <div class="invoice-body">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search..."
+                    [(ngModel)]="filterTerm"
+                  />
+                </div>
+                <div class="table-responsive">
+                  <table class="invoice-table">
+                    <thead>
+                    <tr class="invoice-headings">
+                      <th>Nom </th>
+                      <th>prenom</th>
+                      <th>Email</th>
+                      <th>Nombre des etoile </th>
+                      <th>Commentaire</th>
+                      <th></th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let avis of maha|paginate: { itemsPerPage: 5, currentPage: p }| filter: filterTerm">
+                    <tr>
+                      <td>{{avis.nom_auteur}}</td>
+                      <td>{{avis.prenom_auteur}}</td>
+                      <td>{{avis.email_auteur}}</td>
+                      <td>{{avis.start}}</td>
+                      <td>{{avis.description}}</td>
+                      <td><button type="button" class="btn btn-outline-success"   (click)="delete(avis)">
+                        <i class="bi bi-check-circle"></i> Activer
+                        </button>
+                      </td>
+                    </tr>
+                    <tbody>
+                  </table>
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                  <div class="alert alert-warning" role="alert" *ngIf="maha.length==0">
+                    Ne trouvez pas des avis non acceptee
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
-    <!--Dashboard content ends-->
-
-    <!--Dashboard footer starts-->
-
   </div>
-  <!--Dashboard content Wrapper ends-->
-
-
-
-</body>
-
-</html>
-
+</div>

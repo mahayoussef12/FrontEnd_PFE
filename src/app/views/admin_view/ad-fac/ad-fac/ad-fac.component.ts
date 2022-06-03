@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FactureService} from "../../../../services/facture.service";
 import {Facture} from "../../../../Facture";
+import {FilterSearchService} from "ng-filter-search";
 
 @Component({
   selector: 'app-ad-fac',
@@ -15,9 +16,11 @@ import {Facture} from "../../../../Facture";
   ]
 })
 export class AdFacComponent implements OnInit {
-factures!: Facture[];
 
-  constructor(private route: ActivatedRoute,private factureService:FactureService, private router: Router) { }
+  p: number=1;
+ factures!: Facture[];
+  filterTerm!: string;
+  constructor(private route: ActivatedRoute,private factureService:FactureService, private router: Router,private fs: FilterSearchService) { }
 
   ngOnInit(): void {
     this.factureService.getAllFacture().subscribe(prod => {
@@ -26,6 +29,7 @@ factures!: Facture[];
       }
     )
   }
+
 
 
 

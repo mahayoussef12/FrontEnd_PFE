@@ -42,6 +42,7 @@ export class ServiceenComponent implements OnInit {
         position: 'br',
         duration: 5000
       })
+      window.location.reload();
     });
   }
 
@@ -51,7 +52,7 @@ export class ServiceenComponent implements OnInit {
       this.servicee.desactiver(rdv.id_service).subscribe(() => {
 
         this.toast.success({detail: 'Bravo..', summary: 'vous avez desactivee service', position: 'br', duration: 9000})
-
+        window.location.reload();
       })
   }
 
@@ -60,7 +61,7 @@ export class ServiceenComponent implements OnInit {
       this.servicee.Activee(item.id_service).subscribe(() => {
 
         this.toast.success({detail: 'Bravo..', summary: 'vous avez activee service', position: 'br', duration: 9000})
-
+        window.location.reload();
       })
 
   }

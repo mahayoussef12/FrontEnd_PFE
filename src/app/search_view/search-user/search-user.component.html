@@ -198,6 +198,22 @@
                 </div>
               </div>
             </div>
+            <div class="sidebar-widget">
+              <div class="business-time">
+                <div class="business-title">
+                  <h4><i class="bi bi-clock"></i> Horaire:</h4>
+                </div>
+                <ul class="business-hours" *ngFor="let item of list">
+                  <li class="business-open">
+                    <span class="day">{{item.Day}}</span>
+                    <div class="atbd_open_close_time">
+                      <span class="time">{{item.opentime}}</span> - <span class="time">{{item.closeTime}}</span>
+                      <span class="time">{{item.opentimemidi}}</span> - <span class="time">{{item.closetimemidi}}</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

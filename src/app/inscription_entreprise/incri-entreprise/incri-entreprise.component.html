@@ -82,19 +82,19 @@
           </ul>
           <div class="tab-content mar-tb-30 add_list_content">
             <div class="tab-pane fade show active" id="general_info">
-              <h4> <i class="ion-ios-information"></i> General Information :</h4>
+              <h4> <i class="bi bi-info-circle-fill"></i> General Information :</h4>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Matricule fiscale:</label>
-                    <input type="text" class="form-control filter-input" placeholder="Hotel Ocean paradise" [(ngModel)]="newEN.mat_fiscale">
+                    <input type="text" class="form-control filter-input" placeholder="Matricule Fiscale" [(ngModel)]="newEN.mat_fiscale">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Categorie</label>
                     <select  class="form-control"  name="pets" id="pet-select" [(ngModel)]="newEN.categorie">
-                      <option value="">--Please choose an option--</option>
+                      <option value="">--Choisir categorie--</option>
                       <option value="Medecin">medecin</option>
                       <option value="Coiffure">coiffure</option>
                       <option value="Architecture">Architecture</option>
@@ -106,32 +106,32 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Adress </label>
-                    <input type="text" class="form-control filter-input" placeholder="Address of your hotel" [(ngModel)]="newEN.adresse">
+                    <input type="text" class="form-control filter-input" placeholder="Adresse ..." [(ngModel)]="newEN.adresse">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Ville </label>
-                    <input type="text" class="form-control filter-input" placeholder="Address of your hotel" [(ngModel)]="newEN.ville">
+                    <input type="text" class="form-control filter-input" placeholder="Ville..." [(ngModel)]="newEN.ville">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Email </label>
-                    <input type="email" class="form-control filter-input" placeholder="Address of your hotel" [(ngModel)]="newEN.email" [(ngModel)]="Newuser.email">
+                    <input type="email" class="form-control filter-input" placeholder="Email ..." [(ngModel)]="newEN.email" [(ngModel)]="Newuser.email">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Mdp</label>
-                    <input type="text" class="form-control filter-input" placeholder="Address of your hotel" [(ngModel)]="newEN.mdp" [(ngModel)]="Newuser.mdp">
+                    <input type="password" class="form-control filter-input" placeholder="mot de passe .." [(ngModel)]="newEN.mdp" [(ngModel)]="Newuser.mdp">
                   </div>
                 </div>
                 <div class="col-md-12">
 
                     <div class="form-group">
                       <label for="list_info">Description</label>
-                      <textarea class="form-control" id="list_info" rows="4" placeholder="Enter your text here"></textarea>
+                      <textarea class="form-control" id="list_info" rows="4" placeholder="Description.."></textarea>
                     </div>
                     <ul class="nav nav-tabs list-details-tab">
                       <li class="nav-item active">
@@ -142,19 +142,19 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Nom Gerant</label>
-                      <input type="text" class="form-control filter-input" placeholder="Keywords should be separated by commas" [(ngModel)]="newEN.nom_gerant"  [(ngModel)]="Newuser.username">
+                      <input type="text" class="form-control filter-input" placeholder="Nom Gerant" [(ngModel)]="newEN.nom_gerant"  [(ngModel)]="Newuser.username">
                     </div>
                   </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Telephone Societe </label>
-                        <input type="text" class="form-control filter-input" placeholder="Address of your hotel" [(ngModel)]="newEN.tel">
+                        <input type="text" class="form-control filter-input" placeholder="Telephone Societe.." [(ngModel)]="newEN.tel">
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Telephone gerant </label>
-                        <input type="text" class="form-control filter-input" placeholder="Address of your hotel" [(ngModel)]="newEN.tel_gerant">
+                        <input type="text" class="form-control filter-input" placeholder="Telephone Gerant .." [(ngModel)]="newEN.tel_gerant">
                       </div>
                     </div>
                 </div>

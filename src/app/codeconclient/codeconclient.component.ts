@@ -2,27 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import {EntrepriseService} from "../services/entreprise.service";
 import {NgToastService} from "ng-angular-popup";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ClientService} from "../services/client.service";
 
 @Component({
-  selector: 'app-code-confirmation',
-  templateUrl: './code-confirmation.component.html',
-  styleUrls: ['./code-confirmation.component.css']
+  selector: 'app-codeconclient',
+  templateUrl: './codeconclient.component.html',
+  styleUrls: ['./codeconclient.component.css']
 })
-export class CodeConfirmationComponent implements OnInit {
-  id!: number ;
+export class CodeconclientComponent implements OnInit {
+  private id: any;
   code: any;
-  entreprise: any
 
-  constructor(private entrepriseService: EntrepriseService, private toast: NgToastService, private router: ActivatedRoute, private route: Router) {
+  constructor(private clientservice:ClientService, private toast: NgToastService, private router: ActivatedRoute, private route: Router) {
   }
 
   ngOnInit(): void {
-    //this.id = localStorage.getItem('cle')
   }
 
   save() {
     this.id = this.router.snapshot.params['id'];
-    this.entrepriseService.verif(this.id, this.code).subscribe((response) => {
+    this.clientservice.veriff(this.id, this.code).subscribe((response) => {
       console.log(response)
       if (response == true) {
         console.log("code verifier ")
@@ -33,25 +32,21 @@ export class CodeConfirmationComponent implements OnInit {
           duration: 10000
         })
         this.route.navigate(['login'])
-        localStorage.setItem('cle', JSON.stringify(this.id));
-        this.route.navigate(['horaire'])
       } else {
         console.log("code non verifier")
         this.toast.error({
           detail: 'Erreur...',
           summary: 'Code de confirmation est faux',
           position: 'br',
-          duration: 5000
+          duration: 9000
         })
       }
     });
   }
 
-  renvoi(): void {
+  renvoi() {
     this.id = this.router.snapshot.params['id'];
-    this.entrepriseService.renvoiCode(this.id).subscribe((response) => {
-      this.entreprise = response
-      console.log(this.entreprise)
+    this.clientservice.renvoiCode(this.id).subscribe((response) => {
       this.toast.success({detail: 'Bravo..', summary: ' vous recevez un autre code', position: 'br', duration: 7000})
     });
   }
